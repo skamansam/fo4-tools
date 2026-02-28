@@ -1,0 +1,492 @@
+[
+  {
+    "id": "strength-1",
+    "name": "Iron Fist",
+    "special": "Strength",
+    "level": 1,
+    "description": "Your unarmed attacks do 20% more damage"
+  },
+  {
+    "id": "strength-2",
+    "name": "Big Leagues",
+    "special": "Strength",
+    "level": 2,
+    "description": "Your melee weapons do 20% more damage"
+  },
+  {
+    "id": "strength-3",
+    "name": "Armorer",
+    "special": "Strength",
+    "level": 3,
+    "description": "You can craft and modify armor"
+  },
+  {
+    "id": "strength-4",
+    "name": "Blacksmith",
+    "special": "Strength",
+    "level": 4,
+    "description": "You can craft and modify melee weapons"
+  },
+  {
+    "id": "strength-5",
+    "name": "Heavy Weapons",
+    "special": "Strength",
+    "level": 5,
+    "description": "Heavy guns do 20% more damage"
+  },
+  {
+    "id": "strength-6",
+    "name": "Steady Aim",
+    "special": "Strength",
+    "level": 6,
+    "description": "Heavy guns have 25% less recoil"
+  },
+  {
+    "id": "strength-7",
+    "name": "Pain Train",
+    "special": "Strength",
+    "level": 7,
+    "description": "Sprinting into enemies knocks them down"
+  },
+  {
+    "id": "strength-8",
+    "name": "Rooted",
+    "special": "Strength",
+    "level": 8,
+    "description": "While standing still, take 25% less damage"
+  },
+  {
+    "id": "strength-9",
+    "name": "Unstoppable Force",
+    "special": "Strength",
+    "level": 9,
+    "description": "Power attacks with melee weapons do 25% more damage"
+  },
+  {
+    "id": "strength-10",
+    "name": "Barbarian",
+    "special": "Strength",
+    "level": 10,
+    "description": "Melee weapons do 25% more damage"
+  },
+    {
+    "id": "perception-1",
+    "name": "Pickpocket",
+    "special": "Perception",
+    "level": 1,
+    "description": "You can pickpocket 25% more effectively"
+  },
+  {
+    "id": "perception-2",
+    "name": "Rifleman",
+    "special": "Perception",
+    "level": 2,
+    "description": "Rifles do 20% more damage"
+  },
+  {
+    "id": "perception-3",
+    "name": "Lockpicking",
+    "special": "Perception",
+    "level": 3,
+    "description": "You can pick locks"
+  },
+  {
+    "id": "perception-4",
+    "name": "Awareness",
+    "special": "Perception",
+    "level": 4,
+    "description": "You can see enemy health and components"
+  },
+  {
+    "id": "perception-5",
+    "name": "Sniper",
+    "special": "Perception",
+    "level": 5,
+    "description": "Scoped weapons have 25% better accuracy"
+  },
+  {
+    "id": "perception-6",
+    "name": "Concentrated Fire",
+    "special": "Perception",
+    "level": 6,
+    "description": "Hitting the same body part increases damage by 25%"
+  },
+  {
+    "id": "perception-7",
+    "name": "Penetrator",
+    "special": "Perception",
+    "level": 7,
+    "description": "Ballistic weapons ignore 25% of armor"
+  },
+  {
+    "id": "perception-8",
+    "name": "Deadeye",
+    "special": "Perception",
+    "level": 8,
+    "description": "VATS accuracy is increased by 25%"
+  },
+  {
+    "id": "perception-9",
+    "name": "Refractor",
+    "special": "Perception",
+    "level": 9,
+    "description": "Energy weapons ignore 25% of armor"
+  },
+  {
+    "id": "perception-10",
+    "name": "Sneak",
+    "special": "Perception",
+    "level": 10,
+    "description": "You are 25% harder to detect while sneaking"
+  },
+  {
+    "id": "endurance-1",
+    "name": "Toughness",
+    "special": "Endurance",
+    "level": 1,
+    "description": "You take 10% less damage"
+  },
+  {
+    "id": "endurance-2",
+    "name": "Lead Belly",
+    "special": "Endurance",
+    "level": 2,
+    "description": "You take 50% less radiation damage"
+  },
+  {
+    "id": "endurance-3",
+    "name": "Lifegiver",
+    "special": "Endurance",
+    "level": 3,
+    "description": "You gain 30 more HP"
+  },
+  {
+    "id": "endurance-4",
+    "name": "Chem Resistant",
+    "special": "Endurance",
+    "level": 4,
+    "description": "Chems are 50% less addictive"
+  },
+  {
+    "id": "endurance-5",
+    "name": "Aquaboy",
+    "special": "Endurance",
+    "level": 5,
+    "description": "You can breathe underwater"
+  },
+  {
+    "id": "endurance-6",
+    "name": "Rad Resistant",
+    "special": "Endurance",
+    "level": 6,
+    "description": "You gain 10 radiation resistance"
+  },
+  {
+    "id": "endurance-7",
+    "name": "Cannibal",
+    "special": "Endurance",
+    "level": 7,
+    "description": "Eating corpses restores health"
+  },
+  {
+    "id": "endurance-8",
+    "name": "Ghoulish",
+    "special": "Endurance",
+    "level": 8,
+    "description": "Radiation restores health instead of harming you"
+  },
+  {
+    "id": "endurance-9",
+    "name": "Ironclad",
+    "special": "Endurance",
+    "level": 9,
+    "description": "Armor provides 25% more damage resistance"
+  },
+  {
+    "id": "endurance-10",
+    "name": "Assassin",
+    "special": "Endurance",
+    "level": 10,
+    "description": "You take 25% less damage from humans"
+  },
+  {
+    "id": "charisma-1",
+    "name": "Cap Collector",
+    "special": "Charisma",
+    "level": 1,
+    "description": "Vendors have 25% more caps"
+  },
+  {
+    "id": "charisma-2",
+    "name": "Bartering",
+    "special": "Charisma",
+    "level": 2,
+    "description": "Prices are 10% better"
+  },
+  {
+    "id": "charisma-3",
+    "name": "Lone Wanderer",
+    "special": "Charisma",
+    "level": 3,
+    "description": "You take 25% less damage without a companion"
+  },
+  {
+    "id": "charisma-4",
+    "name": "Attack Dog",
+    "special": "Charisma",
+    "level": 4,
+    "description": "Your dog does 25% more damage"
+  },
+  {
+    "id": "charisma-5",
+    "name": "Animal Friend",
+    "special": "Charisma",
+    "level": 5,
+    "description": "You can pacify animals"
+  },
+  {
+    "id": "charisma-6",
+    "name": "Local Leader",
+    "special": "Charisma",
+    "level": 6,
+    "description": "You can establish supply lines"
+  },
+  {
+    "id": "charisma-7",
+    "name": "Inspirational",
+    "special": "Charisma",
+    "level": 7,
+    "description": "Companions do 25% more damage"
+  },
+  {
+    "id": "charisma-8",
+    "name": "Wasteland Whisperer",
+    "special": "Charisma",
+    "level": 8,
+    "description": "You can pacify humanoid creatures"
+  },
+  {
+    "id": "charisma-9",
+    "name": "Intimidation",
+    "special": "Charisma",
+    "level": 9,
+    "description": "Enemies are easier to pacify"
+  },
+  {
+    "id": "charisma-10",
+    "name": "Benevolent Leader",
+    "special": "Charisma",
+    "level": 10,
+    "description": "Settlement happiness increases 25% faster"
+  },
+  {
+    "id": "intelligence-1",
+    "name": "Hacker",
+    "special": "Intelligence",
+    "level": 1,
+    "description": "You can hack terminals"
+  },
+  {
+    "id": "intelligence-2",
+    "name": "Scrapper",
+    "special": "Intelligence",
+    "level": 2,
+    "description": "You get more materials when scrapping"
+  },
+  {
+    "id": "intelligence-3",
+    "name": "Chemist",
+    "special": "Intelligence",
+    "level": 3,
+    "description": "You can craft chems"
+  },
+  {
+    "id": "intelligence-4",
+    "name": "Gunsmith",
+    "special": "Intelligence",
+    "level": 4,
+    "description": "You can craft and modify guns"
+  },
+  {
+    "id": "intelligence-5",
+    "name": "Medic",
+    "special": "Intelligence",
+    "level": 5,
+    "description": "Stimpaks restore 25% more health"
+  },
+  {
+    "id": "intelligence-6",
+    "name": "Science",
+    "special": "Intelligence",
+    "level": 6,
+    "description": "You can craft and modify energy weapons"
+  },
+  {
+    "id": "intelligence-7",
+    "name": "Roboticist",
+    "special": "Intelligence",
+    "level": 7,
+    "description": "You can hack robots"
+  },
+  {
+    "id": "intelligence-8",
+    "name": "Nuclear Physicist",
+    "special": "Intelligence",
+    "level": 8,
+    "description": "Fusion cores last 25% longer"
+  },
+  {
+    "id": "intelligence-9",
+    "name": "Experimenter",
+    "special": "Intelligence",
+    "level": 9,
+    "description": "Chems are 25% more effective"
+  },
+  {
+    "id": "intelligence-10",
+    "name": "Egghead",
+    "special": "Intelligence",
+    "level": 10,
+    "description": "You gain +2 to all SPECIAL stats"
+  },
+  {
+    "id": "agility-1",
+    "name": "Gunslinger",
+    "special": "Agility",
+    "level": 1,
+    "description": "Pistols do 20% more damage"
+  },
+  {
+    "id": "agility-2",
+    "name": "Commando",
+    "special": "Agility",
+    "level": 2,
+    "description": "Automatic rifles do 20% more damage"
+  },
+  {
+    "id": "agility-3",
+    "name": "Blitz",
+    "special": "Agility",
+    "level": 3,
+    "description": "VATS melee attacks cost 25% less AP"
+  },
+  {
+    "id": "agility-4",
+    "name": "Evasion",
+    "special": "Agility",
+    "level": 4,
+    "description": "You take 25% less damage from ranged attacks"
+  },
+  {
+    "id": "agility-5",
+    "name": "Ninja",
+    "special": "Agility",
+    "level": 5,
+    "description": "Sneak attacks do 25% more damage"
+  },
+  {
+    "id": "agility-6",
+    "name": "Quick Hands",
+    "special": "Agility",
+    "level": 6,
+    "description": "Reload speed is 25% faster"
+  },
+  {
+    "id": "agility-7",
+    "name": "Gunfu",
+    "special": "Agility",
+    "level": 7,
+    "description": "VATS gun attacks hit an additional target"
+  },
+  {
+    "id": "agility-8",
+    "name": "Adrenaline",
+    "special": "Agility",
+    "level": 8,
+    "description": "Melee attacks build adrenaline for bonus damage"
+  },
+  {
+    "id": "agility-9",
+    "name": "Ricochet",
+    "special": "Agility",
+    "level": 9,
+    "description": "25% of ranged damage is reflected"
+  },
+  {
+    "id": "agility-10",
+    "name": "Slayer",
+    "special": "Agility",
+    "level": 10,
+    "description": "VATS attacks do 25% more damage"
+  },
+  {
+    "id": "luck-1",
+    "name": "Fortune Finder",
+    "special": "Luck",
+    "level": 1,
+    "description": "You find more caps in containers"
+  },
+  {
+    "id": "luck-2",
+    "name": "Scrounger",
+    "special": "Luck",
+    "level": 2,
+    "description": "You find more ammo in containers"
+  },
+  {
+    "id": "luck-3",
+    "name": "Bloody Mess",
+    "special": "Luck",
+    "level": 3,
+    "description": "Kills have a 5% chance to gib enemies"
+  },
+  {
+    "id": "luck-4",
+    "name": "Mysterious Stranger",
+    "special": "Luck",
+    "level": 4,
+    "description": "Mysterious Stranger appears in VATS"
+  },
+  {
+    "id": "luck-5",
+    "name": "Idiot Savant",
+    "special": "Luck",
+    "level": 5,
+    "description": "Random chance to gain bonus XP"
+  },
+  {
+    "id": "luck-6",
+    "name": "Better Criticals",
+    "special": "Luck",
+    "level": 6,
+    "description": "Critical hits do 50% more damage"
+  },
+  {
+    "id": "luck-7",
+    "name": "Critical Banker",
+    "special": "Luck",
+    "level": 7,
+    "description": "Gain an extra critical hit"
+  },
+  {
+    "id": "luck-8",
+    "name": "Grim Reaper's Sprint",
+    "special": "Luck",
+    "level": 8,
+    "description": "Kills restore action points"
+  },
+  {
+    "id": "luck-9",
+    "name": "Ricochet",
+    "special": "Luck",
+    "level": 9,
+    "description": "Chance to reflect ranged damage"
+  },
+  {
+    "id": "luck-10",
+    "name": "Luck of the Irish",
+    "special": "Luck",
+    "level": 10,
+    "description": "Gain +1 Luck"
+  }
+]
