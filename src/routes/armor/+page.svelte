@@ -1,8 +1,15 @@
 <script lang="ts">
+	import { perkStore } from '$lib/stores/perkStore';
+	import { calculateFinalArmorStats } from '$lib/utils/perkCalculator';
+	import perkEffectsData from '$lib/data/perkEffects.json';
+	import armorData from '$lib/data/armor.json';
+
 	interface ArmorMod {
 		id: string;
 		name: string;
 		effect: string;
+		resistanceBonus?: number;
+		energyResistanceBonus?: number;
 		materials: Record<string, number>;
 	}
 
@@ -10,52 +17,26 @@
 		id: string;
 		name: string;
 		type: string;
+		armorType: string;
 		baseResistance: number;
+		baseEnergyResistance: number;
 		mods: ArmorMod[];
 	}
 
 	let selectedArmor: ArmorPiece | null = $state(null);
 	let selectedMod: ArmorMod | null = $state(null);
 	let armorPieces: ArmorPiece[] = $state([]);
+	let activePerkRanks = $state<Map<string, number>>(new Map());
 
-	// Placeholder data - will be replaced with JSON data
+	// Subscribe to perk store changes
+	$effect(() => {
+		perkStore.subscribe((perks) => {
+			activePerkRanks = new Map(perks);
+		})();
+	});
+
 	function loadArmorData() {
-		armorPieces = [
-			{
-				id: 'combat-chest',
-				name: 'Combat Armor Chest Piece',
-				type: 'Torso',
-				baseResistance: 20,
-				mods: [
-					{
-						id: 'mod-1',
-						name: 'Heavy Armor Plating',
-						effect: '+10 Damage Resistance',
-						materials: { steel: 5, aluminum: 3 }
-					},
-					{
-						id: 'mod-2',
-						name: 'Polished Metal',
-						effect: '+5 Energy Resistance',
-						materials: { steel: 3, glass: 2 }
-					}
-				]
-			},
-			{
-				id: 'combat-helmet',
-				name: 'Combat Armor Helmet',
-				type: 'Head',
-				baseResistance: 15,
-				mods: [
-					{
-						id: 'mod-3',
-						name: 'Reinforced Lens',
-						effect: '+2 Perception',
-						materials: { glass: 4, steel: 2 }
-					}
-				]
-			}
-		];
+		armorPieces = armorData as ArmorPiece[];
 	}
 
 	function selectArmor(armor: ArmorPiece) {
@@ -65,6 +46,50 @@
 
 	function selectMod(mod: ArmorMod) {
 		selectedMod = mod;
+	}
+
+	function calculateModBonus(): { resistance: number; energyResistance: number } {
+		if (!selectedArmor || !selectedMod) {
+			return { resistance: 0, energyResistance: 0 };
+		}
+		return {
+			resistance: selectedMod.resistanceBonus || 0,
+			energyResistance: selectedMod.energyResistanceBonus || 0
+		};
+	}
+
+	function calculateFinalStats(): { resistance: number; energyResistance: number } {
+		if (!selectedArmor) return { resistance: 0, energyResistance: 0 };
+		const modBonus = calculateModBonus();
+		const baseResistance = selectedArmor.baseResistance + modBonus.resistance;
+		const baseEnergyResistance = selectedArmor.baseEnergyResistance + modBonus.energyResistance;
+		return calculateFinalArmorStats(
+			baseResistance,
+			baseEnergyResistance,
+			selectedArmor.armorType,
+			activePerkRanks,
+			perkEffectsData.armorPerkModifiers
+		);
+	}
+
+	function getApplicablePerks(): { name: string; rank: number; resistanceBonus: number; energyResistanceBonus: number }[] {
+		if (!selectedArmor) return [];
+		const applicable = [];
+		for (const modifier of perkEffectsData.armorPerkModifiers) {
+			if (modifier.armorTypes.includes(selectedArmor.armorType) || modifier.armorTypes.includes('all')) {
+				const rank = activePerkRanks.get(modifier.perkId) || 0;
+				if (rank > 0) {
+					const effect = modifier.effects.find((e) => e.rank === rank);
+					applicable.push({
+						name: modifier.name,
+						rank,
+						resistanceBonus: effect?.resistanceBonus || 0,
+						energyResistanceBonus: effect?.energyResistanceBonus || 0
+					});
+				}
+			}
+		}
+		return applicable;
 	}
 
 	$effect(() => {
@@ -116,6 +141,10 @@
 							<p class="text-sm opacity-75">Base Damage Resistance:</p>
 							<p class="text-lg font-bold">{selectedArmor.baseResistance}</p>
 						</div>
+						<div>
+							<p class="text-sm opacity-75">Base Energy Resistance:</p>
+							<p class="text-lg font-bold">{selectedArmor.baseEnergyResistance}</p>
+						</div>
 					</div>
 				</div>
 
@@ -150,6 +179,18 @@
 								<p class="text-sm opacity-75">Effect:</p>
 								<p class="text-lg font-bold">{selectedMod.effect}</p>
 							</div>
+							{#if selectedMod.resistanceBonus}
+								<div>
+									<p class="text-sm opacity-75">Damage Resistance Bonus:</p>
+									<p class="text-lg font-bold">+{selectedMod.resistanceBonus}</p>
+								</div>
+							{/if}
+							{#if selectedMod.energyResistanceBonus}
+								<div>
+									<p class="text-sm opacity-75">Energy Resistance Bonus:</p>
+									<p class="text-lg font-bold">+{selectedMod.energyResistanceBonus}</p>
+								</div>
+							{/if}
 							<div>
 								<p class="text-sm opacity-75 mb-2">Materials Required:</p>
 								<div class="space-y-1">
@@ -158,6 +199,70 @@
 									{/each}
 								</div>
 							</div>
+						</div>
+					</div>
+				{/if}
+
+				<!-- Applicable Perks -->
+				{#if selectedArmor && getApplicablePerks().length > 0}
+					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
+						<h3 class="text-lg font-bold text-fo4-green-light mb-4">APPLICABLE PERKS</h3>
+						<div class="space-y-3">
+							{#each getApplicablePerks() as perk}
+								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+									<div>
+										<p class="font-semibold text-sm">{perk.name}</p>
+										<p class="text-xs opacity-75">Rank {perk.rank}</p>
+									</div>
+									<div class="text-right">
+										{#if perk.resistanceBonus > 0}
+											<p class="text-sm font-bold text-fo4-green-light">+{perk.resistanceBonus} DR</p>
+										{/if}
+										{#if perk.energyResistanceBonus > 0}
+											<p class="text-sm font-bold text-fo4-green-light">+{perk.energyResistanceBonus} ER</p>
+										{/if}
+									</div>
+								</div>
+							{/each}
+						</div>
+					</div>
+				{/if}
+
+				<!-- Final Resistance with Perks -->
+				{#if selectedArmor}
+					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
+						<h3 class="text-lg font-bold text-fo4-green-light mb-4">FINAL RESISTANCE CALCULATION</h3>
+						<div class="space-y-3">
+							<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+								<p class="text-sm">Base Damage Resistance:</p>
+								<p class="text-lg font-bold">{selectedArmor.baseResistance}</p>
+							</div>
+							<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+								<p class="text-sm">Base Energy Resistance:</p>
+								<p class="text-lg font-bold">{selectedArmor.baseEnergyResistance}</p>
+							</div>
+							{#if selectedMod && (selectedMod.resistanceBonus || selectedMod.energyResistanceBonus)}
+								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+									<p class="text-sm">With Mod ({selectedMod.name}):</p>
+									<div class="text-right">
+										{#if selectedMod.resistanceBonus}
+											<p class="text-sm font-bold">DR: {selectedArmor.baseResistance + selectedMod.resistanceBonus}</p>
+										{/if}
+										{#if selectedMod.energyResistanceBonus}
+											<p class="text-sm font-bold">ER: {selectedArmor.baseEnergyResistance + selectedMod.energyResistanceBonus}</p>
+										{/if}
+									</div>
+								</div>
+							{/if}
+							{#if getApplicablePerks().length > 0}
+								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green-light">
+									<p class="text-sm font-semibold">With Perks:</p>
+									<div class="text-right">
+										<p class="text-sm font-bold text-fo4-green-light">DR: {calculateFinalStats().resistance}</p>
+										<p class="text-sm font-bold text-fo4-green-light">ER: {calculateFinalStats().energyResistance}</p>
+									</div>
+								</div>
+							{/if}
 						</div>
 					</div>
 				{/if}

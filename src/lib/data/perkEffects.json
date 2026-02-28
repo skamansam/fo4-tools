@@ -1,0 +1,102 @@
+{
+  "weaponPerkModifiers": [
+    {
+      "perkId": "strength-2",
+      "name": "Big Leagues",
+      "weaponTypes": ["melee"],
+      "effects": [
+        { "rank": 1, "damageBonus": 0.20 },
+        { "rank": 2, "damageBonus": 0.40 },
+        { "rank": 3, "damageBonus": 0.60 },
+        { "rank": 4, "damageBonus": 0.80 },
+        { "rank": 5, "damageBonus": 1.0 }
+      ]
+    },
+    {
+      "perkId": "strength-5",
+      "name": "Heavy Weapons",
+      "weaponTypes": ["heavy"],
+      "effects": [
+        { "rank": 1, "damageBonus": 0.20 },
+        { "rank": 2, "damageBonus": 0.40 },
+        { "rank": 3, "damageBonus": 0.60 },
+        { "rank": 4, "damageBonus": 0.80 },
+        { "rank": 5, "damageBonus": 1.0 }
+      ]
+    },
+    {
+      "perkId": "perception-2",
+      "name": "Rifleman",
+      "weaponTypes": ["rifle"],
+      "effects": [
+        { "rank": 1, "damageBonus": 0.20 },
+        { "rank": 2, "damageBonus": 0.40 },
+        { "rank": 3, "damageBonus": 0.60 },
+        { "rank": 4, "damageBonus": 0.80 },
+        { "rank": 5, "damageBonus": 1.0 }
+      ]
+    },
+    {
+      "perkId": "agility-1",
+      "name": "Gunslinger",
+      "weaponTypes": ["pistol"],
+      "effects": [
+        { "rank": 1, "damageBonus": 0.20 },
+        { "rank": 2, "damageBonus": 0.40 },
+        { "rank": 3, "damageBonus": 0.60 },
+        { "rank": 4, "damageBonus": 0.80 },
+        { "rank": 5, "damageBonus": 1.0 }
+      ]
+    },
+    {
+      "perkId": "agility-2",
+      "name": "Commando",
+      "weaponTypes": ["automatic-rifle"],
+      "effects": [
+        { "rank": 1, "damageBonus": 0.20 },
+        { "rank": 2, "damageBonus": 0.40 },
+        { "rank": 3, "damageBonus": 0.60 },
+        { "rank": 4, "damageBonus": 0.80 },
+        { "rank": 5, "damageBonus": 1.0 }
+      ]
+    },
+    {
+      "perkId": "intelligence-6",
+      "name": "Science",
+      "weaponTypes": ["energy"],
+      "effects": [
+        { "rank": 1, "damageBonus": 0.20 },
+        { "rank": 2, "damageBonus": 0.40 },
+        { "rank": 3, "damageBonus": 0.60 },
+        { "rank": 4, "damageBonus": 0.80 },
+        { "rank": 5, "damageBonus": 1.0 }
+      ]
+    }
+  ],
+  "armorPerkModifiers": [
+    {
+      "perkId": "strength-3",
+      "name": "Armorer",
+      "armorTypes": ["all"],
+      "effects": [
+        { "rank": 1, "resistanceBonus": 5, "energyResistanceBonus": 5 },
+        { "rank": 2, "resistanceBonus": 10, "energyResistanceBonus": 10 },
+        { "rank": 3, "resistanceBonus": 15, "energyResistanceBonus": 15 },
+        { "rank": 4, "resistanceBonus": 20, "energyResistanceBonus": 20 },
+        { "rank": 5, "resistanceBonus": 25, "energyResistanceBonus": 25 }
+      ]
+    },
+    {
+      "perkId": "endurance-1",
+      "name": "Toughness",
+      "armorTypes": ["all"],
+      "effects": [
+        { "rank": 1, "resistanceBonus": 10, "energyResistanceBonus": 10 },
+        { "rank": 2, "resistanceBonus": 20, "energyResistanceBonus": 20 },
+        { "rank": 3, "resistanceBonus": 30, "energyResistanceBonus": 30 },
+        { "rank": 4, "resistanceBonus": 40, "energyResistanceBonus": 40 },
+        { "rank": 5, "resistanceBonus": 50, "energyResistanceBonus": 50 }
+      ]
+    }
+  ]
+}

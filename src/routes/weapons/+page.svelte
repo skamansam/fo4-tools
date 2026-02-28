@@ -1,4 +1,9 @@
 <script lang="ts">
+	import { perkStore } from '$lib/stores/perkStore';
+	import { calculateFinalWeaponStats } from '$lib/utils/perkCalculator';
+	import perkEffectsData from '$lib/data/perkEffects.json';
+	import weaponsData from '$lib/data/weapons.json';
+
 	interface WeaponMod {
 		id: string;
 		name: string;
@@ -11,6 +16,7 @@
 		id: string;
 		name: string;
 		type: string;
+		weaponType: string;
 		baseDamage: number;
 		fireRate: number;
 		accuracy: number;
@@ -21,79 +27,17 @@
 	let selectedWeapon: Weapon | null = $state(null);
 	let selectedMod: WeaponMod | null = $state(null);
 	let weapons: Weapon[] = $state([]);
+	let activePerkRanks = $state<Map<string, number>>(new Map());
 
-	// Placeholder data - will be replaced with JSON data
+	// Subscribe to perk store changes
+	$effect(() => {
+		perkStore.subscribe((perks) => {
+			activePerkRanks = new Map(perks);
+		})();
+	});
+
 	function loadWeaponData() {
-		weapons = [
-			{
-				id: 'assault-rifle',
-				name: 'Assault Rifle',
-				type: 'Rifle',
-				baseDamage: 16,
-				fireRate: 25,
-				accuracy: 65,
-				weight: 9.8,
-				mods: [
-					{
-						id: 'mod-1',
-						name: 'Automatic Receiver',
-						effect: 'Converts to automatic fire',
-						damageModifier: 0.9,
-						materials: { steel: 8, aluminum: 4 }
-					},
-					{
-						id: 'mod-2',
-						name: 'Powerful Receiver',
-						effect: '+25% Damage',
-						damageModifier: 1.25,
-						materials: { steel: 10, adhesive: 5 }
-					},
-					{
-						id: 'mod-3',
-						name: 'Long Recon Scope',
-						effect: '+2 Perception, Better accuracy',
-						damageModifier: 1.0,
-						materials: { glass: 6, steel: 3 }
-					}
-				]
-			},
-			{
-				id: 'laser-rifle',
-				name: 'Laser Rifle',
-				type: 'Energy',
-				baseDamage: 20,
-				fireRate: 20,
-				accuracy: 70,
-				weight: 7.5,
-				mods: [
-					{
-						id: 'mod-4',
-						name: 'Beam Splitter',
-						effect: 'Fires 2 beams per shot',
-						damageModifier: 0.6,
-						materials: { crystal: 8, steel: 5 }
-					}
-				]
-			},
-			{
-				id: 'combat-shotgun',
-				name: 'Combat Shotgun',
-				type: 'Shotgun',
-				baseDamage: 24,
-				fireRate: 15,
-				accuracy: 40,
-				weight: 12.0,
-				mods: [
-					{
-						id: 'mod-5',
-						name: 'Long Barrel',
-						effect: '+10% Accuracy',
-						damageModifier: 1.0,
-						materials: { steel: 6, aluminum: 3 }
-					}
-				]
-			}
-		];
+		weapons = weaponsData as Weapon[];
 	}
 
 	function selectWeapon(weapon: Weapon) {
@@ -108,6 +52,36 @@
 	function calculateModifiedDamage(): number {
 		if (!selectedWeapon || !selectedMod) return selectedWeapon?.baseDamage || 0;
 		return Math.round(selectedWeapon.baseDamage * selectedMod.damageModifier);
+	}
+
+	function calculateFinalDamage(): number {
+		if (!selectedWeapon) return 0;
+		const baseDamage = calculateModifiedDamage();
+		return calculateFinalWeaponStats(
+			baseDamage,
+			selectedWeapon.weaponType,
+			activePerkRanks,
+			perkEffectsData.weaponPerkModifiers
+		);
+	}
+
+	function getApplicablePerks(): { name: string; rank: number; bonus: number }[] {
+		if (!selectedWeapon) return [];
+		const applicable = [];
+		for (const modifier of perkEffectsData.weaponPerkModifiers) {
+			if (modifier.weaponTypes.includes(selectedWeapon.weaponType)) {
+				const rank = activePerkRanks.get(modifier.perkId) || 0;
+				if (rank > 0) {
+					const effect = modifier.effects.find((e) => e.rank === rank);
+					applicable.push({
+						name: modifier.name,
+						rank,
+						bonus: effect?.damageBonus ? Math.round(effect.damageBonus * 100) : 0
+					});
+				}
+			}
+		}
+		return applicable;
 	}
 
 	$effect(() => {
@@ -221,6 +195,49 @@
 									{/each}
 								</div>
 							</div>
+						</div>
+					</div>
+				{/if}
+
+				<!-- Applicable Perks -->
+				{#if selectedWeapon && getApplicablePerks().length > 0}
+					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
+						<h3 class="text-lg font-bold text-fo4-green-light mb-4">APPLICABLE PERKS</h3>
+						<div class="space-y-3">
+							{#each getApplicablePerks() as perk}
+								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+									<div>
+										<p class="font-semibold text-sm">{perk.name}</p>
+										<p class="text-xs opacity-75">Rank {perk.rank}</p>
+									</div>
+									<p class="text-lg font-bold text-fo4-green-light">+{perk.bonus}%</p>
+								</div>
+							{/each}
+						</div>
+					</div>
+				{/if}
+
+				<!-- Final Damage with Perks -->
+				{#if selectedWeapon}
+					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
+						<h3 class="text-lg font-bold text-fo4-green-light mb-4">FINAL DAMAGE CALCULATION</h3>
+						<div class="space-y-3">
+							<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+								<p class="text-sm">Base Damage:</p>
+								<p class="text-lg font-bold">{selectedWeapon.baseDamage}</p>
+							</div>
+							{#if selectedMod}
+								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+									<p class="text-sm">With Mod ({selectedMod.name}):</p>
+									<p class="text-lg font-bold">{calculateModifiedDamage()}</p>
+								</div>
+							{/if}
+							{#if getApplicablePerks().length > 0}
+								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green-light">
+									<p class="text-sm font-semibold">With Perks:</p>
+									<p class="text-lg font-bold text-fo4-green-light">{calculateFinalDamage()}</p>
+								</div>
+							{/if}
 						</div>
 					</div>
 				{/if}

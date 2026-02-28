@@ -4,7 +4,40 @@
     "name": "Iron Fist",
     "special": "Strength",
     "level": 1,
-    "description": "Your unarmed attacks do 20% more damage"
+    "description": "Your unarmed attacks do 20% more damage",
+    "maxRank": 5,
+    "effects": [
+      {
+        "rank": 1,
+        "description": "Unarmed attacks do 20% more damage",
+        "appliesToWeaponTypes": ["unarmed"],
+        "damageBonus": 0.20
+      },
+      {
+        "rank": 2,
+        "description": "Unarmed attacks do 40% more damage",
+        "appliesToWeaponTypes": ["unarmed"],
+        "damageBonus": 0.40
+      },
+      {
+        "rank": 3,
+        "description": "Unarmed attacks do 60% more damage",
+        "appliesToWeaponTypes": ["unarmed"],
+        "damageBonus": 0.60
+      },
+      {
+        "rank": 4,
+        "description": "Unarmed attacks do 80% more damage",
+        "appliesToWeaponTypes": ["unarmed"],
+        "damageBonus": 0.80
+      },
+      {
+        "rank": 5,
+        "description": "Unarmed attacks do 100% more damage",
+        "appliesToWeaponTypes": ["unarmed"],
+        "damageBonus": 1.0
+      }
+    ]
   },
   {
     "id": "strength-2",
