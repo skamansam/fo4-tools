@@ -1,0 +1,212 @@
+[
+  {
+    "id": "assault-rifle",
+    "name": "Assault Rifle",
+    "type": "Rifle",
+    "baseDamage": 16,
+    "fireRate": 25,
+    "accuracy": 65,
+    "weight": 9.8,
+    "mods": [
+      {
+        "id": "assault-rifle-mod-1",
+        "name": "Automatic Receiver",
+        "effect": "Converts to automatic fire",
+        "damageModifier": 0.9,
+        "fireRateModifier": 1.5,
+        "materials": {
+          "steel": 8,
+          "aluminum": 4
+        }
+      },
+      {
+        "id": "assault-rifle-mod-2",
+        "name": "Powerful Receiver",
+        "effect": "+25% Damage",
+        "damageModifier": 1.25,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "steel": 10,
+          "adhesive": 5
+        }
+      },
+      {
+        "id": "assault-rifle-mod-3",
+        "name": "Long Recon Scope",
+        "effect": "+2 Perception, Better accuracy",
+        "damageModifier": 1.0,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "glass": 6,
+          "steel": 3
+        }
+      },
+      {
+        "id": "assault-rifle-mod-4",
+        "name": "Suppressor",
+        "effect": "Silenced shots",
+        "damageModifier": 0.85,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "steel": 5,
+          "aluminum": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "laser-rifle",
+    "name": "Laser Rifle",
+    "type": "Energy",
+    "baseDamage": 20,
+    "fireRate": 20,
+    "accuracy": 70,
+    "weight": 7.5,
+    "mods": [
+      {
+        "id": "laser-rifle-mod-1",
+        "name": "Beam Splitter",
+        "effect": "Fires 2 beams per shot",
+        "damageModifier": 0.6,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "crystal": 8,
+          "steel": 5
+        }
+      },
+      {
+        "id": "laser-rifle-mod-2",
+        "name": "Focused Lens",
+        "effect": "+15% Damage",
+        "damageModifier": 1.15,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "glass": 5,
+          "crystal": 3
+        }
+      },
+      {
+        "id": "laser-rifle-mod-3",
+        "name": "Charging Barrel",
+        "effect": "Charged shots deal more damage",
+        "damageModifier": 1.3,
+        "fireRateModifier": 0.8,
+        "materials": {
+          "steel": 6,
+          "crystal": 4,
+          "nuclear": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "combat-shotgun",
+    "name": "Combat Shotgun",
+    "type": "Shotgun",
+    "baseDamage": 24,
+    "fireRate": 15,
+    "accuracy": 40,
+    "weight": 12.0,
+    "mods": [
+      {
+        "id": "combat-shotgun-mod-1",
+        "name": "Long Barrel",
+        "effect": "+10% Accuracy",
+        "damageModifier": 1.0,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "steel": 6,
+          "aluminum": 3
+        }
+      },
+      {
+        "id": "combat-shotgun-mod-2",
+        "name": "Powerful Receiver",
+        "effect": "+20% Damage",
+        "damageModifier": 1.2,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "steel": 8,
+          "adhesive": 4
+        }
+      },
+      {
+        "id": "combat-shotgun-mod-3",
+        "name": "Automatic Receiver",
+        "effect": "Converts to automatic fire",
+        "damageModifier": 0.85,
+        "fireRateModifier": 2.0,
+        "materials": {
+          "steel": 10,
+          "aluminum": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "10mm-pistol",
+    "name": "10mm Pistol",
+    "type": "Pistol",
+    "baseDamage": 11,
+    "fireRate": 20,
+    "accuracy": 60,
+    "weight": 3.5,
+    "mods": [
+      {
+        "id": "10mm-pistol-mod-1",
+        "name": "Automatic Receiver",
+        "effect": "Converts to automatic fire",
+        "damageModifier": 0.8,
+        "fireRateModifier": 2.5,
+        "materials": {
+          "steel": 6,
+          "aluminum": 3
+        }
+      },
+      {
+        "id": "10mm-pistol-mod-2",
+        "name": "Powerful Receiver",
+        "effect": "+20% Damage",
+        "damageModifier": 1.2,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "steel": 7,
+          "adhesive": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "minigun",
+    "name": "Minigun",
+    "type": "Heavy",
+    "baseDamage": 8,
+    "fireRate": 40,
+    "accuracy": 50,
+    "weight": 21.0,
+    "mods": [
+      {
+        "id": "minigun-mod-1",
+        "name": "Accelerating Barrel",
+        "effect": "+25% Fire Rate",
+        "damageModifier": 1.0,
+        "fireRateModifier": 1.25,
+        "materials": {
+          "steel": 12,
+          "aluminum": 6
+        }
+      },
+      {
+        "id": "minigun-mod-2",
+        "name": "Powerful Barrel",
+        "effect": "+15% Damage",
+        "damageModifier": 1.15,
+        "fireRateModifier": 1.0,
+        "materials": {
+          "steel": 10,
+          "adhesive": 5
+        }
+      }
+    ]
+  }
+]

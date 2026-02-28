@@ -1,0 +1,119 @@
+[
+  {
+    "id": "combat-armor-head",
+    "name": "Combat Armor Helmet",
+    "type": "Head",
+    "baseResistance": 15,
+    "baseEnergyResistance": 0,
+    "weight": 1.0,
+    "mods": [
+      {
+        "id": "combat-head-mod-1",
+        "name": "Reinforced Lens",
+        "effect": "+2 Perception",
+        "resistanceBonus": 0,
+        "energyResistanceBonus": 0,
+        "materials": {
+          "glass": 4,
+          "steel": 2
+        }
+      },
+      {
+        "id": "combat-head-mod-2",
+        "name": "Shadowed Lining",
+        "effect": "+1 Agility",
+        "resistanceBonus": 0,
+        "energyResistanceBonus": 0,
+        "materials": {
+          "cloth": 3,
+          "steel": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "combat-armor-chest",
+    "name": "Combat Armor Chest Piece",
+    "type": "Torso",
+    "baseResistance": 20,
+    "baseEnergyResistance": 0,
+    "weight": 3.5,
+    "mods": [
+      {
+        "id": "combat-chest-mod-1",
+        "name": "Heavy Armor Plating",
+        "effect": "+10 Damage Resistance",
+        "resistanceBonus": 10,
+        "energyResistanceBonus": 0,
+        "materials": {
+          "steel": 5,
+          "aluminum": 3
+        }
+      },
+      {
+        "id": "combat-chest-mod-2",
+        "name": "Polished Metal",
+        "effect": "+5 Energy Resistance",
+        "resistanceBonus": 0,
+        "energyResistanceBonus": 5,
+        "materials": {
+          "steel": 3,
+          "glass": 2
+        }
+      },
+      {
+        "id": "combat-chest-mod-3",
+        "name": "Deep Pocketed",
+        "effect": "+50 Carry Weight",
+        "resistanceBonus": 0,
+        "energyResistanceBonus": 0,
+        "materials": {
+          "leather": 4,
+          "steel": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "combat-armor-arms",
+    "name": "Combat Armor Arms",
+    "type": "Arms",
+    "baseResistance": 15,
+    "baseEnergyResistance": 0,
+    "weight": 2.0,
+    "mods": [
+      {
+        "id": "combat-arms-mod-1",
+        "name": "Strengthened",
+        "effect": "+1 Strength",
+        "resistanceBonus": 5,
+        "energyResistanceBonus": 0,
+        "materials": {
+          "steel": 4,
+          "adhesive": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "combat-armor-legs",
+    "name": "Combat Armor Legs",
+    "type": "Legs",
+    "baseResistance": 15,
+    "baseEnergyResistance": 0,
+    "weight": 2.5,
+    "mods": [
+      {
+        "id": "combat-legs-mod-1",
+        "name": "Cushioned",
+        "effect": "+1 Agility, Fall damage reduction",
+        "resistanceBonus": 0,
+        "energyResistanceBonus": 0,
+        "materials": {
+          "cloth": 4,
+          "steel": 2
+        }
+      }
+    ]
+  }
+]
