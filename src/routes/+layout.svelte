@@ -2,6 +2,7 @@
 	import './layout.css';
 	import { App, type MenuItem } from 'twintrinsic';
 	import { page } from '$app/stores';
+	import { defaultTheme } from '$lib/theme';
 
 	let { children } = $props();
 
@@ -34,6 +35,10 @@
 				{ title: 'Bobbleheads', link: '/bobbleheads' },
 				{ title: 'Magazines', link: '/magazines' }
 			]
+		},
+		{
+			title: 'Site Theme',
+			link: "/theme"
 		}
 	];
 </script>

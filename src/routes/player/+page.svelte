@@ -1,5 +1,6 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
+  import { defaultTheme } from '$lib/theme';
 
   interface Bonus {
     label: string;
@@ -104,67 +105,72 @@
   const selectedCategory = writable<number>(0);
 </script>
 
-<div class="min-h-screen bg-gradient-to-br from-yellow-900 via-yellow-800 to-yellow-900 p-8">
-  <div class="max-w-7xl mx-auto">
-    <!-- Pip-Boy Container -->
-    <div class="bg-yellow-950 border-4 border-yellow-600 rounded-lg overflow-hidden shadow-2xl">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
-        <!-- Left: Pip-Boy Image -->
-        <div class="flex items-center justify-center lg:col-span-1">
-          <div class="bg-yellow-900 border-2 border-yellow-600 rounded-lg p-6 text-center">
-            <div class="w-48 h-64 bg-yellow-800 border-2 border-yellow-600 rounded flex items-center justify-center">
-              <div class="text-center">
-                <div class="text-6xl mb-4">🤖</div>
-                <div class="text-yellow-400 font-bold text-sm tracking-wider">VAULT-TEC</div>
-                <div class="text-yellow-400 font-bold text-sm tracking-wider">PIP-BOY 3000</div>
-                <div class="text-yellow-600 text-xs mt-4 font-mono">STAT DISPLAY</div>
+{#if true}
+  {@const theme = defaultTheme}
+  <div
+    class="min-h-screen p-8"
+    style="background-color: {theme.bg};"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Pip-Boy Container -->
+      <div class="overflow-hidden shadow-2xl border-4" style="background-color: {theme.bg}; border-color: {theme.border};">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+          <!-- Left: Pip-Boy Image -->
+          <div class="flex items-center justify-center lg:col-span-1">
+            <div class="p-6 text-center border-2" style="background-color: {theme.secondary}; border-color: {theme.border};">
+              <div class="w-48 h-64 flex items-center justify-center border-2" style="background-color: {theme.bg}; border-color: {theme.border};">
+                <div class="text-center">
+                  <div class="text-6xl mb-4">🤖</div>
+                  <div class="font-bold text-sm tracking-wider" style="color: {theme.primary};">VAULT-TEC</div>
+                  <div class="font-bold text-sm tracking-wider" style="color: {theme.primary};">PIP-BOY 3000</div>
+                  <div class="text-xs mt-4 font-mono" style="color: {theme.accent};">STAT DISPLAY</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Right: Stats Display -->
-        <div class="lg:col-span-2">
-          <h1 class="text-4xl font-bold text-yellow-400 mb-2 font-mono tracking-wider">CHARACTER STATS</h1>
-          <div class="border-b-2 border-yellow-600 mb-6"></div>
+          <!-- Right: Stats Display -->
+          <div class="lg:col-span-2">
+            <h1 class="text-4xl font-bold mb-2 font-mono tracking-wider" style="color: {theme.primary};">CHARACTER STATS</h1>
+            <div class="mb-6" style="border-bottom: 2px solid {theme.border};"></div>
 
-          <!-- Category Tabs -->
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-2 mb-6">
-            {#each bonusCategories as category, index}
-              <button
-                on:click={() => selectedCategory.set(index)}
-                class="px-3 py-2 text-xs font-mono font-bold transition-all {$selectedCategory === index
-                  ? 'bg-yellow-400 text-yellow-900 border-2 border-yellow-600'
-                  : 'bg-yellow-800 text-yellow-400 border-2 border-yellow-600 hover:bg-yellow-700'}"
-              >
-                {category.name}
-              </button>
-            {/each}
-          </div>
-
-          <!-- Stats List -->
-          <div class="bg-yellow-900 border-2 border-yellow-600 rounded p-4">
-            <div class="space-y-3">
-              {#each bonusCategories[$selectedCategory].bonuses as bonus}
-                <div class="flex justify-between items-center border-b border-yellow-700 pb-2 last:border-b-0">
-                  <span class="text-yellow-400 font-mono text-sm">{bonus.label}</span>
-                  <span class="text-yellow-300 font-mono font-bold text-sm">{bonus.value}</span>
-                </div>
+            <!-- Category Tabs -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2 mb-6">
+              {#each bonusCategories as category, index}
+                <button
+                  on:click={() => selectedCategory.set(index)}
+                  class="px-3 py-2 text-xs font-mono font-bold transition-all border-2"
+                  style="background-color: {$selectedCategory === index ? theme.primary : theme.secondary}; color: {$selectedCategory === index ? theme.bg : theme.text}; border-color: {theme.border};"
+                >
+                  {category.name}
+                </button>
               {/each}
             </div>
-          </div>
 
-          <!-- Info Box -->
-          <div class="mt-6 bg-yellow-900 border-2 border-yellow-600 rounded p-4">
-            <p class="text-yellow-400 text-xs font-mono">
-              <strong>NOTE:</strong> This is a placeholder interface. Bonuses will be calculated based on selected perks and bobbleheads.
-            </p>
+            <!-- Stats List -->
+            <div class="p-4 border-2" style="background-color: {theme.secondary}; border-color: {theme.border};">
+              <div class="space-y-3">
+                {#each bonusCategories[$selectedCategory].bonuses as bonus}
+                  <div class="flex justify-between items-center pb-2 last:border-b-0" style="border-bottom: 1px solid {theme.border};">
+                    <span class="font-mono text-sm" style="color: {theme.primary};">{bonus.label}</span>
+                    <span class="font-mono font-bold text-sm" style="color: {theme.accent};">{bonus.value}</span>
+                  </div>
+                {/each}
+              </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="mt-6 p-4 border-2" style="background-color: {theme.secondary}; border-color: {theme.border};">
+              <p class="text-xs font-mono" style="color: {theme.primary};">
+                <strong>NOTE:</strong> This is a placeholder interface. Bonuses will be calculated based on selected perks and bobbleheads.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{/if}
 
 <style lang="postcss">
   @reference "../../routes/layout.css";
