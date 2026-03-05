@@ -22,6 +22,12 @@
 			]
 		},
 		{
+			title: 'Player',
+			children: [
+				{ title: 'Character Stats', link: '/player' }
+			]
+		},
+		{
 			title: 'Reference',
 			children: [
 				{ title: 'Perks', link: '/perks' },
