@@ -53,7 +53,7 @@
 	$effect(() => {
 		for (const special of specialAttributes) {
 			if (!(special in specialRanks)) {
-				specialRanks[special] = 0;
+				specialRanks[special] = 4;
 			}
 		}
 	});
@@ -115,7 +115,6 @@
 									value={specialRanks[special] || 0}
 									max={10}
 									min={1}
-									precision={1}
 									size="sm"
 									variant="primary"
 									showValue={true}
@@ -145,10 +144,10 @@
 												<Rating
 													value={activePerkRanks.get(perk.id) || 0}
 													max={5}
-													min={0}
 													size="sm"
 													variant="primary"
 													showValue={true}
+													showPreview={true}
 													onchange={(e) => handlePerkRankChange(perk.id, e)}
 													onhover={(e) => handlePerkHover(perk.id, e)}
 												/>

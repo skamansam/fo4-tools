@@ -24,7 +24,9 @@
 		{
 			title: 'Reference',
 			children: [
-				{ title: 'Perks', link: '/perks' }
+				{ title: 'Perks', link: '/perks' },
+				{ title: 'Bobbleheads', link: '/bobbleheads' },
+				{ title: 'Magazines', link: '/magazines' }
 			]
 		}
 	];

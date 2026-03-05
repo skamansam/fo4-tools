@@ -4,38 +4,28 @@
     "name": "Iron Fist",
     "special": "Strength",
     "level": 1,
-    "description": "Your unarmed attacks do 20% more damage",
     "maxRank": 5,
-    "effects": [
+    "description": "Your unarmed attacks do more damage. Power fists, Deathclaw Gauntlets, and knuckles benefit from this perk.",
+    "ranks": [
       {
         "rank": 1,
-        "description": "Unarmed attacks do 20% more damage",
-        "appliesToWeaponTypes": ["unarmed"],
-        "damageBonus": 0.20
+        "description": "Unarmed attacks do 20% more damage"
       },
       {
         "rank": 2,
-        "description": "Unarmed attacks do 40% more damage",
-        "appliesToWeaponTypes": ["unarmed"],
-        "damageBonus": 0.40
+        "description": "Unarmed attacks do 40% more damage. 10% chance to disarm"
       },
       {
         "rank": 3,
-        "description": "Unarmed attacks do 60% more damage",
-        "appliesToWeaponTypes": ["unarmed"],
-        "damageBonus": 0.60
+        "description": "Unarmed attacks do 60% more damage. 1% chance to cripple"
       },
       {
         "rank": 4,
-        "description": "Unarmed attacks do 80% more damage",
-        "appliesToWeaponTypes": ["unarmed"],
-        "damageBonus": 0.80
+        "description": "Unarmed attacks do 80% more damage. 15% chance to disarm"
       },
       {
         "rank": 5,
-        "description": "Unarmed attacks do 100% more damage",
-        "appliesToWeaponTypes": ["unarmed"],
-        "damageBonus": 1.0
+        "description": "Unarmed attacks do 100% more damage. 15% chance to disarm"
       }
     ]
   },
@@ -44,482 +34,1609 @@
     "name": "Big Leagues",
     "special": "Strength",
     "level": 2,
-    "description": "Your melee weapons do 20% more damage"
+    "maxRank": 5,
+    "description": "Your melee weapons do more damage. This affects all melee weapons except unarmed.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Melee weapons do 20% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Melee weapons do 40% more damage. 10% chance to disarm"
+      },
+      {
+        "rank": 3,
+        "description": "Melee weapons do 60% more damage. 15% chance to disarm and 10% chance to cripple"
+      },
+      {
+        "rank": 4,
+        "description": "Melee weapons do 80% more damage. 15% chance to disarm and 10% chance to cripple"
+      },
+      {
+        "rank": 5,
+        "description": "Melee weapons do 100% more damage. 15% chance to disarm and 10% chance to cripple"
+      }
+    ]
   },
   {
     "id": "strength-3",
     "name": "Armorer",
     "special": "Strength",
     "level": 3,
-    "description": "You can craft and modify armor"
+    "maxRank": 4,
+    "description": "You can craft and modify armor, including power armor. Unlock new armor mods at higher ranks.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can craft and modify armor"
+      },
+      {
+        "rank": 2,
+        "description": "You can craft and modify armor. Armor and Power Armor are 20% more effective"
+      },
+      {
+        "rank": 3,
+        "description": "You can craft and modify armor. Armor and Power Armor are 40% more effective"
+      },
+      {
+        "rank": 4,
+        "description": "You can craft and modify armor. Armor and Power Armor are 60% more effective"
+      }
+    ]
   },
   {
     "id": "strength-4",
     "name": "Blacksmith",
     "special": "Strength",
     "level": 4,
-    "description": "You can craft and modify melee weapons"
+    "maxRank": 5,
+    "description": "You can craft and modify melee weapons. Damage boosts stack with Big Leagues.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can craft and modify melee weapons"
+      },
+      {
+        "rank": 2,
+        "description": "You can craft and modify melee weapons. Melee weapons are 25% more effective"
+      },
+      {
+        "rank": 3,
+        "description": "You can craft and modify melee weapons. Melee weapons are 50% more effective"
+      },
+      {
+        "rank": 4,
+        "description": "You can craft and modify melee weapons. Melee weapons are 75% more effective"
+      },
+      {
+        "rank": 5,
+        "description": "You can craft and modify melee weapons. Melee weapons are 100% more effective"
+      }
+    ]
   },
   {
     "id": "strength-5",
-    "name": "Heavy Weapons",
+    "name": "Heavy Gunner",
     "special": "Strength",
     "level": 5,
-    "description": "Heavy guns do 20% more damage"
+    "maxRank": 5,
+    "description": "Heavy guns do more damage and have a chance to stagger enemies.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Heavy guns do 20% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Heavy guns do 40% more damage. 10% chance to stagger"
+      },
+      {
+        "rank": 3,
+        "description": "Heavy guns do 60% more damage. 10% chance to stagger"
+      },
+      {
+        "rank": 4,
+        "description": "Heavy guns do 80% more damage. 1.5% chance to stagger per bullet"
+      },
+      {
+        "rank": 5,
+        "description": "Heavy guns do 100% more damage. 1.5% chance to stagger per bullet"
+      }
+    ]
   },
   {
     "id": "strength-6",
-    "name": "Steady Aim",
+    "name": "Strong Back",
     "special": "Strength",
     "level": 6,
-    "description": "Heavy guns have 25% less recoil"
+    "maxRank": 4,
+    "description": "Carry more weight and move while over-encumbered.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Carry weight increased by 25 lbs"
+      },
+      {
+        "rank": 2,
+        "description": "Carry weight increased by 50 lbs"
+      },
+      {
+        "rank": 3,
+        "description": "Carry weight increased by 75 lbs. You can move while over-encumbered"
+      },
+      {
+        "rank": 4,
+        "description": "Carry weight increased by 100 lbs. You can move faster while over-encumbered"
+      }
+    ]
   },
   {
     "id": "strength-7",
-    "name": "Pain Train",
+    "name": "Steady Aim",
     "special": "Strength",
     "level": 7,
-    "description": "Sprinting into enemies knocks them down"
+    "maxRank": 3,
+    "description": "Heavy guns have less recoil when hip-firing.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Heavy guns have 25% less recoil"
+      },
+      {
+        "rank": 2,
+        "description": "Heavy guns have 50% less recoil"
+      },
+      {
+        "rank": 3,
+        "description": "Heavy guns have 75% less recoil"
+      }
+    ]
   },
   {
     "id": "strength-8",
-    "name": "Rooted",
+    "name": "Basher",
     "special": "Strength",
     "level": 8,
-    "description": "While standing still, take 25% less damage"
+    "maxRank": 5,
+    "description": "Gun bashing does more damage.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Gun bashing does 25% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Gun bashing does 50% more damage"
+      },
+      {
+        "rank": 3,
+        "description": "Gun bashing does 75% more damage"
+      },
+      {
+        "rank": 4,
+        "description": "Gun bashing does 100% more damage"
+      },
+      {
+        "rank": 5,
+        "description": "Gun bashing does 125% more damage"
+      }
+    ]
   },
   {
     "id": "strength-9",
-    "name": "Unstoppable Force",
+    "name": "Rooted",
     "special": "Strength",
     "level": 9,
-    "description": "Power attacks with melee weapons do 25% more damage"
+    "maxRank": 3,
+    "description": "While standing still, gain damage and energy resistance.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "While standing still, gain +25 Damage and Energy Resistance"
+      },
+      {
+        "rank": 2,
+        "description": "While standing still, gain +50 Damage and Energy Resistance"
+      },
+      {
+        "rank": 3,
+        "description": "While standing still, gain +75 Damage and Energy Resistance"
+      }
+    ]
   },
   {
     "id": "strength-10",
-    "name": "Barbarian",
+    "name": "Pain Train",
     "special": "Strength",
     "level": 10,
-    "description": "Melee weapons do 25% more damage"
+    "maxRank": 3,
+    "description": "Sprinting into enemies knocks them down and deals damage.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Sprinting into enemies knocks them down"
+      },
+      {
+        "rank": 2,
+        "description": "Sprinting into enemies knocks them down and deals damage"
+      },
+      {
+        "rank": 3,
+        "description": "Sprinting into enemies knocks them down and deals significant damage"
+      }
+    ]
   },
-    {
+  {
     "id": "perception-1",
     "name": "Pickpocket",
     "special": "Perception",
     "level": 1,
-    "description": "You can pickpocket 25% more effectively"
+    "maxRank": 4,
+    "description": "Steal items from people and creatures without being detected.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Pickpocket success increased by 25%"
+      },
+      {
+        "rank": 2,
+        "description": "Pickpocket success increased by 50%"
+      },
+      {
+        "rank": 3,
+        "description": "Pickpocket success increased by 75%"
+      },
+      {
+        "rank": 4,
+        "description": "Pickpocket success doubled. Can pickpocket weapons and armor"
+      }
+    ]
   },
   {
     "id": "perception-2",
     "name": "Rifleman",
     "special": "Perception",
     "level": 2,
-    "description": "Rifles do 20% more damage"
+    "maxRank": 5,
+    "description": "Non-automatic rifles do more damage. Includes shotguns, laser rifles, and muskets.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Rifles do 20% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Rifles do 40% more damage. 10% chance to cripple limbs"
+      },
+      {
+        "rank": 3,
+        "description": "Rifles do 60% more damage. 10% chance to cripple limbs"
+      },
+      {
+        "rank": 4,
+        "description": "Rifles do 80% more damage. 10% chance to cripple limbs"
+      },
+      {
+        "rank": 5,
+        "description": "Rifles do 100% more damage. 10% chance to cripple limbs"
+      }
+    ]
   },
   {
     "id": "perception-3",
-    "name": "Lockpicking",
+    "name": "Locksmith",
     "special": "Perception",
     "level": 3,
-    "description": "You can pick locks"
+    "maxRank": 4,
+    "description": "Pick locks on safes, doors, and containers.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can pick Novice locks"
+      },
+      {
+        "rank": 2,
+        "description": "You can pick Advanced locks"
+      },
+      {
+        "rank": 3,
+        "description": "You can pick Expert locks"
+      },
+      {
+        "rank": 4,
+        "description": "You can pick Master locks. Bobby pins are easier to find"
+      }
+    ]
   },
   {
     "id": "perception-4",
     "name": "Awareness",
     "special": "Perception",
     "level": 4,
-    "description": "You can see enemy health and components"
+    "maxRank": 1,
+    "description": "See enemy health, components, and resistances in VATS.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "In VATS, you can see enemy health and resistances (Damage, Energy, Radiation, Bleed)"
+      }
+    ]
   },
   {
     "id": "perception-5",
-    "name": "Sniper",
+    "name": "Demolition Expert",
     "special": "Perception",
     "level": 5,
-    "description": "Scoped weapons have 25% better accuracy"
+    "maxRank": 4,
+    "description": "Grenades, mines, and explosives do more damage and have larger blast radius.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Grenades and mines do 20% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Grenades and mines do 40% more damage. You can see grenade trajectory"
+      },
+      {
+        "rank": 3,
+        "description": "Grenades and mines do 60% more damage. Larger blast radius. Can craft explosives"
+      },
+      {
+        "rank": 4,
+        "description": "Grenades and mines do 80% more damage. Larger blast radius. Explosions deal double damage when targeted in VATS"
+      }
+    ]
   },
   {
     "id": "perception-6",
-    "name": "Concentrated Fire",
+    "name": "Night Person",
     "special": "Perception",
     "level": 6,
-    "description": "Hitting the same body part increases damage by 25%"
+    "maxRank": 2,
+    "description": "Gain bonuses at night.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "At night, gain +1 Intelligence and +1 Endurance. Gain +9% XP at night"
+      },
+      {
+        "rank": 2,
+        "description": "At night, gain +2 Intelligence and +2 Endurance. Gain +9% XP at night"
+      }
+    ]
   },
   {
     "id": "perception-7",
-    "name": "Penetrator",
+    "name": "Refractor",
     "special": "Perception",
     "level": 7,
-    "description": "Ballistic weapons ignore 25% of armor"
+    "maxRank": 5,
+    "description": "Energy weapons ignore your armor less effectively.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You gain +10 Energy Resistance"
+      },
+      {
+        "rank": 2,
+        "description": "You gain +20 Energy Resistance"
+      },
+      {
+        "rank": 3,
+        "description": "You gain +30 Energy Resistance"
+      },
+      {
+        "rank": 4,
+        "description": "You gain +40 Energy Resistance"
+      },
+      {
+        "rank": 5,
+        "description": "You gain +50 Energy Resistance"
+      }
+    ]
   },
   {
     "id": "perception-8",
-    "name": "Deadeye",
+    "name": "Sniper",
     "special": "Perception",
     "level": 8,
-    "description": "VATS accuracy is increased by 25%"
+    "maxRank": 3,
+    "description": "Scoped weapons are more effective.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Scoped weapons have 25% less AP cost when holding breath"
+      },
+      {
+        "rank": 2,
+        "description": "Scoped weapons have 50% less AP cost. Targets occasionally get knocked down"
+      },
+      {
+        "rank": 3,
+        "description": "Scoped weapons have 75% less AP cost. Targets occasionally get knocked down. Scoped weapons do 25% more damage"
+      }
+    ]
   },
   {
     "id": "perception-9",
-    "name": "Refractor",
+    "name": "Penetrator",
     "special": "Perception",
     "level": 9,
-    "description": "Energy weapons ignore 25% of armor"
+    "maxRank": 3,
+    "description": "Ballistic weapons ignore armor and can penetrate cover.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Ballistic weapons ignore 25% of armor"
+      },
+      {
+        "rank": 2,
+        "description": "Ballistic weapons ignore 50% of armor. Can penetrate one layer of cover"
+      },
+      {
+        "rank": 3,
+        "description": "Ballistic weapons ignore 75% of armor. Can penetrate one layer of cover. Critical hits penetrate all cover"
+      }
+    ]
   },
   {
     "id": "perception-10",
-    "name": "Sneak",
+    "name": "Concentrated Fire",
     "special": "Perception",
     "level": 10,
-    "description": "You are 25% harder to detect while sneaking"
+    "maxRank": 3,
+    "description": "Hitting the same target repeatedly in VATS increases accuracy and damage.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Each consecutive hit on the same target in VATS increases accuracy by 20%"
+      },
+      {
+        "rank": 2,
+        "description": "Each consecutive hit on the same target in VATS increases accuracy by 20%. Accuracy caps at 95%"
+      },
+      {
+        "rank": 3,
+        "description": "Each consecutive hit on the same target in VATS increases accuracy by 20%. Accuracy caps at 95%. Targets take 20% more damage"
+      }
+    ]
   },
   {
     "id": "endurance-1",
     "name": "Toughness",
     "special": "Endurance",
     "level": 1,
-    "description": "You take 10% less damage"
+    "maxRank": 5,
+    "description": "You take less damage from all sources.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You take 10% less damage"
+      },
+      {
+        "rank": 2,
+        "description": "You take 20% less damage"
+      },
+      {
+        "rank": 3,
+        "description": "You take 30% less damage"
+      },
+      {
+        "rank": 4,
+        "description": "You take 40% less damage"
+      },
+      {
+        "rank": 5,
+        "description": "You take 50% less damage"
+      }
+    ]
   },
   {
     "id": "endurance-2",
     "name": "Lead Belly",
     "special": "Endurance",
     "level": 2,
-    "description": "You take 50% less radiation damage"
+    "maxRank": 3,
+    "description": "You take less radiation damage from food and water.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You take 50% less radiation from food and water"
+      },
+      {
+        "rank": 2,
+        "description": "You take 66% less radiation from food and water"
+      },
+      {
+        "rank": 3,
+        "description": "You take 75% less radiation from food and water. You can eat any food without radiation"
+      }
+    ]
   },
   {
     "id": "endurance-3",
     "name": "Lifegiver",
     "special": "Endurance",
     "level": 3,
-    "description": "You gain 30 more HP"
+    "maxRank": 3,
+    "description": "Gain more HP and regenerate health out of combat.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You gain +30 HP"
+      },
+      {
+        "rank": 2,
+        "description": "You gain +60 HP"
+      },
+      {
+        "rank": 3,
+        "description": "You gain +90 HP. Out of combat, regenerate 1% health every 2 seconds"
+      }
+    ]
   },
   {
     "id": "endurance-4",
     "name": "Chem Resistant",
     "special": "Endurance",
     "level": 4,
-    "description": "Chems are 50% less addictive"
+    "maxRank": 2,
+    "description": "Chems are less addictive.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Chems are 50% less addictive"
+      },
+      {
+        "rank": 2,
+        "description": "Chems are 100% less addictive"
+      }
+    ]
   },
   {
     "id": "endurance-5",
     "name": "Aquaboy",
     "special": "Endurance",
     "level": 5,
-    "description": "You can breathe underwater"
+    "maxRank": 2,
+    "description": "You can breathe underwater and move faster in water.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can breathe underwater"
+      },
+      {
+        "rank": 2,
+        "description": "You can breathe underwater. You move faster in water"
+      }
+    ]
   },
   {
     "id": "endurance-6",
     "name": "Rad Resistant",
     "special": "Endurance",
     "level": 6,
-    "description": "You gain 10 radiation resistance"
+    "maxRank": 5,
+    "description": "You gain radiation resistance.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You gain +10 Radiation Resistance"
+      },
+      {
+        "rank": 2,
+        "description": "You gain +20 Radiation Resistance"
+      },
+      {
+        "rank": 3,
+        "description": "You gain +30 Radiation Resistance"
+      },
+      {
+        "rank": 4,
+        "description": "You gain +40 Radiation Resistance"
+      },
+      {
+        "rank": 5,
+        "description": "You gain +50 Radiation Resistance"
+      }
+    ]
   },
   {
     "id": "endurance-7",
-    "name": "Cannibal",
+    "name": "Adamantium Skeleton",
     "special": "Endurance",
     "level": 7,
-    "description": "Eating corpses restores health"
+    "maxRank": 5,
+    "description": "You take less limb damage.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You take 25% less limb damage"
+      },
+      {
+        "rank": 2,
+        "description": "You take 50% less limb damage"
+      },
+      {
+        "rank": 3,
+        "description": "You take 75% less limb damage"
+      },
+      {
+        "rank": 4,
+        "description": "You take 100% less limb damage"
+      },
+      {
+        "rank": 5,
+        "description": "You take 100% less limb damage. Limbs never cripple"
+      }
+    ]
   },
   {
     "id": "endurance-8",
-    "name": "Ghoulish",
+    "name": "Cannibal",
     "special": "Endurance",
     "level": 8,
-    "description": "Radiation restores health instead of harming you"
+    "maxRank": 3,
+    "description": "Eating corpses restores health.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Eating human and creature corpses restores 25 HP"
+      },
+      {
+        "rank": 2,
+        "description": "Eating human and creature corpses restores 25 HP. Can eat more corpse types"
+      },
+      {
+        "rank": 3,
+        "description": "Eating human and creature corpses restores 50 HP. Can eat more corpse types"
+      }
+    ]
   },
   {
     "id": "endurance-9",
-    "name": "Ironclad",
+    "name": "Ghoulish",
     "special": "Endurance",
     "level": 9,
-    "description": "Armor provides 25% more damage resistance"
+    "maxRank": 3,
+    "description": "Radiation restores health instead of harming you.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Radiation restores 50% of damage as health"
+      },
+      {
+        "rank": 2,
+        "description": "Radiation restores 100% of damage as health"
+      },
+      {
+        "rank": 3,
+        "description": "Radiation restores 150% of damage as health"
+      }
+    ]
   },
   {
     "id": "endurance-10",
-    "name": "Assassin",
+    "name": "Solar Powered",
     "special": "Endurance",
     "level": 10,
-    "description": "You take 25% less damage from humans"
+    "maxRank": 2,
+    "description": "Gain bonuses during the day.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "During the day, gain +1 Strength and +1 Endurance. Radiation is reduced by 50%"
+      },
+      {
+        "rank": 2,
+        "description": "During the day, gain +2 Strength and +2 Endurance. Radiation is reduced by 50%"
+      }
+    ]
   },
   {
     "id": "charisma-1",
     "name": "Cap Collector",
     "special": "Charisma",
     "level": 1,
-    "description": "Vendors have 25% more caps"
+    "maxRank": 3,
+    "description": "Vendors have more caps and you get better prices.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Vendors have 10% more caps. Prices are 10% better"
+      },
+      {
+        "rank": 2,
+        "description": "Vendors have 20% more caps. Prices are 20% better"
+      },
+      {
+        "rank": 3,
+        "description": "Vendors have 30% more caps. Prices are 25% better"
+      }
+    ]
   },
   {
     "id": "charisma-2",
-    "name": "Bartering",
+    "name": "Black Widow/Lady Killer",
     "special": "Charisma",
     "level": 2,
-    "description": "Prices are 10% better"
+    "maxRank": 3,
+    "description": "Do more damage to the opposite sex and gain dialogue options.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Do 25% more damage to the opposite sex. Gain dialogue options"
+      },
+      {
+        "rank": 2,
+        "description": "Do 50% more damage to the opposite sex. Gain dialogue options"
+      },
+      {
+        "rank": 3,
+        "description": "Do 75% more damage to the opposite sex. Gain dialogue options"
+      }
+    ]
   },
   {
     "id": "charisma-3",
     "name": "Lone Wanderer",
     "special": "Charisma",
     "level": 3,
-    "description": "You take 25% less damage without a companion"
+    "maxRank": 3,
+    "description": "You take less damage and carry more without a companion.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Without a companion, take 25% less damage"
+      },
+      {
+        "rank": 2,
+        "description": "Without a companion, take 25% less damage. Carry capacity increased by 50 lbs"
+      },
+      {
+        "rank": 3,
+        "description": "Without a companion, take 50% less damage. Carry capacity increased by 100 lbs"
+      }
+    ]
   },
   {
     "id": "charisma-4",
     "name": "Attack Dog",
     "special": "Charisma",
     "level": 4,
-    "description": "Your dog does 25% more damage"
+    "maxRank": 3,
+    "description": "Your dog does more damage and can hold enemies.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Your dog does 25% more damage. Can hold enemies in combat"
+      },
+      {
+        "rank": 2,
+        "description": "Your dog does 50% more damage. Can hold enemies in combat"
+      },
+      {
+        "rank": 3,
+        "description": "Your dog does 75% more damage. Can hold and cripple enemies in combat"
+      }
+    ]
   },
   {
     "id": "charisma-5",
     "name": "Animal Friend",
     "special": "Charisma",
     "level": 5,
-    "description": "You can pacify animals"
+    "maxRank": 3,
+    "description": "You can pacify animals.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can pacify animals below your level"
+      },
+      {
+        "rank": 2,
+        "description": "You can pacify animals at or below your level"
+      },
+      {
+        "rank": 3,
+        "description": "You can pacify any animal. Can command them to attack"
+      }
+    ]
   },
   {
     "id": "charisma-6",
     "name": "Local Leader",
     "special": "Charisma",
     "level": 6,
-    "description": "You can establish supply lines"
+    "maxRank": 2,
+    "description": "You can establish supply lines and build trading posts.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can establish supply lines between settlements"
+      },
+      {
+        "rank": 2,
+        "description": "You can establish supply lines and build trading posts in settlements"
+      }
+    ]
   },
   {
     "id": "charisma-7",
-    "name": "Inspirational",
+    "name": "Party Boy",
     "special": "Charisma",
     "level": 7,
-    "description": "Companions do 25% more damage"
+    "maxRank": 2,
+    "description": "Alcohol is more effective and less addictive.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Alcohol is 25% more effective. Alcohol is 50% less addictive"
+      },
+      {
+        "rank": 2,
+        "description": "Alcohol is 50% more effective. Alcohol is 100% less addictive"
+      }
+    ]
   },
   {
     "id": "charisma-8",
-    "name": "Wasteland Whisperer",
+    "name": "Inspirational",
     "special": "Charisma",
     "level": 8,
-    "description": "You can pacify humanoid creatures"
+    "maxRank": 2,
+    "description": "Your companions do more damage and carry more.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Your companions do 25% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Your companions do 25% more damage. Companions carry capacity increased by 50 lbs"
+      }
+    ]
   },
   {
     "id": "charisma-9",
-    "name": "Intimidation",
+    "name": "Wasteland Whisperer",
     "special": "Charisma",
     "level": 9,
-    "description": "Enemies are easier to pacify"
+    "maxRank": 3,
+    "description": "You can pacify humanoid creatures.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can pacify humanoid creatures below your level"
+      },
+      {
+        "rank": 2,
+        "description": "You can pacify humanoid creatures at or below your level"
+      },
+      {
+        "rank": 3,
+        "description": "You can pacify any humanoid creature. Can command them to attack"
+      }
+    ]
   },
   {
     "id": "charisma-10",
-    "name": "Benevolent Leader",
+    "name": "Intimidation",
     "special": "Charisma",
     "level": 10,
-    "description": "Settlement happiness increases 25% faster"
+    "maxRank": 3,
+    "description": "Enemies are easier to pacify.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Enemies below your level are easier to pacify"
+      },
+      {
+        "rank": 2,
+        "description": "Enemies at or below your level are easier to pacify"
+      },
+      {
+        "rank": 3,
+        "description": "Any enemy can be pacified. Can command them to attack"
+      }
+    ]
   },
   {
     "id": "intelligence-1",
     "name": "Hacker",
     "special": "Intelligence",
     "level": 1,
-    "description": "You can hack terminals"
+    "maxRank": 4,
+    "description": "You can hack terminals and unlock computer systems.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can hack Novice terminals"
+      },
+      {
+        "rank": 2,
+        "description": "You can hack Advanced terminals"
+      },
+      {
+        "rank": 3,
+        "description": "You can hack Expert terminals"
+      },
+      {
+        "rank": 4,
+        "description": "You can hack Master terminals. Terminals are easier to hack"
+      }
+    ]
   },
   {
     "id": "intelligence-2",
     "name": "Scrapper",
     "special": "Intelligence",
     "level": 2,
-    "description": "You get more materials when scrapping"
+    "maxRank": 2,
+    "description": "You get more materials when scrapping weapons and armor.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You get more materials when scrapping weapons and armor"
+      },
+      {
+        "rank": 2,
+        "description": "You get even more materials when scrapping. Rare materials are more common"
+      }
+    ]
   },
   {
     "id": "intelligence-3",
     "name": "Chemist",
     "special": "Intelligence",
     "level": 3,
-    "description": "You can craft chems"
+    "maxRank": 4,
+    "description": "You can craft and modify chems.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can craft chems"
+      },
+      {
+        "rank": 2,
+        "description": "You can craft chems. Chems are 25% more potent"
+      },
+      {
+        "rank": 3,
+        "description": "You can craft chems. Chems are 50% more potent"
+      },
+      {
+        "rank": 4,
+        "description": "You can craft chems. Chems are 100% more potent"
+      }
+    ]
   },
   {
     "id": "intelligence-4",
-    "name": "Gunsmith",
+    "name": "Gun Nut",
     "special": "Intelligence",
     "level": 4,
-    "description": "You can craft and modify guns"
+    "maxRank": 4,
+    "description": "You can craft and modify guns.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can craft and modify guns"
+      },
+      {
+        "rank": 2,
+        "description": "You can craft and modify guns. Guns are 25% more effective"
+      },
+      {
+        "rank": 3,
+        "description": "You can craft and modify guns. Guns are 50% more effective"
+      },
+      {
+        "rank": 4,
+        "description": "You can craft and modify guns. Guns are 100% more effective"
+      }
+    ]
   },
   {
     "id": "intelligence-5",
     "name": "Medic",
     "special": "Intelligence",
     "level": 5,
-    "description": "Stimpaks restore 25% more health"
+    "maxRank": 4,
+    "description": "Stimpaks and RadAway restore more health and radiation.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Stimpaks restore 40% health. RadAway removes 40% radiation"
+      },
+      {
+        "rank": 2,
+        "description": "Stimpaks restore 60% health. RadAway removes 60% radiation"
+      },
+      {
+        "rank": 3,
+        "description": "Stimpaks restore 80% health. RadAway removes 80% radiation"
+      },
+      {
+        "rank": 4,
+        "description": "Stimpaks restore 100% health. RadAway removes 100% radiation"
+      }
+    ]
   },
   {
     "id": "intelligence-6",
     "name": "Science",
     "special": "Intelligence",
     "level": 6,
-    "description": "You can craft and modify energy weapons"
+    "maxRank": 4,
+    "description": "You can craft and modify energy weapons.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can craft and modify energy weapons"
+      },
+      {
+        "rank": 2,
+        "description": "You can craft and modify energy weapons. Energy weapons are 25% more effective"
+      },
+      {
+        "rank": 3,
+        "description": "You can craft and modify energy weapons. Energy weapons are 50% more effective"
+      },
+      {
+        "rank": 4,
+        "description": "You can craft and modify energy weapons. Energy weapons are 100% more effective"
+      }
+    ]
   },
   {
     "id": "intelligence-7",
-    "name": "Roboticist",
+    "name": "Robotics Expert",
     "special": "Intelligence",
     "level": 7,
-    "description": "You can hack robots"
+    "maxRank": 3,
+    "description": "You can hack and control robots.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You can hack robots below your level"
+      },
+      {
+        "rank": 2,
+        "description": "You can hack robots at or below your level"
+      },
+      {
+        "rank": 3,
+        "description": "You can hack any robot. Can command them to attack"
+      }
+    ]
   },
   {
     "id": "intelligence-8",
     "name": "Nuclear Physicist",
     "special": "Intelligence",
     "level": 8,
-    "description": "Fusion cores last 25% longer"
+    "maxRank": 3,
+    "description": "Fusion cores last longer and radiation weapons are more effective.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Fusion cores last 25% longer"
+      },
+      {
+        "rank": 2,
+        "description": "Fusion cores last 50% longer. Radiation weapons do 50% more damage"
+      },
+      {
+        "rank": 3,
+        "description": "Fusion cores last 100% longer. Radiation weapons do 100% more damage. Can eject fusion cores as grenades"
+      }
+    ]
   },
   {
     "id": "intelligence-9",
-    "name": "Experimenter",
+    "name": "Nerd Rage",
     "special": "Intelligence",
     "level": 9,
-    "description": "Chems are 25% more effective"
+    "maxRank": 3,
+    "description": "When your health is low, gain bonuses to damage and defense.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Below 25% health, gain +20 Damage and +20 Damage Resistance"
+      },
+      {
+        "rank": 2,
+        "description": "Below 25% health, gain +40 Damage and +40 Damage Resistance"
+      },
+      {
+        "rank": 3,
+        "description": "Below 25% health, gain +60 Damage and +60 Damage Resistance. Time slows down"
+      }
+    ]
   },
   {
     "id": "intelligence-10",
-    "name": "Egghead",
+    "name": "V.A.N.S.",
     "special": "Intelligence",
     "level": 10,
-    "description": "You gain +2 to all SPECIAL stats"
+    "maxRank": 1,
+    "description": "See quest markers and waypoints without a compass.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Hold VATS button to see quest markers and waypoints on screen"
+      }
+    ]
   },
   {
     "id": "agility-1",
     "name": "Gunslinger",
     "special": "Agility",
     "level": 1,
-    "description": "Pistols do 20% more damage"
+    "maxRank": 5,
+    "description": "Pistols do more damage and have better range.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Pistols do 20% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Pistols do 40% more damage. Pistols have 25% more range"
+      },
+      {
+        "rank": 3,
+        "description": "Pistols do 60% more damage. Pistols have 50% more range"
+      },
+      {
+        "rank": 4,
+        "description": "Pistols do 80% more damage. Pistols have 50% more range"
+      },
+      {
+        "rank": 5,
+        "description": "Pistols do 100% more damage. Pistols have 50% more range"
+      }
+    ]
   },
   {
     "id": "agility-2",
     "name": "Commando",
     "special": "Agility",
     "level": 2,
-    "description": "Automatic rifles do 20% more damage"
+    "maxRank": 5,
+    "description": "Automatic rifles do more damage and have better accuracy.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Automatic rifles do 20% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Automatic rifles do 40% more damage. Hip-fire spread is reduced by 25%"
+      },
+      {
+        "rank": 3,
+        "description": "Automatic rifles do 60% more damage. Hip-fire spread is reduced by 50%"
+      },
+      {
+        "rank": 4,
+        "description": "Automatic rifles do 80% more damage. Hip-fire spread is reduced by 50%"
+      },
+      {
+        "rank": 5,
+        "description": "Automatic rifles do 100% more damage. Hip-fire spread is reduced by 50%"
+      }
+    ]
   },
   {
     "id": "agility-3",
-    "name": "Blitz",
+    "name": "Sneak",
     "special": "Agility",
     "level": 3,
-    "description": "VATS melee attacks cost 25% less AP"
+    "maxRank": 4,
+    "description": "You are harder to detect while sneaking.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You are 25% harder to detect while sneaking"
+      },
+      {
+        "rank": 2,
+        "description": "You are 50% harder to detect while sneaking"
+      },
+      {
+        "rank": 3,
+        "description": "You are 75% harder to detect while sneaking. You can move faster while sneaking"
+      },
+      {
+        "rank": 4,
+        "description": "You are 100% harder to detect while sneaking. You can move at normal speed while sneaking"
+      }
+    ]
   },
   {
     "id": "agility-4",
-    "name": "Evasion",
+    "name": "Mister Sandman",
     "special": "Agility",
     "level": 4,
-    "description": "You take 25% less damage from ranged attacks"
+    "maxRank": 3,
+    "description": "Sneak attacks with silenced weapons do more damage.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Silenced weapons do 25% more sneak attack damage"
+      },
+      {
+        "rank": 2,
+        "description": "Silenced weapons do 50% more sneak attack damage. Can kill sleeping targets silently"
+      },
+      {
+        "rank": 3,
+        "description": "Silenced weapons do 100% more sneak attack damage. Can kill sleeping targets silently"
+      }
+    ]
   },
   {
     "id": "agility-5",
-    "name": "Ninja",
+    "name": "Action Boy",
     "special": "Agility",
     "level": 5,
-    "description": "Sneak attacks do 25% more damage"
+    "maxRank": 2,
+    "description": "Gain more action points and regenerate them faster.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Gain +15 Action Points. Action Points regenerate 25% faster"
+      },
+      {
+        "rank": 2,
+        "description": "Gain +30 Action Points. Action Points regenerate 50% faster"
+      }
+    ]
   },
   {
     "id": "agility-6",
-    "name": "Quick Hands",
+    "name": "Moving Target",
     "special": "Agility",
     "level": 6,
-    "description": "Reload speed is 25% faster"
+    "maxRank": 3,
+    "description": "Gain damage and energy resistance while moving.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "While moving, gain +25 Damage and Energy Resistance"
+      },
+      {
+        "rank": 2,
+        "description": "While moving, gain +50 Damage and Energy Resistance"
+      },
+      {
+        "rank": 3,
+        "description": "While moving, gain +75 Damage and Energy Resistance"
+      }
+    ]
   },
   {
     "id": "agility-7",
-    "name": "Gunfu",
+    "name": "Ninja",
     "special": "Agility",
     "level": 7,
-    "description": "VATS gun attacks hit an additional target"
+    "maxRank": 3,
+    "description": "Sneak attacks do more damage.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Sneak attacks do 25% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Sneak attacks do 50% more damage"
+      },
+      {
+        "rank": 3,
+        "description": "Sneak attacks do 100% more damage"
+      }
+    ]
   },
   {
     "id": "agility-8",
-    "name": "Adrenaline",
+    "name": "Quick Hands",
     "special": "Agility",
     "level": 8,
-    "description": "Melee attacks build adrenaline for bonus damage"
+    "maxRank": 2,
+    "description": "Reload speed is faster.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Reload speed is 25% faster"
+      },
+      {
+        "rank": 2,
+        "description": "Reload speed is 50% faster. Can reload while moving"
+      }
+    ]
   },
   {
     "id": "agility-9",
-    "name": "Ricochet",
+    "name": "Blitz",
     "special": "Agility",
     "level": 9,
-    "description": "25% of ranged damage is reflected"
+    "maxRank": 3,
+    "description": "VATS melee attacks have increased range and cost less AP.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "VATS melee attacks have 25% more range. Cost 25% less AP"
+      },
+      {
+        "rank": 2,
+        "description": "VATS melee attacks have 50% more range. Cost 25% less AP"
+      },
+      {
+        "rank": 3,
+        "description": "VATS melee attacks have 75% more range. Cost 50% less AP"
+      }
+    ]
   },
   {
     "id": "agility-10",
-    "name": "Slayer",
+    "name": "Gun Fu",
     "special": "Agility",
     "level": 10,
-    "description": "VATS attacks do 25% more damage"
+    "maxRank": 4,
+    "description": "VATS gun attacks hit multiple targets.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "VATS gun attacks can hit an additional target"
+      },
+      {
+        "rank": 2,
+        "description": "VATS gun attacks can hit 2 additional targets"
+      },
+      {
+        "rank": 3,
+        "description": "VATS gun attacks can hit 3 additional targets. Each hit does 25% more damage"
+      },
+      {
+        "rank": 4,
+        "description": "VATS gun attacks can hit 4 additional targets. Each hit does 25% more damage"
+      }
+    ]
   },
   {
     "id": "luck-1",
     "name": "Fortune Finder",
     "special": "Luck",
     "level": 1,
-    "description": "You find more caps in containers"
+    "maxRank": 4,
+    "description": "You find more caps in containers.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You find 25% more caps in containers"
+      },
+      {
+        "rank": 2,
+        "description": "You find 50% more caps in containers"
+      },
+      {
+        "rank": 3,
+        "description": "You find 75% more caps in containers"
+      },
+      {
+        "rank": 4,
+        "description": "You find 100% more caps in containers"
+      }
+    ]
   },
   {
     "id": "luck-2",
     "name": "Scrounger",
     "special": "Luck",
     "level": 2,
-    "description": "You find more ammo in containers"
+    "maxRank": 4,
+    "description": "You find more ammo in containers.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "You find 25% more ammo in containers"
+      },
+      {
+        "rank": 2,
+        "description": "You find 50% more ammo in containers"
+      },
+      {
+        "rank": 3,
+        "description": "You find 75% more ammo in containers"
+      },
+      {
+        "rank": 4,
+        "description": "You find 100% more ammo in containers"
+      }
+    ]
   },
   {
     "id": "luck-3",
     "name": "Bloody Mess",
     "special": "Luck",
     "level": 3,
-    "description": "Kills have a 5% chance to gib enemies"
+    "maxRank": 3,
+    "description": "All weapons do more damage and kills can gib enemies.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "All weapons do 5% more damage. 5% chance to gib enemies"
+      },
+      {
+        "rank": 2,
+        "description": "All weapons do 10% more damage. 5% chance to gib enemies"
+      },
+      {
+        "rank": 3,
+        "description": "All weapons do 15% more damage. 5% chance to gib enemies"
+      }
+    ]
   },
   {
     "id": "luck-4",
     "name": "Mysterious Stranger",
     "special": "Luck",
     "level": 4,
-    "description": "Mysterious Stranger appears in VATS"
+    "maxRank": 3,
+    "description": "A mysterious stranger appears in VATS to help you.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Mysterious Stranger appears in VATS to kill an enemy"
+      },
+      {
+        "rank": 2,
+        "description": "Mysterious Stranger appears in VATS to kill an enemy. Appears more often"
+      },
+      {
+        "rank": 3,
+        "description": "Mysterious Stranger appears in VATS to kill an enemy. Appears more often. Fills your critical meter"
+      }
+    ]
   },
   {
     "id": "luck-5",
     "name": "Idiot Savant",
     "special": "Luck",
     "level": 5,
-    "description": "Random chance to gain bonus XP"
+    "maxRank": 3,
+    "description": "Random chance to gain bonus XP.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Random chance to gain 3x XP"
+      },
+      {
+        "rank": 2,
+        "description": "Random chance to gain 3x XP. Chance increases with lower Intelligence"
+      },
+      {
+        "rank": 3,
+        "description": "Random chance to gain 3x XP. Chance increases with lower Intelligence. Applies to quest XP"
+      }
+    ]
   },
   {
     "id": "luck-6",
     "name": "Better Criticals",
     "special": "Luck",
     "level": 6,
-    "description": "Critical hits do 50% more damage"
+    "maxRank": 3,
+    "description": "Critical hits do more damage.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Critical hits do 50% more damage"
+      },
+      {
+        "rank": 2,
+        "description": "Critical hits do 100% more damage"
+      },
+      {
+        "rank": 3,
+        "description": "Critical hits do 150% more damage"
+      }
+    ]
   },
   {
     "id": "luck-7",
     "name": "Critical Banker",
     "special": "Luck",
     "level": 7,
-    "description": "Gain an extra critical hit"
+    "maxRank": 3,
+    "description": "Store critical hits for later use.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Gain an extra critical hit. Can store up to 4 crits"
+      },
+      {
+        "rank": 2,
+        "description": "Gain an extra critical hit. Can store up to 4 crits. Chance to gain crit on crit"
+      },
+      {
+        "rank": 3,
+        "description": "Gain an extra critical hit. Can store up to 4 crits. Chance to gain crit on crit. Crits refill faster"
+      }
+    ]
   },
   {
     "id": "luck-8",
     "name": "Grim Reaper's Sprint",
     "special": "Luck",
     "level": 8,
-    "description": "Kills restore action points"
+    "maxRank": 3,
+    "description": "Kills restore action points.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "Kills restore 15 action points"
+      },
+      {
+        "rank": 2,
+        "description": "Kills restore 30 action points"
+      },
+      {
+        "rank": 3,
+        "description": "Kills restore all action points"
+      }
+    ]
   },
   {
     "id": "luck-9",
-    "name": "Ricochet",
+    "name": "Four Leaf Clover",
     "special": "Luck",
     "level": 9,
-    "description": "Chance to reflect ranged damage"
+    "maxRank": 4,
+    "description": "Chance to gain a critical hit when using VATS.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "10% chance to gain a critical hit when using VATS"
+      },
+      {
+        "rank": 2,
+        "description": "15% chance to gain a critical hit when using VATS"
+      },
+      {
+        "rank": 3,
+        "description": "20% chance to gain a critical hit when using VATS"
+      },
+      {
+        "rank": 4,
+        "description": "25% chance to gain a critical hit when using VATS"
+      }
+    ]
   },
   {
     "id": "luck-10",
-    "name": "Luck of the Irish",
+    "name": "Ricochet",
     "special": "Luck",
     "level": 10,
-    "description": "Gain +1 Luck"
+    "maxRank": 3,
+    "description": "Chance to reflect ranged damage back at attackers.",
+    "ranks": [
+      {
+        "rank": 1,
+        "description": "10% chance to reflect ranged damage"
+      },
+      {
+        "rank": 2,
+        "description": "15% chance to reflect ranged damage"
+      },
+      {
+        "rank": 3,
+        "description": "20% chance to reflect ranged damage"
+      }
+    ]
   }
 ]
