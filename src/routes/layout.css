@@ -15,6 +15,40 @@
   --theme-bg: #0f2818;
   --theme-border: #22c55e;
   --theme-text: #dcfce7;
+
+  /* Override Twintrinsic color variables to use theme colors */
+  --color-background: var(--theme-secondary);
+  --color-surface: var(--theme-bg);
+  --color-text: var(--theme-text);
+  --color-border: var(--theme-border);
+}
+
+/* Style the App component and its sections */
+.app {
+  background-color: var(--theme-bg) !important;
+}
+
+.appMain {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+}
+
+/* Hover and active states use accent color */
+button:hover,
+a:hover,
+[role="button"]:hover {
+  background-color: var(--theme-accent) !important;
+  color: var(--theme-bg) !important;
+}
+
+button:active,
+a:active,
+[role="button"]:active,
+button.active,
+a.active,
+[role="button"].active {
+  background-color: var(--theme-accent) !important;
+  color: var(--theme-bg) !important;
 }
 
 @theme {
