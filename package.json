@@ -10,6 +10,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "biome format --write .",
+		"lint": "biome lint .",
 		"test:e2e": "playwright test",
 		"test": "npm run test:e2e"
 	},
@@ -31,6 +33,7 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
+		"@biomejs/biome": "^2.4.5",
 		"twintrinsic": "^0.0.1"
 	}
 }
