@@ -2,7 +2,6 @@
 	import './layout.css';
 	import { App, type MenuItem } from 'twintrinsic';
 	import { page } from '$app/stores';
-	import { defaultTheme } from '$lib/theme';
 
 	let { children } = $props();
 
