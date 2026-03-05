@@ -1,0 +1,751 @@
+[
+  {
+    "id": "aaa-1",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 1,
+    "category": "Combat",
+    "effect": "Regenerate 1 point of health per minute"
+  },
+  {
+    "id": "aaa-2",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 2,
+    "category": "Combat",
+    "effect": "Do +5% damage with scoped weapons"
+  },
+  {
+    "id": "aaa-3",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 3,
+    "category": "Combat",
+    "effect": "Take 5% less damage from robots"
+  },
+  {
+    "id": "aaa-4",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 4,
+    "category": "Combat",
+    "effect": "Do +5% damage with the Alien Blaster"
+  },
+  {
+    "id": "aaa-5",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 5,
+    "category": "Combat",
+    "effect": "Gain +5 Poison Resistance"
+  },
+  {
+    "id": "aaa-6",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 6,
+    "category": "Combat",
+    "effect": "Do +5% damage against Mirelurks"
+  },
+  {
+    "id": "aaa-7",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 7,
+    "category": "Combat",
+    "effect": "Do +5% damage at night"
+  },
+  {
+    "id": "aaa-8",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 8,
+    "category": "Combat",
+    "effect": "Gain +5 Action Points"
+  },
+  {
+    "id": "aaa-9",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 9,
+    "category": "Combat",
+    "effect": "Do +5% damage with the Cryolator"
+  },
+  {
+    "id": "aaa-10",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 10,
+    "category": "Combat",
+    "effect": "Gain +5 Radiation Resistance"
+  },
+  {
+    "id": "aaa-11",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 11,
+    "category": "Combat",
+    "effect": "RadAway heals +5% radiation damage"
+  },
+  {
+    "id": "aaa-12",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 12,
+    "category": "Combat",
+    "effect": "Your canine companion permanently takes 10% less damage"
+  },
+  {
+    "id": "aaa-13",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 13,
+    "category": "Combat",
+    "effect": "Do +5% damage against Ghouls"
+  },
+  {
+    "id": "aaa-14",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 14,
+    "category": "Combat",
+    "effect": "Do +5% damage against Super Mutants"
+  },
+  {
+    "id": "aaa-15",
+    "magazine": "Astoundingly Awesome Tales",
+    "issue": 15,
+    "category": "Combat",
+    "effect": "Your canine companion takes 10% less damage"
+  },
+  {
+    "id": "barbarian-1",
+    "magazine": "Grognak the Barbarian",
+    "issue": 1,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-2",
+    "magazine": "Grognak the Barbarian",
+    "issue": 2,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-3",
+    "magazine": "Grognak the Barbarian",
+    "issue": 3,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-4",
+    "magazine": "Grognak the Barbarian",
+    "issue": 4,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-5",
+    "magazine": "Grognak the Barbarian",
+    "issue": 5,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-6",
+    "magazine": "Grognak the Barbarian",
+    "issue": 6,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-7",
+    "magazine": "Grognak the Barbarian",
+    "issue": 7,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-8",
+    "magazine": "Grognak the Barbarian",
+    "issue": 8,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-9",
+    "magazine": "Grognak the Barbarian",
+    "issue": 9,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "barbarian-10",
+    "magazine": "Grognak the Barbarian",
+    "issue": 10,
+    "category": "Melee",
+    "effect": "Critical Hits with unarmed and melee attacks do +5% damage"
+  },
+  {
+    "id": "guns-bullets-1",
+    "magazine": "Guns and Bullets",
+    "issue": 1,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-2",
+    "magazine": "Guns and Bullets",
+    "issue": 2,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-3",
+    "magazine": "Guns and Bullets",
+    "issue": 3,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-4",
+    "magazine": "Guns and Bullets",
+    "issue": 4,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-5",
+    "magazine": "Guns and Bullets",
+    "issue": 5,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-6",
+    "magazine": "Guns and Bullets",
+    "issue": 6,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-7",
+    "magazine": "Guns and Bullets",
+    "issue": 7,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-8",
+    "magazine": "Guns and Bullets",
+    "issue": 8,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-9",
+    "magazine": "Guns and Bullets",
+    "issue": 9,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "guns-bullets-10",
+    "magazine": "Guns and Bullets",
+    "issue": 10,
+    "category": "Weapons",
+    "effect": "Ballistic weapons do +5% critical damage"
+  },
+  {
+    "id": "la-coiffe-1",
+    "magazine": "La Coiffe",
+    "issue": 1,
+    "category": "Cosmetic",
+    "effect": "Extra hairstyles"
+  },
+  {
+    "id": "la-coiffe-2",
+    "magazine": "La Coiffe",
+    "issue": 2,
+    "category": "Cosmetic",
+    "effect": "Extra hairstyles"
+  },
+  {
+    "id": "live-love-1",
+    "magazine": "Live & Love",
+    "issue": 1,
+    "category": "Companions",
+    "effect": "Companions gain +10 health"
+  },
+  {
+    "id": "live-love-2",
+    "magazine": "Live & Love",
+    "issue": 2,
+    "category": "Companions",
+    "effect": "Companions do +5% damage"
+  },
+  {
+    "id": "live-love-3",
+    "magazine": "Live & Love",
+    "issue": 3,
+    "category": "Companions",
+    "effect": "Companions have +10 carry weight"
+  },
+  {
+    "id": "live-love-4",
+    "magazine": "Live & Love",
+    "issue": 4,
+    "category": "Companions",
+    "effect": "Gain +25% XP from persuading women"
+  },
+  {
+    "id": "live-love-5",
+    "magazine": "Live & Love",
+    "issue": 5,
+    "category": "Companions",
+    "effect": "Gain +1 Luck from alcohol when adventuring with a companion"
+  },
+  {
+    "id": "live-love-6",
+    "magazine": "Live & Love",
+    "issue": 6,
+    "category": "Companions",
+    "effect": "Companions gain +5 Damage Resistance and Energy Resistance"
+  },
+  {
+    "id": "live-love-7",
+    "magazine": "Live & Love",
+    "issue": 7,
+    "category": "Companions",
+    "effect": "Gain +25% XP from persuading men"
+  },
+  {
+    "id": "live-love-8",
+    "magazine": "Live & Love",
+    "issue": 8,
+    "category": "Companions",
+    "effect": "Gain +5% XP while adventuring with a companion"
+  },
+  {
+    "id": "live-love-9",
+    "magazine": "Live & Love",
+    "issue": 9,
+    "category": "Companions",
+    "effect": "Robot companions inflict +5% damage"
+  },
+  {
+    "id": "live-love-10",
+    "magazine": "Live & Love",
+    "issue": 10,
+    "category": "Companions",
+    "effect": "Companions do 5% more damage"
+  },
+  {
+    "id": "massachusetts-1",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 1,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-2",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 2,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-3",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 3,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-4",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 4,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-5",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 5,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-6",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 6,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-7",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 7,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-8",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 8,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "massachusetts-9",
+    "magazine": "Massachusetts Surgical Journal",
+    "issue": 9,
+    "category": "Combat",
+    "effect": "Inflict +2% limb damage"
+  },
+  {
+    "id": "picket-fences-1",
+    "magazine": "Picket Fences",
+    "issue": 1,
+    "category": "Settlement",
+    "effect": "Build picket fencing at settlement workshops"
+  },
+  {
+    "id": "picket-fences-2",
+    "magazine": "Picket Fences",
+    "issue": 2,
+    "category": "Settlement",
+    "effect": "Build high tech lights at settlement workshops"
+  },
+  {
+    "id": "picket-fences-3",
+    "magazine": "Picket Fences",
+    "issue": 3,
+    "category": "Settlement",
+    "effect": "Build new statues at settlement workshops"
+  },
+  {
+    "id": "picket-fences-4",
+    "magazine": "Picket Fences",
+    "issue": 4,
+    "category": "Settlement",
+    "effect": "Build potted plants at settlement workshops"
+  },
+  {
+    "id": "picket-fences-5",
+    "magazine": "Picket Fences",
+    "issue": 5,
+    "category": "Settlement",
+    "effect": "Build patio furniture at settlement workshops"
+  },
+  {
+    "id": "tales-junktown-1",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 1,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tales-junktown-2",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 2,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tales-junktown-3",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 3,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tales-junktown-4",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 4,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tales-junktown-5",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 5,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tales-junktown-6",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 6,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tales-junktown-7",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 7,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tales-junktown-8",
+    "magazine": "Tales of a Junktown Jerky Vendor",
+    "issue": 8,
+    "category": "Trading",
+    "effect": "Get better prices when buying from vendors"
+  },
+  {
+    "id": "tesla-science-1",
+    "magazine": "Tesla Science Magazine",
+    "issue": 1,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-2",
+    "magazine": "Tesla Science Magazine",
+    "issue": 2,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-3",
+    "magazine": "Tesla Science Magazine",
+    "issue": 3,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-4",
+    "magazine": "Tesla Science Magazine",
+    "issue": 4,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-5",
+    "magazine": "Tesla Science Magazine",
+    "issue": 5,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-6",
+    "magazine": "Tesla Science Magazine",
+    "issue": 6,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-7",
+    "magazine": "Tesla Science Magazine",
+    "issue": 7,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-8",
+    "magazine": "Tesla Science Magazine",
+    "issue": 8,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tesla-science-9",
+    "magazine": "Tesla Science Magazine",
+    "issue": 9,
+    "category": "Energy Weapons",
+    "effect": "Energy weapons inflict +5% critical damage"
+  },
+  {
+    "id": "tumblers-today-1",
+    "magazine": "Tumblers Today",
+    "issue": 1,
+    "category": "Lockpicking",
+    "effect": "Gain a bonus to lockpicking"
+  },
+  {
+    "id": "tumblers-today-2",
+    "magazine": "Tumblers Today",
+    "issue": 2,
+    "category": "Lockpicking",
+    "effect": "Gain a bonus to lockpicking"
+  },
+  {
+    "id": "tumblers-today-3",
+    "magazine": "Tumblers Today",
+    "issue": 3,
+    "category": "Lockpicking",
+    "effect": "Gain a bonus to lockpicking"
+  },
+  {
+    "id": "tumblers-today-4",
+    "magazine": "Tumblers Today",
+    "issue": 4,
+    "category": "Lockpicking",
+    "effect": "Gain a bonus to lockpicking"
+  },
+  {
+    "id": "tumblers-today-5",
+    "magazine": "Tumblers Today",
+    "issue": 5,
+    "category": "Lockpicking",
+    "effect": "Gain a bonus to lockpicking"
+  },
+  {
+    "id": "covert-operations-1",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 1,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-2",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 2,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-3",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 3,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-4",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 4,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-5",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 5,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-6",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 6,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-7",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 7,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-8",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 8,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-9",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 9,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "covert-operations-10",
+    "magazine": "U.S. Covert Operations Manual",
+    "issue": 10,
+    "category": "Stealth",
+    "effect": "You are more difficult to detect while sneaking"
+  },
+  {
+    "id": "unstoppables-1",
+    "magazine": "Unstoppables",
+    "issue": 1,
+    "category": "Combat",
+    "effect": "Gain a +1% chance of avoiding all damage from an attack"
+  },
+  {
+    "id": "unstoppables-2",
+    "magazine": "Unstoppables",
+    "issue": 2,
+    "category": "Combat",
+    "effect": "Gain a +1% chance of avoiding all damage from an attack"
+  },
+  {
+    "id": "unstoppables-3",
+    "magazine": "Unstoppables",
+    "issue": 3,
+    "category": "Combat",
+    "effect": "Gain a +1% chance of avoiding all damage from an attack"
+  },
+  {
+    "id": "unstoppables-4",
+    "magazine": "Unstoppables",
+    "issue": 4,
+    "category": "Combat",
+    "effect": "Gain a +1% chance of avoiding all damage from an attack"
+  },
+  {
+    "id": "unstoppables-5",
+    "magazine": "Unstoppables",
+    "issue": 5,
+    "category": "Combat",
+    "effect": "Gain a +1% chance of avoiding all damage from an attack"
+  },
+  {
+    "id": "wasteland-survival-1",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 1,
+    "category": "Survival",
+    "effect": "Heal 50% more from fruits and vegetables"
+  },
+  {
+    "id": "wasteland-survival-2",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 2,
+    "category": "Survival",
+    "effect": "Take 5% less damage from insects"
+  },
+  {
+    "id": "wasteland-survival-3",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 3,
+    "category": "Survival",
+    "effect": "Heal +50% from irradiated packaged food and drink"
+  },
+  {
+    "id": "wasteland-survival-4",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 4,
+    "category": "Survival",
+    "effect": "Access new decoration items in workshop settlements"
+  },
+  {
+    "id": "wasteland-survival-5",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 5,
+    "category": "Survival",
+    "effect": "Diamond City is now permanently marked on your map"
+  },
+  {
+    "id": "wasteland-survival-6",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 6,
+    "category": "Survival",
+    "effect": "+10% discount from food and drink vendors"
+  },
+  {
+    "id": "wasteland-survival-7",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 7,
+    "category": "Survival",
+    "effect": "Swim +25% faster"
+  },
+  {
+    "id": "wasteland-survival-8",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 8,
+    "category": "Survival",
+    "effect": "Take 5% less damage from melee attacks"
+  },
+  {
+    "id": "wasteland-survival-9",
+    "magazine": "Wasteland Survival Guide",
+    "issue": 9,
+    "category": "Survival",
+    "effect": "Collect extra meat from animal kills"
+  }
+]
