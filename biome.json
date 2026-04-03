@@ -93,7 +93,13 @@
     "expand": "auto",
     "useEditorconfig": true
   },
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -333,7 +339,12 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+      "includes": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.mts",
+        "**/*.cts"
+      ],
       "linter": {
         "rules": {
           "complexity": {
@@ -373,20 +384,33 @@
       }
     },
     {
-      "includes": ["*.svelte", "**/*.svelte"],
-      "javascript": { "globals": [] },
+      "includes": [
+        "*.svelte",
+        "**/*.svelte"
+      ],
+      "javascript": {
+        "globals": []
+      },
       "linter": {
         "rules": {
           "correctness": {
             "noInnerDeclarations": "off",
-            "noSelfAssign": "off"
+            "noSelfAssign": "off",
+            "noUndeclaredVariables": "off"
           }
         }
       }
     },
     {
-      "includes": ["*.svelte.js", "*.svelte.ts", "**/*.svelte.js", "**/*.svelte.ts"],
-      "javascript": { "globals": [] }
+      "includes": [
+        "*.svelte.js",
+        "*.svelte.ts",
+        "**/*.svelte.js",
+        "**/*.svelte.ts"
+      ],
+      "javascript": {
+        "globals": []
+      }
     }
   ]
 }
