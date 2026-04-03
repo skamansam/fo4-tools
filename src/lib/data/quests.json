@@ -1,0 +1,120 @@
+{
+  "categories": [
+    {
+      "id": "main",
+      "name": "Main Quests",
+      "description": "The primary storyline quests",
+      "quests": [
+        { "id": "1", "name": "Out of Time", "completed": false },
+        { "id": "2", "name": "War Never Changes", "completed": false },
+        { "id": "3", "name": "When Freedom Calls", "completed": false },
+        { "id": "4", "name": "Sanctuary", "completed": false },
+        { "id": "5", "name": "Concord", "completed": false },
+        { "id": "6", "name": "Jewels of the Commonwealth", "completed": false },
+        { "id": "7", "name": "Unlikely Valentine", "completed": false },
+        { "id": "8", "name": "Diamond City Blues", "completed": false },
+        { "id": "9", "name": "Reunions", "completed": false },
+        { "id": "10", "name": "Dangerous Minds", "completed": false },
+        { "id": "11", "name": "The Glowing Sea", "completed": false },
+        { "id": "12", "name": "The Institute", "completed": false },
+        { "id": "13", "name": "Mankind Redefined", "completed": false },
+        { "id": "14", "name": "The Battle of Bunker Hill", "completed": false },
+        { "id": "15", "name": "Blind Betrayal", "completed": false },
+        { "id": "16", "name": "The Nuclear Option", "completed": false },
+        { "id": "17", "name": "The Future of the Commonwealth", "completed": false }
+      ]
+    },
+    {
+      "id": "miscellaneous",
+      "name": "Miscellaneous",
+      "description": "Side quests and miscellaneous objectives",
+      "quests": [
+        { "id": "m1", "name": "Defend the Castle", "completed": false },
+        { "id": "m2", "name": "Minuteman Radiant Quests", "completed": false },
+        { "id": "m3", "name": "Cleansing the Commonwealth", "completed": false },
+        { "id": "m4", "name": "Kidnapping", "completed": false },
+        { "id": "m5", "name": "The Big Dig", "completed": false },
+        { "id": "m6", "name": "Confidence Man", "completed": false },
+        { "id": "m7", "name": "Ghoul Problem", "completed": false },
+        { "id": "m8", "name": "Hole in the Wall", "completed": false },
+        { "id": "m9", "name": "Human Error", "completed": false },
+        { "id": "m10", "name": "Irma's Shack", "completed": false }
+      ]
+    },
+    {
+      "id": "brotherhood",
+      "name": "Brotherhood of Steel",
+      "description": "Brotherhood of Steel faction quests",
+      "quests": [
+        { "id": "b1", "name": "The First Step", "completed": false },
+        { "id": "b2", "name": "Semper Invicta", "completed": false },
+        { "id": "b3", "name": "Call to Arms", "completed": false },
+        { "id": "b4", "name": "Shadow of Steel", "completed": false },
+        { "id": "b5", "name": "Tactical Thinking", "completed": false },
+        { "id": "b6", "name": "Blind Betrayal", "completed": false },
+        { "id": "b7", "name": "Brotherhood Radiant Quests", "completed": false }
+      ]
+    },
+    {
+      "id": "railroad",
+      "name": "The Railroad",
+      "description": "The Railroad faction quests",
+      "quests": [
+        { "id": "r1", "name": "Emergent Behavior", "completed": false },
+        { "id": "r2", "name": "Tradecraft", "completed": false },
+        { "id": "r3", "name": "Underground Undercover", "completed": false },
+        { "id": "r4", "name": "Precipice of War", "completed": false },
+        { "id": "r5", "name": "Railroad Radiant Quests", "completed": false }
+      ]
+    },
+    {
+      "id": "institute",
+      "name": "The Institute",
+      "description": "The Institute faction quests",
+      "quests": [
+        { "id": "i1", "name": "Mankind Redefined", "completed": false },
+        { "id": "i2", "name": "The Battle of Bunker Hill", "completed": false },
+        { "id": "i3", "name": "Synth Retention", "completed": false },
+        { "id": "i4", "name": "Pinned", "completed": false },
+        { "id": "i5", "name": "The Nuclear Option", "completed": false },
+        { "id": "i6", "name": "Institute Radiant Quests", "completed": false }
+      ]
+    },
+    {
+      "id": "nuka-world",
+      "name": "Nuka-World",
+      "description": "Nuka-World DLC quests",
+      "quests": [
+        { "id": "nw1", "name": "All Aboard", "completed": false },
+        { "id": "nw2", "name": "Taken for a Ride", "completed": false },
+        { "id": "nw3", "name": "Amoral Combat", "completed": false },
+        { "id": "nw4", "name": "Aces Wild", "completed": false },
+        { "id": "nw5", "name": "Colter's Gambit", "completed": false },
+        { "id": "nw6", "name": "Nuka-Cade", "completed": false },
+        { "id": "nw7", "name": "Nuka-World Radiant Quests", "completed": false }
+      ]
+    },
+    {
+      "id": "far-harbor",
+      "name": "Far Harbor",
+      "description": "Far Harbor DLC quests",
+      "quests": [
+        { "id": "fh1", "name": "The Mariner", "completed": false },
+        { "id": "fh2", "name": "Blood Ties", "completed": false },
+        { "id": "fh3", "name": "The Arrival", "completed": false },
+        { "id": "fh4", "name": "Visions of the Fog", "completed": false },
+        { "id": "fh5", "name": "The Fog Condensers", "completed": false },
+        { "id": "fh6", "name": "Far Harbor Radiant Quests", "completed": false }
+      ]
+    },
+    {
+      "id": "vault-tec",
+      "name": "Vault-Tec Workshop",
+      "description": "Vault-Tec Workshop DLC quests",
+      "quests": [
+        { "id": "vt1", "name": "Vault-Tec Workshop", "completed": false },
+        { "id": "vt2", "name": "Vault-Tec Radiant Quests", "completed": false }
+      ]
+    }
+  ]
+}
