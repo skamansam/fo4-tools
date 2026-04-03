@@ -1,5 +1,13 @@
-<div class="max-w-4xl mx-auto">
-	<div class="border-2 border-fo4-green p-6 bg-fo4-black mb-6">
+<script lang="ts">
+	import { Container } from 'twintrinsic';
+</script>
+
+
+<Container as="article" class="max-w-none">
+
+<div class="prose dark:prose-invert max-w-none">
+	<h1>Welcome to Fallout 4 Tools</h1>
+	<!-- <div class="border-2 border-fo4-green p-6 bg-fo4-black mb-6">
 		<h2 class="text-2xl font-bold text-fo4-green-light mb-4">WELCOME TO FALLOUT 4 TOOLS</h2>
 		<p class="mb-4">Select a tool from the navigation menu above to begin.</p>
 	</div>
@@ -19,5 +27,13 @@
 			<h3 class="text-xl font-bold mb-2">WEAPON WORKBENCH</h3>
 			<p class="text-sm opacity-75">Explore weapon customization and upgrade options.</p>
 		</a>
-	</div>
-</div>
+	</div>-->
+</div> 
+</Container>
+
+  
+  <style lang="postcss">
+    @reference 'twintrinsic/twintrinsic.css';
+    @reference './layout.css';
+
+  </style>
