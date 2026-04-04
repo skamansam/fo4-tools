@@ -67,8 +67,9 @@
 <div class="min-h-screen bg-background text-text">
 <App
 	appName="Fallout 4 Tools"
-	rightSidebarHidden={true}
-	  brand={{
+	rightSidebarHidden
+	themeToggleHidden
+  brand={{
     name: 'Fallout 4 Tools',
     href: '/',
     logo
