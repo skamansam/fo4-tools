@@ -64,12 +64,12 @@
 </script>
 
 {#if category}
-	<div class="max-w-4xl mx-auto space-y-8">
+	<div class="max-w-6xl mx-auto space-y-6">
 		<!-- Header -->
-		<div class="space-y-4">
-			<a href="/quests" class="text-blue-400 hover:text-blue-300 text-sm">← Back to Quests</a>
-			<h1 class="text-4xl font-bold">{category.name}</h1>
-			<p class="text-slate-400">{category.description}</p>
+		<div class="border-2 border-theme-border p-6 bg-surface">
+			<a href="/quests" class="text-theme-primary hover:text-theme-accent text-sm mb-4 block">← Back to Quests</a>
+			<h1 class="text-4xl font-bold text-theme-primary mb-2">{category.name}</h1>
+			<p class="text-muted">{category.description}</p>
 		</div>
 
 		<!-- Search Box -->
@@ -77,75 +77,80 @@
 			type="text"
 			placeholder="Search quests..."
 			bind:value={searchQuery}
-			class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+			class="w-full px-4 py-2 bg-background border-2 border-theme-border text-text placeholder-muted focus:outline-none focus:border-theme-primary transition-colors"
 		/>
 
 		<!-- Progress Section -->
-		<div class="p-6 bg-slate-900 border border-slate-700 rounded-lg space-y-4">
-			<div class="flex justify-between items-center">
-				<h2 class="text-xl font-semibold">Progress</h2>
-				<span class="text-lg font-bold text-blue-400">{calculateProgress()}%</span>
+		<div class="border-2 border-theme-border p-6 bg-surface">
+			<h2 class="text-xl font-bold text-theme-primary mb-4">PROGRESS</h2>
+			<div class="space-y-4">
+				<div class="flex justify-between items-center">
+					<span class="text-text">Completed</span>
+					<span class="text-lg font-bold text-theme-primary">{calculateProgress()}%</span>
+				</div>
+				<Progress value={calculateProgress()} class="h-3" />
+				<p class="text-sm text-muted">
+					{questsState.filter((q) => q.completed).length} of {questsState.length} quests completed
+				</p>
 			</div>
-			<Progress value={calculateProgress()} class="h-3" />
-			<p class="text-sm text-slate-400">
-				{questsState.filter((q) => q.completed).length} of {questsState.length} quests completed
-			</p>
 		</div>
 
 		<!-- Action Buttons -->
 		<div class="flex gap-4">
 			<button
 				onclick={completeAll}
-				class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition-colors"
+				class="px-4 py-2 bg-theme-primary hover:bg-theme-accent text-theme-bg font-bold transition-colors"
 			>
-				Complete All
+				COMPLETE ALL
 			</button>
 			<button
 				onclick={resetAll}
-				class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-colors"
+				class="px-4 py-2 border-2 border-theme-border bg-surface hover:bg-border font-bold transition-colors"
 			>
-				Reset All
+				RESET ALL
 			</button>
 		</div>
 
 		<!-- Quest List -->
-		<div class="space-y-3">
-			<h2 class="text-2xl font-bold">
-				{hasSearch ? 'Search Results' : 'Quests'}
+		<div class="space-y-4">
+			<h2 class="text-2xl font-bold text-theme-primary">
+				{hasSearch ? 'SEARCH RESULTS' : 'QUESTS'}
 			</h2>
 			{#if filteredQuests.length === 0}
-				<div class="p-6 bg-slate-900 border border-slate-700 rounded-lg text-center">
-					<p class="text-slate-400">No quests found matching "{searchQuery}"</p>
+				<div class="border-2 border-theme-border p-6 bg-surface text-center">
+					<p class="text-muted">No quests found matching "{searchQuery}"</p>
 				</div>
 			{:else}
-				<div class="space-y-2">
-					{#each filteredQuests as quest (quest.id)}
-						<div class="flex items-center gap-4 p-4 bg-slate-900 border border-slate-700 rounded-lg hover:border-slate-600 transition-colors">
-							<input
-								type="checkbox"
-								checked={quest.completed}
-								onchange={() => toggleQuest(quest.id)}
-								class="w-5 h-5 rounded cursor-pointer"
-							/>
-							<span
-								class={`flex-1 ${
-									quest.completed ? 'line-through text-slate-500' : 'text-slate-100'
-								}`}
-							>
-								{quest.name}
-							</span>
-						</div>
-					{/each}
+				<div class="border-2 border-theme-border p-6 bg-surface">
+					<div class="space-y-2">
+						{#each filteredQuests as quest (quest.id)}
+							<div class="flex items-center gap-4 p-3 bg-background border border-theme-border hover:border-theme-primary transition-colors">
+								<input
+									type="checkbox"
+									checked={quest.completed}
+									onchange={() => toggleQuest(quest.id)}
+									class="w-5 h-5 cursor-pointer"
+								/>
+								<span
+									class={`flex-1 ${
+										quest.completed ? 'line-through text-muted' : 'text-text'
+									}`}
+								>
+									{quest.name}
+								</span>
+							</div>
+						{/each}
+					</div>
 				</div>
 			{/if}
 		</div>
 	</div>
 {:else}
-	<div class="max-w-4xl mx-auto space-y-4">
-		<a href="/quests" class="text-blue-400 hover:text-blue-300 text-sm">← Back to Quests</a>
-		<div class="p-6 bg-red-900 border border-red-700 rounded-lg">
-			<h1 class="text-2xl font-bold text-red-100">Quest Category Not Found</h1>
-			<p class="text-red-200 mt-2">The quest category you're looking for doesn't exist.</p>
+	<div class="max-w-6xl mx-auto space-y-6">
+		<a href="/quests" class="text-theme-primary hover:text-theme-accent text-sm">← Back to Quests</a>
+		<div class="border-2 border-theme-border p-6 bg-surface">
+			<h1 class="text-2xl font-bold text-theme-primary">QUEST CATEGORY NOT FOUND</h1>
+			<p class="text-muted mt-2">The quest category you're looking for doesn't exist.</p>
 		</div>
 	</div>
 {/if}
