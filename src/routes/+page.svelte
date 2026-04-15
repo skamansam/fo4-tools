@@ -28,32 +28,32 @@
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			<a href="/hacking" class="border-2 border-theme-border p-6 bg-surface hover:bg-border transition-colors group">
 				<h3 class="text-xl font-bold text-theme-primary mb-2 group-hover:text-theme-accent">HACKING TERMINAL</h3>
-				<p class="text-sm text-muted">Solve terminal hacking puzzles using likeness constraints. Master the art of cracking Fallout terminals.</p>
+				<p class="text-sm text-text">Solve terminal hacking puzzles using likeness constraints. Master the art of cracking Fallout terminals.</p>
 			</a>
 
 			<a href="/armor" class="border-2 border-theme-border p-6 bg-surface hover:bg-border transition-colors group">
 				<h3 class="text-xl font-bold text-theme-primary mb-2 group-hover:text-theme-accent">ARMOR WORKBENCH</h3>
-				<p class="text-sm text-muted">Browse and customize armor pieces with available modifications. Build the perfect protective gear.</p>
+				<p class="text-sm text-text">Browse and customize armor pieces with available modifications. Build the perfect protective gear.</p>
 			</a>
 
 			<a href="/weapons" class="border-2 border-theme-border p-6 bg-surface hover:bg-border transition-colors group">
 				<h3 class="text-xl font-bold text-theme-primary mb-2 group-hover:text-theme-accent">WEAPON WORKBENCH</h3>
-				<p class="text-sm text-muted">Explore weapon customization and upgrade options. Craft the ultimate arsenal for combat.</p>
+				<p class="text-sm text-text">Explore weapon customization and upgrade options. Craft the ultimate arsenal for combat.</p>
 			</a>
 
 			<a href="/quests" class="border-2 border-theme-border p-6 bg-surface hover:bg-border transition-colors group">
 				<h3 class="text-xl font-bold text-theme-primary mb-2 group-hover:text-theme-accent">QUEST CHECKLIST</h3>
-				<p class="text-sm text-muted">Track your progress through all major and miscellaneous quests across the Commonwealth.</p>
+				<p class="text-sm text-text">Track your progress through all major and miscellaneous quests across the Commonwealth.</p>
 			</a>
 
 			<a href="/bobbleheads" class="border-2 border-theme-border p-6 bg-surface hover:bg-border transition-colors group">
 				<h3 class="text-xl font-bold text-theme-primary mb-2 group-hover:text-theme-accent">BOBBLEHEADS</h3>
-				<p class="text-sm text-muted">Locate all 20 SPECIAL and Skill bobbleheads hidden throughout the Commonwealth.</p>
+				<p class="text-sm text-text">Locate all 20 SPECIAL and Skill bobbleheads hidden throughout the Commonwealth.</p>
 			</a>
 
 			<a href="/magazines" class="border-2 border-theme-border p-6 bg-surface hover:bg-border transition-colors group">
 				<h3 class="text-xl font-bold text-theme-primary mb-2 group-hover:text-theme-accent">MAGAZINES</h3>
-				<p class="text-sm text-muted">Track magazines and issues to unlock permanent bonuses and perks.</p>
+				<p class="text-sm text-text">Track magazines and issues to unlock permanent bonuses and perks.</p>
 			</a>
 		</div>
 	</div>

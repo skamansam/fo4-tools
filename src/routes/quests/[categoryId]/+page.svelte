@@ -133,7 +133,7 @@
 								/>
 								<span
 									class={`flex-1 ${
-										quest.completed ? 'line-through text-muted' : 'text-text'
+										quest.completed ? 'line-through text-text opacity-60' : 'text-text'
 									}`}
 								>
 									{quest.name}
