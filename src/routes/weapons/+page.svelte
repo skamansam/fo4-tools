@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { perkStore } from '$lib/stores/perkStore';
-	import { calculateFinalWeaponStats } from '$lib/utils/perkCalculator';
 	import perkEffectsData from '$lib/data/perkEffects.json';
 	import weaponsData from '$lib/data/weapons.json';
+	import { perkStore } from '$lib/stores/perkStore';
+	import { calculateFinalWeaponStats } from '$lib/utils/perkCalculator';
 
 	interface WeaponMod {
 		id: string;
@@ -90,22 +90,22 @@
 </script>
 
 <div class="max-w-6xl mx-auto">
-	<div class="border-2 border-fo4-green p-6 bg-fo4-black mb-6">
-		<h2 class="text-2xl font-bold text-fo4-green-light mb-2">WEAPON WORKBENCH</h2>
+	<div class="border-2 border-primary-500 p-6 bg-surface mb-6">
+		<h2 class="text-2xl font-bold text-primary-300 mb-2">WEAPON WORKBENCH</h2>
 		<p class="text-sm opacity-75">Browse and customize weapons with available modifications.</p>
 	</div>
 
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
 		<!-- Weapon Selection Panel -->
-		<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-			<h3 class="text-lg font-bold text-fo4-green-light mb-4">WEAPONS</h3>
+		<div class="border-2 border-primary-500 p-6 bg-surface">
+			<h3 class="text-lg font-bold text-primary-300 mb-4">WEAPONS</h3>
 			<div class="space-y-2 max-h-96 overflow-y-auto">
 				{#each weapons as weapon}
 					<button
 						onclick={() => selectWeapon(weapon)}
 						class="w-full text-left p-3 border-2 {selectedWeapon?.id === weapon.id
-							? 'border-fo4-green bg-fo4-green text-fo4-black'
-							: 'border-fo4-green bg-fo4-dark text-fo4-green hover:bg-fo4-green hover:text-fo4-black'} transition"
+							? 'border-primary-500 bg-primary-500 text-background'
+							: 'border-primary-500 bg-background text-text hover:bg-primary-500 hover:text-background'} transition"
 					>
 						<div class="font-bold text-sm">{weapon.name}</div>
 						<div class="text-xs opacity-75">{weapon.type}</div>
@@ -118,8 +118,8 @@
 		<div class="lg:col-span-3 space-y-6">
 			{#if selectedWeapon}
 				<!-- Weapon Details -->
-				<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-					<h3 class="text-lg font-bold text-fo4-green-light mb-4">WEAPON DETAILS</h3>
+				<div class="border-2 border-primary-500 p-6 bg-surface">
+					<h3 class="text-lg font-bold text-primary-300 mb-4">WEAPON DETAILS</h3>
 					<div class="grid grid-cols-2 gap-4">
 						<div>
 							<p class="text-sm opacity-75">Name:</p>
@@ -149,15 +149,15 @@
 				</div>
 
 				<!-- Modifications -->
-				<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-					<h3 class="text-lg font-bold text-fo4-green-light mb-4">AVAILABLE MODIFICATIONS</h3>
+				<div class="border-2 border-primary-500 p-6 bg-surface">
+					<h3 class="text-lg font-bold text-primary-300 mb-4">AVAILABLE MODIFICATIONS</h3>
 					<div class="space-y-2">
 						{#each selectedWeapon.mods as mod}
 							<button
 								onclick={() => selectMod(mod)}
 								class="w-full text-left p-3 border-2 {selectedMod?.id === mod.id
-									? 'border-fo4-green bg-fo4-green text-fo4-black'
-									: 'border-fo4-green bg-fo4-dark text-fo4-green hover:bg-fo4-green hover:text-fo4-black'} transition"
+									? 'border-primary-500 bg-primary-500 text-background'
+									: 'border-primary-500 bg-background text-text hover:bg-primary-500 hover:text-background'} transition"
 							>
 								<div class="font-bold">{mod.name}</div>
 								<div class="text-sm opacity-75">{mod.effect}</div>
@@ -168,8 +168,8 @@
 
 				<!-- Mod Details -->
 				{#if selectedMod}
-					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-						<h3 class="text-lg font-bold text-fo4-green-light mb-4">MODIFICATION DETAILS</h3>
+					<div class="border-2 border-primary-500 p-6 bg-surface">
+						<h3 class="text-lg font-bold text-primary-300 mb-4">MODIFICATION DETAILS</h3>
 						<div class="space-y-3">
 							<div>
 								<p class="text-sm opacity-75">Name:</p>
@@ -185,7 +185,7 @@
 							</div>
 							<div>
 								<p class="text-sm opacity-75">Modified Damage:</p>
-								<p class="text-lg font-bold text-fo4-green-light">{calculateModifiedDamage()}</p>
+								<p class="text-lg font-bold text-primary-300">{calculateModifiedDamage()}</p>
 							</div>
 							<div>
 								<p class="text-sm opacity-75 mb-2">Materials Required:</p>
@@ -201,16 +201,16 @@
 
 				<!-- Applicable Perks -->
 				{#if selectedWeapon && getApplicablePerks().length > 0}
-					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-						<h3 class="text-lg font-bold text-fo4-green-light mb-4">APPLICABLE PERKS</h3>
+					<div class="border-2 border-primary-500 p-6 bg-surface">
+						<h3 class="text-lg font-bold text-primary-300 mb-4">APPLICABLE PERKS</h3>
 						<div class="space-y-3">
 							{#each getApplicablePerks() as perk}
-								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+								<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 									<div>
 										<p class="font-semibold text-sm">{perk.name}</p>
 										<p class="text-xs opacity-75">Rank {perk.rank}</p>
 									</div>
-									<p class="text-lg font-bold text-fo4-green-light">+{perk.bonus}%</p>
+									<p class="text-lg font-bold text-primary-300">+{perk.bonus}%</p>
 								</div>
 							{/each}
 						</div>
@@ -219,30 +219,30 @@
 
 				<!-- Final Damage with Perks -->
 				{#if selectedWeapon}
-					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-						<h3 class="text-lg font-bold text-fo4-green-light mb-4">FINAL DAMAGE CALCULATION</h3>
+					<div class="border-2 border-primary-500 p-6 bg-surface">
+						<h3 class="text-lg font-bold text-primary-300 mb-4">FINAL DAMAGE CALCULATION</h3>
 						<div class="space-y-3">
-							<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+							<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 								<p class="text-sm">Base Damage:</p>
 								<p class="text-lg font-bold">{selectedWeapon.baseDamage}</p>
 							</div>
 							{#if selectedMod}
-								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+								<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 									<p class="text-sm">With Mod ({selectedMod.name}):</p>
 									<p class="text-lg font-bold">{calculateModifiedDamage()}</p>
 								</div>
 							{/if}
 							{#if getApplicablePerks().length > 0}
-								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green-light">
+								<div class="flex justify-between items-center p-3 bg-background border border-primary-300">
 									<p class="text-sm font-semibold">With Perks:</p>
-									<p class="text-lg font-bold text-fo4-green-light">{calculateFinalDamage()}</p>
+									<p class="text-lg font-bold text-primary-300">{calculateFinalDamage()}</p>
 								</div>
 							{/if}
 						</div>
 					</div>
 				{/if}
 			{:else}
-				<div class="border-2 border-fo4-green p-6 bg-fo4-black text-center">
+				<div class="border-2 border-primary-500 p-6 bg-surface text-center">
 					<p class="text-sm opacity-50">Select a weapon to view details and modifications.</p>
 				</div>
 			{/if}
