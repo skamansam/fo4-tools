@@ -41,15 +41,15 @@
 </script>
 
 <div class="max-w-4xl mx-auto">
-	<div class="border-2 border-fo4-green p-6 bg-fo4-black mb-6">
-		<h2 class="text-2xl font-bold text-fo4-green-light mb-2">HACKING TERMINAL</h2>
+	<div class="border-2 border-primary-500 p-6 bg-surface mb-6">
+		<h2 class="text-2xl font-bold text-primary-300 mb-2">HACKING TERMINAL</h2>
 		<p class="text-sm opacity-75">Enter candidate words and their likeness values to solve the puzzle.</p>
 	</div>
 
 	<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 		<!-- Input Panel -->
-		<div class="lg:col-span-2 border-2 border-fo4-green p-6 bg-fo4-black">
-			<h3 class="text-lg font-bold text-fo4-green-light mb-4">WORD INPUT</h3>
+		<div class="lg:col-span-2 border-2 border-primary-500 p-6 bg-surface">
+			<h3 class="text-lg font-bold text-primary-300 mb-4">WORD INPUT</h3>
 
 			<div class="space-y-4 mb-6">
 				<div>
@@ -59,7 +59,7 @@
 						type="text"
 						bind:value={newWord}
 						placeholder="Enter word"
-						class="w-full bg-fo4-dark border-2 border-fo4-green text-fo4-green p-2 placeholder-fo4-green placeholder-opacity-50"
+						class="w-full bg-background border-2 border-primary-500 text-text p-2 placeholder-muted placeholder-opacity-50"
 					/>
 				</div>
 
@@ -71,27 +71,27 @@
 						bind:value={newLikeness}
 						min="0"
 						placeholder="0"
-						class="w-full bg-fo4-dark border-2 border-fo4-green text-fo4-green p-2"
+						class="w-full bg-background border-2 border-primary-500 text-text p-2"
 					/>
 				</div>
 
 				<button
 					onclick={addWord}
-					class="w-full bg-fo4-dark border-2 border-fo4-green text-fo4-green p-2 hover:bg-fo4-green hover:text-fo4-black transition font-bold"
+					class="w-full bg-background border-2 border-primary-500 text-text p-2 hover:bg-primary-500 hover:text-background transition font-bold"
 				>
 					ADD WORD
 				</button>
 			</div>
 
 			<!-- Word List -->
-			<h3 class="text-lg font-bold text-fo4-green-light mb-4">CANDIDATE WORDS</h3>
+			<h3 class="text-lg font-bold text-primary-300 mb-4">CANDIDATE WORDS</h3>
 			<div class="space-y-2 mb-6 max-h-64 overflow-y-auto">
 				{#each words as word, index}
-					<div class="flex justify-between items-center bg-fo4-dark border-2 border-fo4-green p-3">
+					<div class="flex justify-between items-center bg-background border-2 border-primary-500 p-3">
 						<span>{word.word} (Likeness: {word.likeness})</span>
 						<button
 							onclick={() => removeWord(index)}
-							class="bg-fo4-green text-fo4-black px-3 py-1 hover:opacity-75 transition font-bold"
+							class="bg-primary-500 text-background px-3 py-1 hover:opacity-75 transition font-bold"
 						>
 							DEL
 						</button>
@@ -105,13 +105,13 @@
 			<div class="flex gap-2">
 				<button
 					onclick={solve}
-					class="flex-1 bg-fo4-dark border-2 border-fo4-green text-fo4-green p-3 hover:bg-fo4-green hover:text-fo4-black transition font-bold"
+					class="flex-1 bg-background border-2 border-primary-500 text-text p-3 hover:bg-primary-500 hover:text-background transition font-bold"
 				>
 					SOLVE
 				</button>
 				<button
 					onclick={reset}
-					class="flex-1 bg-fo4-dark border-2 border-fo4-green text-fo4-green p-3 hover:bg-fo4-green hover:text-fo4-black transition font-bold"
+					class="flex-1 bg-background border-2 border-primary-500 text-text p-3 hover:bg-primary-500 hover:text-background transition font-bold"
 				>
 					RESET
 				</button>
@@ -119,12 +119,12 @@
 		</div>
 
 		<!-- Solution Panel -->
-		<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-			<h3 class="text-lg font-bold text-fo4-green-light mb-4">SOLUTION</h3>
+		<div class="border-2 border-primary-500 p-6 bg-surface">
+			<h3 class="text-lg font-bold text-primary-300 mb-4">SOLUTION</h3>
 			{#if solution}
-				<div class="bg-fo4-dark border-2 border-fo4-green p-4 text-center">
+				<div class="bg-background border-2 border-primary-500 p-4 text-center">
 					<p class="text-sm opacity-75 mb-2">PASSWORD:</p>
-					<p class="text-2xl font-bold text-fo4-green-light">{solution}</p>
+					<p class="text-2xl font-bold text-primary-300">{solution}</p>
 				</div>
 			{:else}
 				<p class="text-sm opacity-50">Enter words and click SOLVE to find the password.</p>
