@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Card, Rating, Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from 'twintrinsic';
-	import { perkStore } from '$lib/stores/perkStore';
+	import { Card, Rating, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from 'twintrinsic';
 	import perksData from '$lib/data/perks.json';
+	import { perkStore } from '$lib/stores/perkStore';
 
 	interface PerkEffect {
 		rank: number;
@@ -99,7 +99,7 @@
 <div class="max-w-7xl mx-auto">
 	<div class="mb-8">
 		<h2 class="text-3xl font-bold text-primary-500 mb-2">PERKS</h2>
-		<p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks</p>
+		<p class="text-sm text-muted mb-4">Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks</p>
 	</div>
 
 		<!-- VAULT-TEC Style Grid with Table Styling -->
@@ -129,15 +129,15 @@
 				{#each Array.from({ length: 10 }, (_, i) => i + 1) as level}
 					<TableRow>
 						{#each specialAttributes as special}
-							<TableCell class="p-4 bg-neutral-50 dark:bg-neutral-900 min-h-[200px]">
+							<TableCell class="p-4 bg-surface min-h-[200px]">
 								<div class="space-y-4 {specialRanks[special] === 0 || specialRanks[special] < level ? 'opacity-50' : ''}">
 									{#each perksBySpecial[special]?.filter(p => p.level === level) || [] as perk}
-											<div class="flex flex-col gap-2 border border-neutral-200 dark:border-neutral-800 p-3 rounded bg-white dark:bg-neutral-950">
+											<div class="flex flex-col gap-2 border border-primary-500 p-3 rounded bg-background">
 												<div>
-													<div class="font-semibold text-sm text-neutral-900 dark:text-white">
+													<div class="font-semibold text-sm text-text">
 														{perk.name}
 													</div>
-													<div class="text-xs text-neutral-600 dark:text-neutral-400">
+													<div class="text-xs text-muted">
 														{perk.description}
 													</div>
 												</div>
