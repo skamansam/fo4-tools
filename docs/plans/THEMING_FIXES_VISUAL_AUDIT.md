@@ -100,20 +100,36 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 - [ ] Table background may not match `bg-surface` theme
 
 ### Bobbleheads Page (/bobbleheads)
-- [ ] Twintrinsic Card components may not have `border-primary-500` borders
-- [ ] Need to verify card background matches `bg-surface`
+- [ ] Main container lacks `border-2 border-primary-500 p-6 bg-surface` styling
+- [ ] Header section should be wrapped in bordered panel like quests page
+- [ ] Progress bar section lacks `border-2 border-primary-500` styling
+- [ ] Category headers should be in bordered panels or match quests page structure
+- [ ] Cards use `rounded-lg` which quests page doesn't use
+- [ ] Card padding is `p-4` instead of `p-6` used in quests page
+- [ ] Info/note sections should use `border-2 border-primary-500` instead of missing borders
 
 ### Magazines Page (/magazines)
-- [ ] Twintrinsic Card components may not have `border-primary-500` borders
-- [ ] Need to verify card background matches `bg-surface`
+- [ ] Main container lacks `border-2 border-primary-500 p-6 bg-surface` styling
+- [ ] Header section should be wrapped in bordered panel like quests page
+- [ ] Progress bar section lacks `border-2 border-primary-500` styling
+- [ ] Info box uses `border-l-4` instead of `border-2 border-primary-500` like quests
+- [ ] Category headers should be in bordered panels or match quests page structure
+- [ ] Cards use `rounded-lg` which quests page doesn't use
+- [ ] Card padding is `p-3` instead of `p-6` used in quests page
+- [ ] DLC magazines section lacks `border-2 border-primary-500` styling
+- [ ] All sections use `rounded-lg` which quests page doesn't use
 
 ### Player Page (/player)
 - [ ] Various Twintrinsic components may not have `border-primary-500` borders
 - [ ] Need to verify backgrounds match `bg-surface`
 
 ### Perks Page (/perks)
+- [ ] Header section should be wrapped in `border-2 border-primary-500 p-6 bg-surface` panel like quests page
+- [ ] Missing overall progress section with Progress component like quests page
 - [ ] Twintrinsic Table component borders don't match `border-primary-500` styling
-- [ ] Table cells use `bg-surface` but borders may be inconsistent
+- [ ] Table cells use `bg-surface` but borders may be inconsistent with quests page panel styling
+- [ ] Table-based layout doesn't match card-based layout of quests page
+- [ ] Consider restructuring to use card-based panels like quests page for consistency
 
 ### Theme Page (/theme)
 - [ ] Theme selector cards may not match panel styling
