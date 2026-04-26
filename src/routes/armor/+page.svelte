@@ -1,8 +1,8 @@
 <script lang="ts">
+	import armorData from '$lib/data/armor.json';
+	import perkEffectsData from '$lib/data/perkEffects.json';
 	import { perkStore } from '$lib/stores/perkStore';
 	import { calculateFinalArmorStats } from '$lib/utils/perkCalculator';
-	import perkEffectsData from '$lib/data/perkEffects.json';
-	import armorData from '$lib/data/armor.json';
 
 	interface ArmorMod {
 		id: string;
@@ -98,22 +98,22 @@
 </script>
 
 <div class="max-w-6xl mx-auto">
-	<div class="border-2 border-fo4-green p-6 bg-fo4-black mb-6">
-		<h2 class="text-2xl font-bold text-fo4-green-light mb-2">ARMOR WORKBENCH</h2>
+	<div class="border-2 border-primary-500 p-6 bg-surface mb-6">
+		<h2 class="text-2xl font-bold text-primary-300 mb-2">ARMOR WORKBENCH</h2>
 		<p class="text-sm opacity-75">Browse and customize armor pieces with available modifications.</p>
 	</div>
 
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
 		<!-- Armor Selection Panel -->
-		<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-			<h3 class="text-lg font-bold text-fo4-green-light mb-4">ARMOR PIECES</h3>
+		<div class="border-2 border-primary-500 p-6 bg-surface">
+			<h3 class="text-lg font-bold text-primary-300 mb-4">ARMOR PIECES</h3>
 			<div class="space-y-2 max-h-96 overflow-y-auto">
 				{#each armorPieces as armor}
 					<button
 						onclick={() => selectArmor(armor)}
 						class="w-full text-left p-3 border-2 {selectedArmor?.id === armor.id
-							? 'border-fo4-green bg-fo4-green text-fo4-black'
-							: 'border-fo4-green bg-fo4-dark text-fo4-green hover:bg-fo4-green hover:text-fo4-black'} transition"
+							? 'border-primary-500 bg-primary-500 text-background'
+							: 'border-primary-500 bg-background text-text hover:bg-primary-500 hover:text-background'} transition"
 					>
 						<div class="font-bold text-sm">{armor.name}</div>
 						<div class="text-xs opacity-75">{armor.type}</div>
@@ -126,8 +126,8 @@
 		<div class="lg:col-span-3 space-y-6">
 			{#if selectedArmor}
 				<!-- Armor Details -->
-				<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-					<h3 class="text-lg font-bold text-fo4-green-light mb-4">ARMOR DETAILS</h3>
+				<div class="border-2 border-primary-500 p-6 bg-surface">
+					<h3 class="text-lg font-bold text-primary-300 mb-4">ARMOR DETAILS</h3>
 					<div class="space-y-3">
 						<div>
 							<p class="text-sm opacity-75">Name:</p>
@@ -149,15 +149,15 @@
 				</div>
 
 				<!-- Modifications -->
-				<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-					<h3 class="text-lg font-bold text-fo4-green-light mb-4">AVAILABLE MODIFICATIONS</h3>
+				<div class="border-2 border-primary-500 p-6 bg-surface">
+					<h3 class="text-lg font-bold text-primary-300 mb-4">AVAILABLE MODIFICATIONS</h3>
 					<div class="space-y-2">
 						{#each selectedArmor.mods as mod}
 							<button
 								onclick={() => selectMod(mod)}
 								class="w-full text-left p-3 border-2 {selectedMod?.id === mod.id
-									? 'border-fo4-green bg-fo4-green text-fo4-black'
-									: 'border-fo4-green bg-fo4-dark text-fo4-green hover:bg-fo4-green hover:text-fo4-black'} transition"
+									? 'border-primary-500 bg-primary-500 text-background'
+									: 'border-primary-500 bg-background text-text hover:bg-primary-500 hover:text-background'} transition"
 							>
 								<div class="font-bold">{mod.name}</div>
 								<div class="text-sm opacity-75">{mod.effect}</div>
@@ -168,8 +168,8 @@
 
 				<!-- Mod Details -->
 				{#if selectedMod}
-					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-						<h3 class="text-lg font-bold text-fo4-green-light mb-4">MODIFICATION DETAILS</h3>
+					<div class="border-2 border-primary-500 p-6 bg-surface">
+						<h3 class="text-lg font-bold text-primary-300 mb-4">MODIFICATION DETAILS</h3>
 						<div class="space-y-3">
 							<div>
 								<p class="text-sm opacity-75">Name:</p>
@@ -205,21 +205,21 @@
 
 				<!-- Applicable Perks -->
 				{#if selectedArmor && getApplicablePerks().length > 0}
-					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-						<h3 class="text-lg font-bold text-fo4-green-light mb-4">APPLICABLE PERKS</h3>
+					<div class="border-2 border-primary-500 p-6 bg-surface">
+						<h3 class="text-lg font-bold text-primary-300 mb-4">APPLICABLE PERKS</h3>
 						<div class="space-y-3">
 							{#each getApplicablePerks() as perk}
-								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+								<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 									<div>
 										<p class="font-semibold text-sm">{perk.name}</p>
 										<p class="text-xs opacity-75">Rank {perk.rank}</p>
 									</div>
 									<div class="text-right">
 										{#if perk.resistanceBonus > 0}
-											<p class="text-sm font-bold text-fo4-green-light">+{perk.resistanceBonus} DR</p>
+											<p class="text-sm font-bold text-primary-300">+{perk.resistanceBonus} DR</p>
 										{/if}
 										{#if perk.energyResistanceBonus > 0}
-											<p class="text-sm font-bold text-fo4-green-light">+{perk.energyResistanceBonus} ER</p>
+											<p class="text-sm font-bold text-primary-300">+{perk.energyResistanceBonus} ER</p>
 										{/if}
 									</div>
 								</div>
@@ -230,19 +230,19 @@
 
 				<!-- Final Resistance with Perks -->
 				{#if selectedArmor}
-					<div class="border-2 border-fo4-green p-6 bg-fo4-black">
-						<h3 class="text-lg font-bold text-fo4-green-light mb-4">FINAL RESISTANCE CALCULATION</h3>
+					<div class="border-2 border-primary-500 p-6 bg-surface">
+						<h3 class="text-lg font-bold text-primary-300 mb-4">FINAL RESISTANCE CALCULATION</h3>
 						<div class="space-y-3">
-							<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+							<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 								<p class="text-sm">Base Damage Resistance:</p>
 								<p class="text-lg font-bold">{selectedArmor.baseResistance}</p>
 							</div>
-							<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+							<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 								<p class="text-sm">Base Energy Resistance:</p>
 								<p class="text-lg font-bold">{selectedArmor.baseEnergyResistance}</p>
 							</div>
 							{#if selectedMod && (selectedMod.resistanceBonus || selectedMod.energyResistanceBonus)}
-								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green">
+								<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 									<p class="text-sm">With Mod ({selectedMod.name}):</p>
 									<div class="text-right">
 										{#if selectedMod.resistanceBonus}
@@ -255,11 +255,11 @@
 								</div>
 							{/if}
 							{#if getApplicablePerks().length > 0}
-								<div class="flex justify-between items-center p-3 bg-fo4-dark border border-fo4-green-light">
+								<div class="flex justify-between items-center p-3 bg-background border border-primary-300">
 									<p class="text-sm font-semibold">With Perks:</p>
 									<div class="text-right">
-										<p class="text-sm font-bold text-fo4-green-light">DR: {calculateFinalStats().resistance}</p>
-										<p class="text-sm font-bold text-fo4-green-light">ER: {calculateFinalStats().energyResistance}</p>
+										<p class="text-sm font-bold text-primary-300">DR: {calculateFinalStats().resistance}</p>
+										<p class="text-sm font-bold text-primary-300">ER: {calculateFinalStats().energyResistance}</p>
 									</div>
 								</div>
 							{/if}
@@ -267,7 +267,7 @@
 					</div>
 				{/if}
 			{:else}
-				<div class="border-2 border-fo4-green p-6 bg-fo4-black text-center">
+				<div class="border-2 border-primary-500 p-6 bg-surface text-center">
 					<p class="text-sm opacity-50">Select an armor piece to view details and modifications.</p>
 				</div>
 			{/if}
