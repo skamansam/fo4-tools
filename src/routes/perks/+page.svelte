@@ -152,7 +152,7 @@
 													onhover={(e) => handlePerkHover(perk.id, e)}
 												/>
 												{#if perk.effects && perk.effects.length > 0}
-													<div class="text-xs text-neutral-600 dark:text-neutral-400 italic min-h-[2.5rem]">
+													<div class="text-xs text-muted italic min-h-[2.5rem]">
 														{getNextRankDescription(perk)}
 													</div>
 												{/if}

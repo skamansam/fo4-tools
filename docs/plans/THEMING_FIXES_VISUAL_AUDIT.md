@@ -85,16 +85,52 @@ After implementing fixes for each page, verify:
 
 ---
 
-## Pages Already Using Theme Colors Correctly
+## Uniformity Issues Found (Post-Initial Fixes)
 
-These pages require no changes:
+After implementing the initial fo4-* class replacements, visual inspection revealed additional uniformity issues:
 
-- [x] Main Page (/) - ✅ Correct
-- [x] Quests Page (/quests) - ✅ Correct
-- [x] Bobbleheads Page (/bobbleheads) - ✅ Correct
-- [x] Magazines Page (/magazines) - ✅ Correct
-- [x] Player Page (/player) - ✅ Correct
-- [x] Theme Page (/theme) - ✅ Correct
+### Main Page (/)
+- [ ] Tool cards lack `border-primary-500` styling used on other pages
+- [ ] Cards use hover effects instead of visible borders
+- [ ] Inconsistent with panel styling on hacking/armor/weapons/workshop pages
+
+### Quests Page (/quests)
+- [ ] Twintrinsic Table component uses default borders
+- [ ] Table borders don't match `border-primary-500` styling used elsewhere
+- [ ] Table background may not match `bg-surface` theme
+
+### Bobbleheads Page (/bobbleheads)
+- [ ] Twintrinsic Card components may not have `border-primary-500` borders
+- [ ] Need to verify card background matches `bg-surface`
+
+### Magazines Page (/magazines)
+- [ ] Twintrinsic Card components may not have `border-primary-500` borders
+- [ ] Need to verify card background matches `bg-surface`
+
+### Player Page (/player)
+- [ ] Various Twintrinsic components may not have `border-primary-500` borders
+- [ ] Need to verify backgrounds match `bg-surface`
+
+### Perks Page (/perks)
+- [ ] Twintrinsic Table component borders don't match `border-primary-500` styling
+- [ ] Table cells use `bg-surface` but borders may be inconsistent
+
+### Theme Page (/theme)
+- [ ] Theme selector cards may not match panel styling
+- [ ] Need to verify borders match `border-primary-500` theme
+
+---
+
+## Pages Already Using Theme Colors Correctly (Initial Assessment)
+
+These pages were marked as correct in initial audit but may need updates based on uniformity review:
+
+- [ ] Main Page (/) - Needs border styling updates
+- [ ] Quests Page (/quests) - Needs table border updates
+- [ ] Bobbleheads Page (/bobbleheads) - Needs card border verification
+- [ ] Magazines Page (/magazines) - Needs card border verification
+- [ ] Player Page (/player) - Needs component border verification
+- [ ] Theme Page (/theme) - Needs card border verification
 
 ---
 

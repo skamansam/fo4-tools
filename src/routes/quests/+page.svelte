@@ -53,23 +53,23 @@
 
 <div class="max-w-6xl mx-auto space-y-6">
 	<!-- Header -->
-	<div class="border-2 border-theme-border p-6 bg-surface">
-		<h1 class="text-4xl font-bold text-theme-primary mb-4">QUEST CHECKLIST</h1>
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<h1 class="text-4xl font-bold text-primary-300 mb-4">QUEST CHECKLIST</h1>
 		<input
 			type="text"
 			placeholder="Search quests..."
 			bind:value={searchQuery}
-			class="w-full px-4 py-2 bg-background border-2 border-theme-border text-text placeholder-muted focus:outline-none focus:border-theme-primary transition-colors"
+			class="w-full px-4 py-2 bg-background border-2 border-primary-500 text-text placeholder-muted focus:outline-none focus:border-primary-500 transition-colors"
 		/>
 	</div>
 
 	<!-- Overall Progress Section -->
-	<div class="border-2 border-theme-border p-6 bg-surface">
-		<h2 class="text-xl font-bold text-theme-primary mb-4">OVERALL PROGRESS</h2>
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<h2 class="text-xl font-bold text-primary-300 mb-4">OVERALL PROGRESS</h2>
 		<div class="space-y-4">
 			<div class="flex justify-between items-center">
 				<span class="text-text">Progress</span>
-				<span class="text-lg font-bold text-theme-primary">{calculateOverallProgress()}%</span>
+				<span class="text-lg font-bold text-primary-300">{calculateOverallProgress()}%</span>
 			</div>
 			<Progress value={calculateOverallProgress()} class="h-3" />
 			<p class="text-sm text-muted">
@@ -82,11 +82,11 @@
 
 	<!-- Categories Grid -->
 	<div class="space-y-4">
-		<h2 class="text-2xl font-bold text-theme-primary">
+		<h2 class="text-2xl font-bold text-primary-300">
 			{searchQuery.trim() ? 'SEARCH RESULTS' : 'QUEST CATEGORIES'}
 		</h2>
 		{#if getFilteredCategories().length === 0}
-			<div class="border-2 border-theme-border p-6 bg-surface text-center">
+			<div class="border-2 border-primary-500 p-6 bg-surface text-center">
 				<p class="text-muted">No quests found matching "{searchQuery}"</p>
 			</div>
 		{:else}
@@ -96,21 +96,21 @@
 						href="/quests/{item.id}"
 						class="block group"
 					>
-						<div class="border-2 border-theme-border p-6 bg-surface hover:border-theme-primary transition-colors h-full">
+						<div class="border-2 border-primary-500 p-6 bg-surface hover:border-primary-500 hover:bg-primary-500 hover:text-background transition-colors h-full">
 							<div class="space-y-4">
 								<div>
-									<h3 class="text-xl font-bold text-theme-primary group-hover:text-theme-accent transition-colors">
+									<h3 class="text-xl font-bold text-primary-300 group-hover:text-background transition-colors">
 										{item.name}
 									</h3>
-									<p class="text-sm text-muted mt-1">{item.description}</p>
+									<p class="text-sm text-muted mt-1 group-hover:text-background">{item.description}</p>
 								</div>
 								<div class="space-y-2">
 									<div class="flex justify-between items-center">
-										<span class="text-sm text-text">Progress</span>
-										<span class="text-sm font-bold text-theme-primary">{calculateProgress(item.id)}%</span>
+										<span class="text-sm text-text group-hover:text-background">Progress</span>
+										<span class="text-sm font-bold text-primary-300 group-hover:text-background">{calculateProgress(item.id)}%</span>
 									</div>
 									<Progress value={calculateProgress(item.id)} class="h-2" />
-									<p class="text-xs text-muted">
+									<p class="text-xs text-muted group-hover:text-background">
 										{item.quests.filter((q) => q.completed).length} of {item.quests.length} quests
 									</p>
 								</div>
