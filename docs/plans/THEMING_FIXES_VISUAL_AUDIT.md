@@ -131,6 +131,9 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 - [x] Components now use `border-primary-500` borders
 - [x] Backgrounds match `bg-surface` and `bg-background`
 - [x] All theme-* classes replaced with Tailwind 4 theme classes
+- [x] Main container now uses `max-w-6xl mx-auto space-y-6` styling
+- [x] Header section now wrapped in bordered panel like quests page
+- [x] Pip-Boy container now has `border-2 border-primary-500` styling
 
 ### Perks Page (/perks) - FIXED ✓
 - [x] Neutral colors replaced with text-muted
