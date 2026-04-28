@@ -161,24 +161,24 @@ These pages were marked as correct in initial audit but may need updates based o
 ## Remaining Work
 
 ### Bobbleheads Page
-- Restructure main container to match quests page layout
-- Add bordered panels to header and progress sections
-- Remove `rounded-lg` classes
-- Update card padding to `p-6`
-- Add borders to category headers
+- [ ] Restructure main container to match quests page layout
+- [ ] Add bordered panels to header and progress sections
+- [ ] Remove `rounded-lg` classes
+- [ ] Update card padding to `p-6`
+- [ ] Add borders to category headers
 
 ### Magazines Page
-- Restructure main container to match quests page layout
-- Add bordered panels to header and progress sections
-- Change info box from `border-l-4` to `border-2 border-primary-500`
-- Remove `rounded-lg` classes
-- Update card padding to `p-6`
-- Add border to DLC magazines section
+- [ ] Restructure main container to match quests page layout
+- [ ] Add bordered panels to header and progress sections
+- [ ] Change info box from `border-l-4` to `border-2 border-primary-500`
+- [ ] Remove `rounded-lg` classes
+- [ ] Update card padding to `p-6`
+- [ ] Add border to DLC magazines section
 
 ### Perks Page
-- Add bordered panel to header section
-- Add overall progress section with Progress component
-- Consider restructuring from table-based to card-based layout for consistency
+- [ ] Add bordered panel to header section
+- [ ] Add overall progress section with Progress component
+- [ ] Consider restructuring from table-based to card-based layout for consistency
 
 ---
 
