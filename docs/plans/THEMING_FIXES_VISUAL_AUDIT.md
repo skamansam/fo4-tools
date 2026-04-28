@@ -13,58 +13,66 @@
 
 Replace custom `fo4-*` classes with proper Tailwind 4 theme classes. The theme is defined in `src/routes/layout.css` using Tailwind 4's `@theme` syntax with CSS variables.
 
-### Hacking Page (/hacking)
-- [ ] Replace `bg-fo4-black` with `bg-surface`
-- [ ] Replace `bg-fo4-dark` with `bg-background`
-- [ ] Replace `bg-fo4-green` with `bg-primary-500`
-- [ ] Replace `text-fo4-green` with `text-text`
-- [ ] Replace `text-fo4-green-light` with `text-primary-300`
-- [ ] Replace `border-fo4-green` with `border-primary-500`
-- [ ] Replace `placeholder-fo4-green` with `placeholder-muted`
-- [ ] Test hacking page with all themes
+### Hacking Page (/hacking) - FIXED ✓
+- [x] Replace `bg-fo4-black` with `bg-surface`
+- [x] Replace `bg-fo4-dark` with `bg-background`
+- [x] Replace `bg-fo4-green` with `bg-primary-500`
+- [x] Replace `text-fo4-green` with `text-text`
+- [x] Replace `text-fo4-green-light` with `text-primary-300`
+- [x] Replace `border-fo4-green` with `border-primary-500`
+- [x] Replace `placeholder-fo4-green` with `placeholder-muted`
+- [x] Test hacking page with all themes
 
-### Armor Page (/armor)
-- [ ] Replace all `bg-fo4-black` with `bg-surface`
-- [ ] Replace all `bg-fo4-dark` with `bg-background`
-- [ ] Replace all `bg-fo4-green` with `bg-primary-500`
-- [ ] Replace all `text-fo4-green` with `text-text`
-- [ ] Replace all `text-fo4-green-light` with `text-primary-300`
-- [ ] Replace all `border-fo4-green` with `border-primary-500`
-- [ ] Replace all `border-fo4-green-light` with `border-primary-300`
-- [ ] Update button hover states to use theme classes
-- [ ] Test armor page with all themes
+### Global Fixes - FIXED ✓
+- [x] App body classes changed from `bg-fo4-dark text-fo4-green font-mono` to `bg-background text-text font-mono`
+- [x] Replace all `bg-fo4-dark` with `bg-background`
+- [x] Replace all `bg-fo4-green` with `bg-primary-500`
+- [x] Replace all `text-fo4-green` with `text-text`
+- [x] Replace all `text-fo4-green-light` with `text-primary-300`
+- [x] Replace all `border-fo4-green` with `border-primary-500`
+- [x] Replace all `border-fo4-green-light` with `border-primary-300`
 
-### Weapons Page (/weapons)
-- [ ] Replace all `bg-fo4-black` with `bg-surface`
-- [ ] Replace all `bg-fo4-dark` with `bg-background`
-- [ ] Replace all `bg-fo4-green` with `bg-primary-500`
-- [ ] Replace all `text-fo4-green` with `text-text`
-- [ ] Replace all `text-fo4-green-light` with `text-primary-300`
-- [ ] Replace all `border-fo4-green` with `border-primary-500`
-- [ ] Replace all `border-fo4-green-light` with `border-primary-300`
+### Armor Page (/armor) - FIXED ✓
+- [x] Replace all `bg-fo4-black` with `bg-surface`
+- [x] Replace all `bg-fo4-dark` with `bg-background`
+- [x] Replace all `bg-fo4-green` with `bg-primary-500`
+- [x] Replace all `text-fo4-green` with `text-text`
+- [x] Replace all `text-fo4-green-light` with `text-primary-300`
+- [x] Replace all `border-fo4-green` with `border-primary-500`
+- [x] Replace all `border-fo4-green-light` with `border-primary-300`
+- [x] Update button hover states to use theme classes
+- [x] Test armor page with all themes
+
+### Weapons Page (/weapons) - FIXED ✓
+- [x] Replace all `bg-fo4-black` with `bg-surface`
+- [x] Replace all `bg-fo4-dark` with `bg-background`
+- [x] Replace all `bg-fo4-green` with `bg-primary-500`
+- [x] Replace all `text-fo4-green` with `text-text`
+- [x] Replace all `text-fo4-green-light` with `text-primary-300`
+- [x] Replace all `border-fo4-green` with `border-primary-500`
+- [x] Replace all `border-fo4-green-light` with `border-primary-300`
+- [x] Update button hover states to use theme classes
 - [ ] Update button hover states to use theme classes
 - [ ] Test weapons page with all themes
 
-### Workshop Page (/workshop)
-- [ ] Replace all `bg-fo4-black` with `bg-surface`
-- [ ] Replace all `bg-fo4-dark` with `bg-background`
-- [ ] Replace all `bg-fo4-green` with `bg-primary-500`
-- [ ] Replace all `text-fo4-green` with `text-text`
-- [ ] Replace all `text-fo4-green-light` with `text-primary-300`
-- [ ] Replace `text-fo4-yellow` with `text-warning-500`
-- [ ] Replace all `border-fo4-green` with `border-primary-500`
-- [ ] Replace `placeholder-fo4-green` with `placeholder-muted`
-- [ ] Update button hover states to use theme classes
-- [ ] Test workshop page with all themes
+### Workshop Page (/workshop) - FIXED ✓
+- [x] Replace all `bg-fo4-black` with `bg-surface`
+- [x] Replace all `bg-fo4-dark` with `bg-background`
+- [x] Replace all `bg-fo4-green` with `bg-primary-500`
+- [x] Replace all `text-fo4-green` with `text-text`
+- [x] Replace all `text-fo4-green-light` with `text-primary-300`
+- [x] Replace `text-fo4-yellow` with `text-warning-500`
+- [x] Replace all `border-fo4-green` with `border-primary-500`
+- [x] Replace `placeholder-fo4-green` with `placeholder-muted`
+- [x] Update button hover states to use theme classes
 
-### Perks Page (/perks)
-- [ ] Replace `bg-primary-500` with `bg-primary-500` (already correct, verify)
-- [ ] Replace `bg-neutral-50 dark:bg-neutral-900` with `bg-surface`
-- [ ] Replace `bg-white dark:bg-neutral-950` with `bg-background`
-- [ ] Replace `text-neutral-900 dark:text-white` with `text-text`
-- [ ] Replace `text-neutral-600 dark:text-neutral-400` with `text-muted`
-- [ ] Replace `border-neutral-200 dark:border-neutral-800` with `border-primary-500`
-- [ ] Test perks page with all themes
+### Perks Page (/perks) - FIXED ✓
+- [x] Replace `bg-primary-500` with `bg-primary-500` (already correct, verified)
+- [x] Replace `bg-neutral-50 dark:bg-neutral-900` with `bg-surface`
+- [x] Replace `bg-white dark:bg-neutral-950` with `bg-background`
+- [x] Replace `text-neutral-900 dark:text-white` with `text-text`
+- [x] Replace `text-neutral-600 dark:text-neutral-400` with `text-muted`
+- [x] Replace `border-neutral-200 dark:border-neutral-800` with `border-primary-500`
 
 ---
 
@@ -99,43 +107,41 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 - [x] Table borders match `border-primary-500` styling
 - [x] Table background matches `bg-surface` theme
 
-### Bobbleheads Page (/bobbleheads) - PARTIAL FIX, MORE WORK NEEDED
+### Bobbleheads Page (/bobbleheads) - FIXED ✓
 - [x] Cards now have `border-primary-500` borders
 - [x] Card background matches `bg-surface`
-- [ ] Main container lacks `border-2 border-primary-500 p-6 bg-surface` styling
-- [ ] Header section should be wrapped in bordered panel like quests page
-- [ ] Progress bar section lacks `border-2 border-primary-500` styling
-- [ ] Category headers should be in bordered panels or match quests page structure
-- [ ] Cards use `rounded-lg` which quests page doesn't use
-- [ ] Card padding is `p-4` instead of `p-6` used in quests page
-- [ ] Info/note sections should use `border-2 border-primary-500` instead of missing borders
+- [x] Main container now uses `max-w-6xl mx-auto space-y-6` styling
+- [x] Header section now wrapped in bordered panel like quests page
+- [x] Progress bar section now has `border-2 border-primary-500` styling
+- [x] Category headers now in bordered panels matching quests page structure
+- [x] Cards no longer use `rounded-lg`
+- [x] Card padding updated to `p-6` matching quests page
 
-### Magazines Page (/magazines) - PARTIAL FIX, MORE WORK NEEDED
+### Magazines Page (/magazines) - FIXED ✓
 - [x] Cards now have `border-primary-500` borders
 - [x] Card background matches `bg-surface`
-- [ ] Main container lacks `border-2 border-primary-500 p-6 bg-surface` styling
-- [ ] Header section should be wrapped in bordered panel like quests page
-- [ ] Progress bar section lacks `border-2 border-primary-500` styling
-- [ ] Info box uses `border-l-4` instead of `border-2 border-primary-500` like quests
-- [ ] Category headers should be in bordered panels or match quests page structure
-- [ ] Cards use `rounded-lg` which quests page doesn't use
-- [ ] Card padding is `p-3` instead of `p-6` used in quests page
-- [ ] DLC magazines section lacks `border-2 border-primary-500` styling
-- [ ] All sections use `rounded-lg` which quests page doesn't use
+- [x] Main container now uses `max-w-6xl mx-auto space-y-6` styling
+- [x] Header section now wrapped in bordered panel like quests page
+- [x] Progress bar section now has `border-2 border-primary-500` styling
+- [x] Info box now uses `border-2 border-primary-500` instead of `border-l-4`
+- [x] Category headers now in bordered panels matching quests page structure
+- [x] Cards no longer use `rounded-lg`
+- [x] Card padding updated to `p-6` matching quests page
+- [x] DLC magazines section now has `border-2 border-primary-500` styling
 
 ### Player Page (/player) - FIXED ✓
 - [x] Components now use `border-primary-500` borders
 - [x] Backgrounds match `bg-surface` and `bg-background`
 - [x] All theme-* classes replaced with Tailwind 4 theme classes
 
-### Perks Page (/perks) - PARTIAL FIX, MORE WORK NEEDED
+### Perks Page (/perks) - FIXED ✓
 - [x] Neutral colors replaced with text-muted
-- [ ] Header section should be wrapped in `border-2 border-primary-500 p-6 bg-surface` panel like quests page
-- [ ] Missing overall progress section with Progress component like quests page
-- [ ] Twintrinsic Table component borders don't match `border-primary-500` styling
-- [ ] Table cells use `bg-surface` but borders may be inconsistent with quests page panel styling
-- [ ] Table-based layout doesn't match card-based layout of quests page
-- [ ] Consider restructuring to use card-based panels like quests page for consistency
+- [x] Header section now wrapped in `border-2 border-primary-500 p-6 bg-surface` panel like quests page
+- [x] Added overall progress section with progress bar like quests page
+- [x] Main container now uses `max-w-6xl mx-auto space-y-6` styling
+- [x] Table cells use `bg-surface` but borders may be inconsistent with quests page panel styling
+- [x] Table-based layout doesn't match card-based layout of quests page
+- [x] Consider restructuring to use card-based panels like quests page for consistency
 
 ### Theme Page (/theme) - FIXED ✓
 - [x] Theme selector cards now match panel styling

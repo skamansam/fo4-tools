@@ -47,71 +47,75 @@
   }
 </script>
 
-<div class="min-h-screen bg-background p-8">
-  <div class="max-w-6xl mx-auto">
-    <h1 class="text-4xl font-bold text-primary-300 mb-2">Magazines Checklist</h1>
-    <p class="text-text mb-8">Track magazines found throughout the Commonwealth</p>
+<div class="max-w-6xl mx-auto space-y-6">
+	<!-- Header -->
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<h1 class="text-4xl font-bold text-primary-300 mb-2">Magazines Checklist</h1>
+		<p class="text-text">Track magazines found throughout the Commonwealth</p>
+	</div>
 
-    <!-- Progress Bar -->
-    <div class="bg-surface rounded-lg p-6 mb-8">
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-text">Progress</span>
-        <span class="text-primary-300 font-bold">{getProgress()} ({getProgressPercentage()}%)</span>
-      </div>
-      <div class="w-full bg-border rounded-full h-3">
-        <div
-          class="bg-primary-500 h-3 rounded-full transition-all duration-300"
-          style="width: {getProgressPercentage()}%"
-        />
-      </div>
-    </div>
+	<!-- Overall Progress -->
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<h2 class="text-xl font-bold text-primary-300 mb-4">OVERALL PROGRESS</h2>
+		<div class="space-y-4">
+			<div class="flex justify-between items-center">
+				<span class="text-text">Progress</span>
+				<span class="text-lg font-bold text-primary-300">{getProgress()} ({getProgressPercentage()}%)</span>
+			</div>
+			<div class="w-full bg-border rounded-full h-3">
+				<div
+					class="bg-primary-500 h-3 rounded-full transition-all duration-300"
+					style="width: {getProgressPercentage()}%"
+				></div>
+			</div>
+		</div>
+	</div>
 
-    <!-- Info Box -->
-    <div class="bg-surface border-l-4 border-primary-500 rounded-lg p-4 mb-8">
-      <p class="text-text">
-        <strong>Note:</strong> This checklist covers base game magazines (113 total issues). Additional magazines are available in DLC content (Far Harbor, Nuka World, Automatron).
-      </p>
-    </div>
+	<!-- Info Box -->
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<p class="text-text">
+			<strong>Note:</strong> This checklist covers base game magazines (113 total issues). Additional magazines are available in DLC content (Far Harbor, Nuka World, Automatron).
+		</p>
+	</div>
 
-    <!-- Magazines by Title -->
-    {#each getMagazineGroups() as [magazineTitle, issues]}
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold text-primary-300 mb-4">{magazineTitle}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {#each issues as issue (issue.id)}
-            <div class="bg-surface border-2 border-primary-500 rounded-lg p-3 hover:bg-primary-500 hover:text-background transition-colors">
-              <label class="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={$checkedMagazines.has(issue.id)}
-                  on:change={() => toggleMagazine(issue.id)}
-                  class="mt-1 w-4 h-4 rounded accent-primary-500"
-                />
-                <div class="flex-1">
-                  <div class="font-semibold text-text">Issue {issue.issue}</div>
-                  <div class="text-xs text-primary-300 mt-1">{issue.category}</div>
-                  <div class="text-xs text-muted mt-2">{issue.effect}</div>
-                </div>
-              </label>
-            </div>
-          {/each}
-        </div>
-      </div>
-    {/each}
+	<!-- Magazines by Title -->
+	{#each getMagazineGroups() as [magazineTitle, issues]}
+		<div class="border-2 border-primary-500 p-6 bg-surface">
+			<h2 class="text-2xl font-bold text-primary-300 mb-4">{magazineTitle}</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+				{#each issues as issue (issue.id)}
+					<div class="bg-surface border-2 border-primary-500 p-6 hover:bg-primary-500 hover:text-background transition-colors">
+						<label class="flex items-start gap-3 cursor-pointer">
+							<input
+								type="checkbox"
+								checked={$checkedMagazines.has(issue.id)}
+								on:change={() => toggleMagazine(issue.id)}
+								class="mt-1 w-4 h-4 rounded accent-primary-500"
+							/>
+							<div class="flex-1">
+								<div class="font-semibold text-text">Issue {issue.issue}</div>
+								<div class="text-xs text-primary-300 mt-1">{issue.category}</div>
+								<div class="text-xs text-muted mt-2">{issue.effect}</div>
+							</div>
+						</label>
+					</div>
+				{/each}
+			</div>
+		</div>
+	{/each}
 
-    <!-- DLC Magazines Info -->
-    <div class="mt-12 bg-surface rounded-lg p-6">
-      <h2 class="text-xl font-bold text-primary-300 mb-4">DLC Magazines</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-text">
-        <div>
-          <h3 class="font-bold text-primary-300 mb-2">Far Harbor</h3>
-          <p class="text-sm">Islander's Almanac (5 issues) - Each provides unique bonuses</p>
-        </div>
-        <div>
-          <h3 class="font-bold text-primary-300 mb-2">Nuka World</h3>
-          <p class="text-sm">Scav Magazine (5 issues) - Provides various bonuses</p>
-        </div>
-      </div>
-    </div>
-  </div>
+	<!-- DLC Magazines Info -->
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<h2 class="text-xl font-bold text-primary-300 mb-4">DLC Magazines</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-text">
+			<div>
+				<h3 class="font-bold text-primary-300 mb-2">Far Harbor</h3>
+				<p class="text-sm">Islander's Almanac (5 issues) - Each provides unique bonuses</p>
+			</div>
+			<div>
+				<h3 class="font-bold text-primary-300 mb-2">Nuka World</h3>
+				<p class="text-sm">Scav Magazine (5 issues) - Provides various bonuses</p>
+			</div>
+		</div>
+	</div>
 </div>

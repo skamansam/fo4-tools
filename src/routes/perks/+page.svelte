@@ -96,13 +96,34 @@
 	}
 </script>
 
-<div class="max-w-7xl mx-auto">
-	<div class="mb-8">
-		<h2 class="text-3xl font-bold text-primary-500 mb-2">PERKS</h2>
-		<p class="text-sm text-muted mb-4">Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks</p>
+<div class="max-w-6xl mx-auto space-y-6">
+	<!-- Header -->
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<h2 class="text-3xl font-bold text-primary-300 mb-2">PERKS</h2>
+		<p class="text-sm text-muted">Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks</p>
 	</div>
 
-		<!-- VAULT-TEC Style Grid with Table Styling -->
+	<!-- SPECIAL Progress -->
+	<div class="border-2 border-primary-500 p-6 bg-surface">
+		<h3 class="text-xl font-bold text-primary-300 mb-4">SPECIAL PROGRESS</h3>
+		<div class="space-y-4">
+			<div class="flex justify-between items-center">
+				<span class="text-text">Points Used</span>
+				<span class="text-lg font-bold text-primary-300">{usedSpecialPoints} / {totalSpecialPoints}</span>
+			</div>
+			<div class="w-full bg-border rounded-full h-3">
+				<div
+					class="bg-primary-500 h-3 rounded-full transition-all duration-300"
+					style="width: {(usedSpecialPoints / totalSpecialPoints) * 100}%"
+				></div>
+			</div>
+			<p class="text-sm text-muted">
+				Remaining: {remainingSpecialPoints} points
+			</p>
+		</div>
+	</div>
+
+	<!-- VAULT-TEC Style Grid with Table Styling -->
 	<div class="overflow-x-auto">
 		<Table bordered striped>
 			<TableHead>
@@ -165,5 +186,5 @@
 				{/each}
 			</TableBody>
 		</Table>
-		</div>
 	</div>
+</div>
