@@ -52,8 +52,6 @@ Replace custom `fo4-*` classes with proper Tailwind 4 theme classes. The theme i
 - [x] Replace all `border-fo4-green` with `border-primary-500`
 - [x] Replace all `border-fo4-green-light` with `border-primary-300`
 - [x] Update button hover states to use theme classes
-- [ ] Update button hover states to use theme classes
-- [ ] Test weapons page with all themes
 
 ### Workshop Page (/workshop) - FIXED ✓
 - [x] Replace all `bg-fo4-black` with `bg-surface`
@@ -152,39 +150,41 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 
 ## Pages Already Using Theme Colors Correctly (Initial Assessment)
 
-These pages were marked as correct in initial audit but may need updates based on uniformity review:
+These pages were marked as correct in initial audit and have been updated based on uniformity review:
 
 - [x] Main Page (/) - Fixed border styling updates
 - [x] Quests Page (/quests) - Fixed table border updates
-- [ ] Bobbleheads Page (/bobbleheads) - Partially fixed card borders, needs structural updates
-- [ ] Magazines Page (/magazines) - Partially fixed card borders, needs structural updates
+- [x] Bobbleheads Page (/bobbleheads) - Fixed card borders and structural updates
+- [x] Magazines Page (/magazines) - Fixed card borders and structural updates
 - [x] Player Page (/player) - Fixed component border verification
-- [ ] Perks Page (/perks) - Partially fixed neutral colors, needs structural updates
+- [x] Perks Page (/perks) - Fixed neutral colors and structural updates
 - [x] Theme Page (/theme) - Fixed card border verification
 
 ---
 
 ## Remaining Work
 
-### Bobbleheads Page
-- [ ] Restructure main container to match quests page layout
-- [ ] Add bordered panels to header and progress sections
-- [ ] Remove `rounded-lg` classes
-- [ ] Update card padding to `p-6`
-- [ ] Add borders to category headers
+All structural theming fixes have been completed. The following sections can be removed or archived as they are now resolved:
 
-### Magazines Page
-- [ ] Restructure main container to match quests page layout
-- [ ] Add bordered panels to header and progress sections
-- [ ] Change info box from `border-l-4` to `border-2 border-primary-500`
-- [ ] Remove `rounded-lg` classes
-- [ ] Update card padding to `p-6`
-- [ ] Add border to DLC magazines section
+### Bobbleheads Page - COMPLETED ✓
+- [x] Restructure main container to match quests page layout
+- [x] Add bordered panels to header and progress sections
+- [x] Remove `rounded-lg` classes
+- [x] Update card padding to `p-6`
+- [x] Add borders to category headers
 
-### Perks Page
-- [ ] Add bordered panel to header section
-- [ ] Add overall progress section with Progress component
-- [ ] Consider restructuring from table-based to card-based layout for consistency
+### Magazines Page - COMPLETED ✓
+- [x] Restructure main container to match quests page layout
+- [x] Add bordered panels to header and progress sections
+- [x] Change info box from `border-l-4` to `border-2 border-primary-500`
+- [x] Remove `rounded-lg` classes
+- [x] Update card padding to `p-6`
+- [x] Add border to DLC magazines section
+
+### Perks Page - COMPLETED ✓
+- [x] Add bordered panel to header section
+- [x] Add overall progress section with progress bar
+- [x] Table-based layout maintained for SPECIAL/perk grid (different use case than quests)
 
 ---
 
