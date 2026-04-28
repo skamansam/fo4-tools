@@ -89,17 +89,19 @@ After implementing fixes for each page, verify:
 
 After implementing the initial fo4-* class replacements, visual inspection revealed additional uniformity issues:
 
-### Main Page (/)
-- [ ] Tool cards lack `border-primary-500` styling used on other pages
-- [ ] Cards use hover effects instead of visible borders
-- [ ] Inconsistent with panel styling on hacking/armor/weapons/workshop pages
+### Main Page (/) - FIXED ✓
+- [x] Tool cards now use `border-primary-500` styling
+- [x] Cards use visible borders with hover effects
+- [x] Consistent with panel styling on other pages
 
-### Quests Page (/quests)
-- [ ] Twintrinsic Table component uses default borders
-- [ ] Table borders don't match `border-primary-500` styling used elsewhere
-- [ ] Table background may not match `bg-surface` theme
+### Quests Page (/quests) - FIXED ✓
+- [x] All panels now use `border-primary-500` styling
+- [x] Table borders match `border-primary-500` styling
+- [x] Table background matches `bg-surface` theme
 
-### Bobbleheads Page (/bobbleheads)
+### Bobbleheads Page (/bobbleheads) - PARTIAL FIX, MORE WORK NEEDED
+- [x] Cards now have `border-primary-500` borders
+- [x] Card background matches `bg-surface`
 - [ ] Main container lacks `border-2 border-primary-500 p-6 bg-surface` styling
 - [ ] Header section should be wrapped in bordered panel like quests page
 - [ ] Progress bar section lacks `border-2 border-primary-500` styling
@@ -108,7 +110,9 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 - [ ] Card padding is `p-4` instead of `p-6` used in quests page
 - [ ] Info/note sections should use `border-2 border-primary-500` instead of missing borders
 
-### Magazines Page (/magazines)
+### Magazines Page (/magazines) - PARTIAL FIX, MORE WORK NEEDED
+- [x] Cards now have `border-primary-500` borders
+- [x] Card background matches `bg-surface`
 - [ ] Main container lacks `border-2 border-primary-500 p-6 bg-surface` styling
 - [ ] Header section should be wrapped in bordered panel like quests page
 - [ ] Progress bar section lacks `border-2 border-primary-500` styling
@@ -119,11 +123,13 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 - [ ] DLC magazines section lacks `border-2 border-primary-500` styling
 - [ ] All sections use `rounded-lg` which quests page doesn't use
 
-### Player Page (/player)
-- [ ] Various Twintrinsic components may not have `border-primary-500` borders
-- [ ] Need to verify backgrounds match `bg-surface`
+### Player Page (/player) - FIXED ✓
+- [x] Components now use `border-primary-500` borders
+- [x] Backgrounds match `bg-surface` and `bg-background`
+- [x] All theme-* classes replaced with Tailwind 4 theme classes
 
-### Perks Page (/perks)
+### Perks Page (/perks) - PARTIAL FIX, MORE WORK NEEDED
+- [x] Neutral colors replaced with text-muted
 - [ ] Header section should be wrapped in `border-2 border-primary-500 p-6 bg-surface` panel like quests page
 - [ ] Missing overall progress section with Progress component like quests page
 - [ ] Twintrinsic Table component borders don't match `border-primary-500` styling
@@ -131,9 +137,10 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 - [ ] Table-based layout doesn't match card-based layout of quests page
 - [ ] Consider restructuring to use card-based panels like quests page for consistency
 
-### Theme Page (/theme)
-- [ ] Theme selector cards may not match panel styling
-- [ ] Need to verify borders match `border-primary-500` theme
+### Theme Page (/theme) - FIXED ✓
+- [x] Theme selector cards now match panel styling
+- [x] Borders match `border-primary-500` theme
+- [x] All theme-* classes replaced with Tailwind 4 theme classes for page structure
 
 ---
 
@@ -141,12 +148,37 @@ After implementing the initial fo4-* class replacements, visual inspection revea
 
 These pages were marked as correct in initial audit but may need updates based on uniformity review:
 
-- [ ] Main Page (/) - Needs border styling updates
-- [ ] Quests Page (/quests) - Needs table border updates
-- [ ] Bobbleheads Page (/bobbleheads) - Needs card border verification
-- [ ] Magazines Page (/magazines) - Needs card border verification
-- [ ] Player Page (/player) - Needs component border verification
-- [ ] Theme Page (/theme) - Needs card border verification
+- [x] Main Page (/) - Fixed border styling updates
+- [x] Quests Page (/quests) - Fixed table border updates
+- [ ] Bobbleheads Page (/bobbleheads) - Partially fixed card borders, needs structural updates
+- [ ] Magazines Page (/magazines) - Partially fixed card borders, needs structural updates
+- [x] Player Page (/player) - Fixed component border verification
+- [ ] Perks Page (/perks) - Partially fixed neutral colors, needs structural updates
+- [x] Theme Page (/theme) - Fixed card border verification
+
+---
+
+## Remaining Work
+
+### Bobbleheads Page
+- Restructure main container to match quests page layout
+- Add bordered panels to header and progress sections
+- Remove `rounded-lg` classes
+- Update card padding to `p-6`
+- Add borders to category headers
+
+### Magazines Page
+- Restructure main container to match quests page layout
+- Add bordered panels to header and progress sections
+- Change info box from `border-l-4` to `border-2 border-primary-500`
+- Remove `rounded-lg` classes
+- Update card padding to `p-6`
+- Add border to DLC magazines section
+
+### Perks Page
+- Add bordered panel to header section
+- Add overall progress section with Progress component
+- Consider restructuring from table-based to card-based layout for consistency
 
 ---
 
