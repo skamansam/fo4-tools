@@ -1,5 +1,6 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
+  import questsprite from '$lib/assets/FO76_questsprite_default02.png';
 
   interface Bonus {
     label: string;
@@ -117,7 +118,7 @@
 			<div class="flex items-center justify-center lg:col-span-1">
 				<div class="w-48 h-64 flex items-center justify-center border-2 bg-background border-primary-500">
 					<div class="text-center">
-						<div class="text-6xl mb-4">🤖</div>
+						<img src={questsprite} alt="Quest Sprite" class="w-32 h-32 object-contain mx-auto mb-4" />
 						<div class="font-bold text-sm tracking-wider text-primary-300">VAULT-TEC</div>
 						<div class="font-bold text-sm tracking-wider text-primary-300">PIP-BOY 3000</div>
 						<div class="text-xs mt-4 font-mono text-background">STAT DISPLAY</div>

@@ -77,7 +77,7 @@
 			type="text"
 			placeholder="Search quests..."
 			bind:value={searchQuery}
-			class="w-full px-4 py-2 bg-background border-2 border-theme-border text-text placeholder-muted focus:outline-none focus:border-theme-primary transition-colors"
+			class="w-full px-4 py-2 bg-background border-2 border-primary-500 text-text transition-colors focus:bg-surface placeholder:text-primary-900 focus:ring-primary-900"
 		/>
 
 		<!-- Progress Section -->

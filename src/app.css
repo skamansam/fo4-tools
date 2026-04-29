@@ -23,6 +23,7 @@
   --color-surface: var(--theme-bg);
   --color-text: var(--theme-text);
   --color-border: var(--theme-border);
+  --color-muted: color-mix(in srgb, var(--theme-primary) 70%, transparent);
 }
 
 /* Style the App component and its sections */
