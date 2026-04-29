@@ -28,10 +28,12 @@
   });
 </script>
 
-<div class="min-h-screen p-8 bg-background text-text">
+<div class="min-h-screen p-8 text-text">
   <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold font-mono mb-2 text-primary-300">THEME SETTINGS</h1>
-    <div class="mb-8 border-b-2 border-primary-500"></div>
+    <!-- Header -->
+    <div class="border-2 border-primary-500 p-6 bg-surface mb-6">
+      <h1 class="text-4xl font-bold text-primary-300">THEME SETTINGS</h1>
+    </div>
 
     <!-- Predefined Colors -->
     <div class="mb-12">
@@ -175,7 +177,7 @@
       </div>
 
       <!-- Text Styles -->
-      <div class="mb-8 p-6 border-2 bg-theme-secondary border-theme-border">
+      <div class="mb-8 p-6 border-2 bg-surface border-primary-500">
         <h3 class="text-lg font-bold font-mono mb-4 text-primary-300">Text Styles</h3>
         <div class="space-y-3">
           <p class="text-primary-300 font-bold">Primary Text (Bold)</p>
@@ -231,7 +233,7 @@
         <div class="space-y-4">
           <div>
             <label class="block text-primary-300 font-mono text-sm font-bold mb-2">Text Input</label>
-            <input type="text" placeholder="Enter text..." class="w-full px-4 py-2 border-2 bg-background text-text border-primary-500 placeholder-muted focus:outline-none focus:border-primary-500" />
+            <input type="text" placeholder="Enter text..." class="w-full px-4 py-2 border-2 bg-background text-text border-primary-500 transition-colors focus:bg-surface placeholder:text-primary-900 focus:ring-primary-900" />
           </div>
           <div>
             <label class="block text-primary-300 font-mono text-sm font-bold mb-2">Color Input</label>
@@ -243,7 +245,7 @@
       <!-- Code Block -->
       <div class="mb-8">
         <h3 class="text-lg font-bold font-mono mb-4 text-primary-300">Code Block</h3>
-        <div class="p-4 border-2 bg-background border-primary-500 font-mono text-sm text-background">
+        <div class="p-4 border-2 border-primary-500 font-mono text-sm text-background">
           <div>const theme = &#123;</div>
           <div class="ml-4">primary: <span class="text-primary-300">#4ade80</span>,</div>
           <div class="ml-4">secondary: <span class="text-muted">#15803d</span>,</div>
