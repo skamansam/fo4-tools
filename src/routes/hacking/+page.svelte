@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Section } from 'twintrinsic';
+
 	interface WordEntry {
 		word: string;
 		likeness: number;
@@ -41,16 +43,11 @@
 </script>
 
 <div class="max-w-4xl mx-auto">
-	<div class="border-2 border-primary-500 p-6 bg-surface mb-6">
-		<h2 class="text-2xl font-bold text-primary-300 mb-2">HACKING TERMINAL</h2>
-		<p class="text-sm opacity-75">Enter candidate words and their likeness values to solve the puzzle.</p>
-	</div>
+	<Section title="HACKING TERMINAL" subtitle="Enter candidate words and their likeness values to solve the puzzle." class="border-2 border-primary-500 p-6 bg-surface mb-6" />
 
 	<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 		<!-- Input Panel -->
-		<div class="lg:col-span-2 border-2 border-primary-500 p-6 bg-surface">
-			<h3 class="text-lg font-bold text-primary-300 mb-4">WORD INPUT</h3>
-
+		<Section title="WORD INPUT" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 			<div class="space-y-4 mb-6">
 				<div>
 					<label for="word-input" class="block text-sm mb-2">Word:</label>
@@ -116,11 +113,10 @@
 					RESET
 				</button>
 			</div>
-		</div>
+		</Section>
 
 		<!-- Solution Panel -->
-		<div class="border-2 border-primary-500 p-6 bg-surface">
-			<h3 class="text-lg font-bold text-primary-300 mb-4">SOLUTION</h3>
+		<Section title="SOLUTION" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 			{#if solution}
 				<div class="bg-background border-2 border-primary-500 p-4 text-center">
 					<p class="text-sm opacity-75 mb-2">PASSWORD:</p>
@@ -129,6 +125,6 @@
 			{:else}
 				<p class="text-sm opacity-50">Enter words and click SOLVE to find the password.</p>
 			{/if}
-		</div>
+		</Section>
 	</div>
 </div>

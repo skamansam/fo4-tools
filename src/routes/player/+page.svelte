@@ -1,5 +1,6 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
+  import { Section } from 'twintrinsic';
   import questsprite from '$lib/assets/FO76_questsprite_default02.png';
 
   interface Bonus {
@@ -112,7 +113,7 @@
 	</div>
 
 	<!-- Pip-Boy Container -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
+  	<Section class="border-2 border-primary-500 p-6 bg-surface mb-0">
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 			<!-- Left: Pip-Boy Image -->
 			<div class="flex items-center justify-center lg:col-span-1">
@@ -165,7 +166,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</Section>
 </div>
 
 <style lang="postcss">

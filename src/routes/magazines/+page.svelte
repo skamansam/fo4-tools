@@ -1,5 +1,6 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
+  import { Section } from 'twintrinsic';
   import magazinesData from '$lib/data/magazines.json';
 
   interface MagazineIssue {
@@ -49,14 +50,10 @@
 
 <div class="max-w-6xl mx-auto space-y-6">
 	<!-- Header -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h1 class="text-4xl font-bold text-primary-300 mb-2">Magazines Checklist</h1>
-		<p class="text-text">Track magazines found throughout the Commonwealth</p>
-	</div>
+	<Section title="Magazines Checklist" subtitle="Track magazines found throughout the Commonwealth" class="border-2 border-primary-500 p-6 bg-surface mb-6" />
 
 	<!-- Overall Progress -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h2 class="text-xl font-bold text-primary-300 mb-4">OVERALL PROGRESS</h2>
+	<Section title="OVERALL PROGRESS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 		<div class="space-y-4">
 			<div class="flex justify-between items-center">
 				<span class="text-text">Progress</span>
@@ -69,19 +66,18 @@
 				></div>
 			</div>
 		</div>
-	</div>
+	</Section>
 
 	<!-- Info Box -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
+	<Section title="Note" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 		<p class="text-text">
-			<strong>Note:</strong> This checklist covers base game magazines (113 total issues). Additional magazines are available in DLC content (Far Harbor, Nuka World, Automatron).
+			This checklist covers base game magazines (113 total issues). Additional magazines are available in DLC content (Far Harbor, Nuka World, Automatron).
 		</p>
-	</div>
+	</Section>
 
 	<!-- Magazines by Title -->
 	{#each getMagazineGroups() as [magazineTitle, issues]}
-		<div class="border-2 border-primary-500 p-6 bg-surface">
-			<h2 class="text-2xl font-bold text-primary-300 mb-4">{magazineTitle}</h2>
+		<Section title={magazineTitle} class="border-2 border-primary-500 p-6 bg-surface mb-6">
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 				{#each issues as issue (issue.id)}
 					<div class="bg-surface border-2 border-primary-500 p-6 hover:bg-primary-500 hover:text-background transition-colors">
@@ -101,12 +97,11 @@
 					</div>
 				{/each}
 			</div>
-		</div>
+		</Section>
 	{/each}
 
 	<!-- DLC Magazines Info -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h2 class="text-xl font-bold text-primary-300 mb-4">DLC Magazines</h2>
+	<Section title="DLC Magazines" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-text">
 			<div>
 				<h3 class="font-bold text-primary-300 mb-2">Far Harbor</h3>
@@ -117,5 +112,5 @@
 				<p class="text-sm">Scav Magazine (5 issues) - Provides various bonuses</p>
 			</div>
 		</div>
-	</div>
+	</Section>
 </div>

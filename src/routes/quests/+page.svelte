@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Container, Progress } from 'twintrinsic';
+	import { Container, Progress, Section } from 'twintrinsic';
 	import questsData from '$lib/data/quests.json';
 
 	interface Category {
@@ -53,19 +53,17 @@
 
 <div class="max-w-6xl mx-auto space-y-6">
 	<!-- Header -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h1 class="text-4xl font-bold text-primary-300 mb-4">QUEST CHECKLIST</h1>
+	<Section title="QUEST CHECKLIST" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 		<input
 			type="text"
 			placeholder="Search quests..."
 			bind:value={searchQuery}
 			class="w-full px-4 py-2 bg-background border-2 border-primary-500 text-text transition-colors focus:bg-surface placeholder:text-primary-900 focus:ring-primary-900"
 		/>
-	</div>
+	</Section>
 
 	<!-- Overall Progress Section -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h2 class="text-xl font-bold text-primary-300 mb-4">OVERALL PROGRESS</h2>
+	<Section title="OVERALL PROGRESS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 		<div class="space-y-4">
 			<div class="flex justify-between items-center">
 				<span class="text-text">Progress</span>
@@ -78,7 +76,7 @@
 					.filter((q) => q.completed).length} of {Object.values(questsState).flat().length} quests completed
 			</p>
 		</div>
-	</div>
+	</Section>
 
 	<!-- Categories Grid -->
 	<div class="space-y-4">

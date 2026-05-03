@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Rating, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from 'twintrinsic';
+	import { Card, Rating, Section, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from 'twintrinsic';
 	import perksData from '$lib/data/perks.json';
 	import { perkStore } from '$lib/stores/perkStore';
 
@@ -98,14 +98,10 @@
 
 <div class="max-w-6xl mx-auto space-y-6">
 	<!-- Header -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h2 class="text-3xl font-bold text-primary-300 mb-2">PERKS</h2>
-		<p class="text-sm text-muted">Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks</p>
-	</div>
+	<Section title="PERKS" subtitle="Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks" class="border-2 border-primary-500 p-6 bg-surface mb-6" />
 
 	<!-- SPECIAL Progress -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h3 class="text-xl font-bold text-primary-300 mb-4">SPECIAL PROGRESS</h3>
+	<Section title="SPECIAL PROGRESS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 		<div class="space-y-4">
 			<div class="flex justify-between items-center">
 				<span class="text-text">Points Used</span>
@@ -121,7 +117,7 @@
 				Remaining: {remainingSpecialPoints} points
 			</p>
 		</div>
-	</div>
+	</Section>
 
 	<!-- VAULT-TEC Style Grid with Table Styling -->
 	<div class="overflow-x-auto">

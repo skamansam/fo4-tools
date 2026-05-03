@@ -1,5 +1,6 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
+  import { Section } from 'twintrinsic';
   import bobbleheadsData from '$lib/data/bobbleheads.json';
 
   interface Bobblehead {
@@ -39,14 +40,10 @@
 
 <div class="max-w-6xl mx-auto space-y-6">
 	<!-- Header -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h1 class="text-4xl font-bold text-primary-300 mb-2">Bobbleheads Checklist</h1>
-		<p class="text-text">Track all 20 bobbleheads in Fallout 4</p>
-	</div>
+	<Section title="Bobbleheads Checklist" subtitle="Track all 20 bobbleheads in Fallout 4" class="border-2 border-primary-500 p-6 bg-surface mb-6" />
 
 	<!-- Overall Progress -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h2 class="text-xl font-bold text-primary-300 mb-4">OVERALL PROGRESS</h2>
+	<Section title="OVERALL PROGRESS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 		<div class="space-y-4">
 			<div class="flex justify-between items-center">
 				<span class="text-text">Progress</span>
@@ -59,11 +56,10 @@
 				></div>
 			</div>
 		</div>
-	</div>
+	</Section>
 
 	<!-- SPECIAL Bobbleheads -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h2 class="text-2xl font-bold text-primary-300 mb-4">SPECIAL Bobbleheads</h2>
+	<Section title="SPECIAL Bobbleheads" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 			{#each bobbleheads.filter(b => b.category === 'SPECIAL') as bobblehead (bobblehead.id)}
 				<div class="bg-surface border-2 border-primary-500 p-6 hover:bg-primary-500 hover:text-background transition-colors">
@@ -84,11 +80,10 @@
 				</div>
 			{/each}
 		</div>
-	</div>
+	</Section>
 
 	<!-- Skill Bobbleheads -->
-	<div class="border-2 border-primary-500 p-6 bg-surface">
-		<h2 class="text-2xl font-bold text-primary-300 mb-4">Skill Bobbleheads</h2>
+	<Section title="Skill Bobbleheads" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 			{#each bobbleheads.filter(b => b.category === 'Skill') as bobblehead (bobblehead.id)}
 				<div class="bg-surface border-2 border-primary-500 p-6 hover:bg-primary-500 hover:text-background transition-colors">
@@ -109,5 +104,5 @@
 				</div>
 			{/each}
 		</div>
-	</div>
+	</Section>
 </div>

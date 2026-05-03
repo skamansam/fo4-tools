@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Section } from 'twintrinsic';
 	import armorData from '$lib/data/armor.json';
 	import perkEffectsData from '$lib/data/perkEffects.json';
 	import { perkStore } from '$lib/stores/perkStore';
@@ -98,15 +99,11 @@
 </script>
 
 <div class="max-w-6xl mx-auto">
-	<div class="border-2 border-primary-500 p-6 bg-surface mb-6">
-		<h2 class="text-2xl font-bold text-primary-300 mb-2">ARMOR WORKBENCH</h2>
-		<p class="text-sm opacity-75">Browse and customize armor pieces with available modifications.</p>
-	</div>
+	<Section title="ARMOR WORKBENCH" subtitle="Browse and customize armor pieces with available modifications." class="border-2 border-primary-500 p-6 bg-surface mb-6" />
 
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
 		<!-- Armor Selection Panel -->
-		<div class="border-2 border-primary-500 p-6 bg-surface">
-			<h3 class="text-lg font-bold text-primary-300 mb-4">ARMOR PIECES</h3>
+		<Section title="ARMOR PIECES" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 			<div class="space-y-2 max-h-96 overflow-y-auto">
 				{#each armorPieces as armor}
 					<button
@@ -120,14 +117,13 @@
 					</button>
 				{/each}
 			</div>
-		</div>
+		</Section>
 
 		<!-- Details Panel -->
 		<div class="lg:col-span-3 space-y-6">
 			{#if selectedArmor}
 				<!-- Armor Details -->
-				<div class="border-2 border-primary-500 p-6 bg-surface">
-					<h3 class="text-lg font-bold text-primary-300 mb-4">ARMOR DETAILS</h3>
+				<Section title="ARMOR DETAILS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 					<div class="space-y-3">
 						<div>
 							<p class="text-sm opacity-75">Name:</p>
@@ -146,11 +142,10 @@
 							<p class="text-lg font-bold">{selectedArmor.baseEnergyResistance}</p>
 						</div>
 					</div>
-				</div>
+				</Section>
 
 				<!-- Modifications -->
-				<div class="border-2 border-primary-500 p-6 bg-surface">
-					<h3 class="text-lg font-bold text-primary-300 mb-4">AVAILABLE MODIFICATIONS</h3>
+				<Section title="AVAILABLE MODIFICATIONS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 					<div class="space-y-2">
 						{#each selectedArmor.mods as mod}
 							<button
@@ -164,12 +159,11 @@
 							</button>
 						{/each}
 					</div>
-				</div>
+				</Section>
 
 				<!-- Mod Details -->
 				{#if selectedMod}
-					<div class="border-2 border-primary-500 p-6 bg-surface">
-						<h3 class="text-lg font-bold text-primary-300 mb-4">MODIFICATION DETAILS</h3>
+					<Section title="MODIFICATION DETAILS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 						<div class="space-y-3">
 							<div>
 								<p class="text-sm opacity-75">Name:</p>
@@ -200,13 +194,12 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</Section>
 				{/if}
 
 				<!-- Applicable Perks -->
 				{#if selectedArmor && getApplicablePerks().length > 0}
-					<div class="border-2 border-primary-500 p-6 bg-surface">
-						<h3 class="text-lg font-bold text-primary-300 mb-4">APPLICABLE PERKS</h3>
+					<Section title="APPLICABLE PERKS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 						<div class="space-y-3">
 							{#each getApplicablePerks() as perk}
 								<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
@@ -225,13 +218,12 @@
 								</div>
 							{/each}
 						</div>
-					</div>
+					</Section>
 				{/if}
 
 				<!-- Final Resistance with Perks -->
 				{#if selectedArmor}
-					<div class="border-2 border-primary-500 p-6 bg-surface">
-						<h3 class="text-lg font-bold text-primary-300 mb-4">FINAL RESISTANCE CALCULATION</h3>
+					<Section title="FINAL RESISTANCE CALCULATION" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 						<div class="space-y-3">
 							<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
 								<p class="text-sm">Base Damage Resistance:</p>
@@ -264,12 +256,12 @@
 								</div>
 							{/if}
 						</div>
-					</div>
+					</Section>
 				{/if}
 			{:else}
-				<div class="border-2 border-primary-500 p-6 bg-surface text-center">
-					<p class="text-sm opacity-50">Select an armor piece to view details and modifications.</p>
-				</div>
+				<Section title="SELECT ARMOR" class="border-2 border-primary-500 p-6 bg-surface mb-0">
+					<p class="text-sm opacity-50 text-center">Select an armor piece to view details and modifications.</p>
+				</Section>
 			{/if}
 		</div>
 	</div>

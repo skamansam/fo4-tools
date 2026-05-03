@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Section } from 'twintrinsic';
 	import workshopData from '$lib/data/workshop.json';
 
 	interface WorkshopItem {
@@ -43,16 +44,10 @@
 </script>
 
 <div class="max-w-6xl mx-auto">
-	<div class="border-2 border-primary-500 p-6 bg-surface mb-6">
-		<h2 class="text-2xl font-bold text-primary-300 mb-2">WORKSHOP BUILDABLES</h2>
-		<p class="text-sm opacity-75">Search and locate workshop buildable items in your settlements.</p>
-	</div>
-
+	<Section title="WORKSHOP BUILDABLES" subtitle="Search and locate workshop buildable items in your settlements." class="border-2 border-primary-500 p-6 bg-surface mb-6" />
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
 		<!-- Search & Filter Panel -->
-		<div class="border-2 border-primary-500 p-6 bg-surface">
-			<h3 class="text-lg font-bold text-primary-300 mb-4">SEARCH & FILTER</h3>
-
+		<Section title="SEARCH & FILTER" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 			<!-- Search Input -->
 			<div class="mb-4">
 				<label for="search" class="block text-sm font-bold text-primary-300 mb-2">
@@ -101,13 +96,12 @@
 					{getFilteredItems().length} of {items.length} items
 				</p>
 			</div>
-		</div>
+		</Section>
 
 		<!-- Items List & Details -->
 		<div class="lg:col-span-3 space-y-6">
 			<!-- Items List -->
-			<div class="border-2 border-primary-500 p-6 bg-surface">
-				<h3 class="text-lg font-bold text-primary-300 mb-4">AVAILABLE ITEMS</h3>
+			<Section title="AVAILABLE ITEMS" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 				<div class="space-y-2 max-h-96 overflow-y-auto">
 					{#if getFilteredItems().length > 0}
 						{#each getFilteredItems() as itm (itm.id)}
@@ -130,12 +124,11 @@
 						</div>
 					{/if}
 				</div>
-			</div>
+			</Section>
 
 			<!-- Item Details -->
 			{#if selectedItem}
-				<div class="border-2 border-primary-500 p-6 bg-surface">
-					<h3 class="text-lg font-bold text-primary-300 mb-4">ITEM DETAILS</h3>
+				<Section title="ITEM DETAILS" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 					<div class="space-y-3">
 						<div>
 							<p class="text-sm opacity-75">Name:</p>
@@ -162,11 +155,10 @@
 							</div>
 						{/if}
 					</div>
-				</div>
+				</Section>
 
 				<!-- Materials Required -->
-				<div class="border-2 border-primary-500 p-6 bg-surface">
-					<h3 class="text-lg font-bold text-primary-300 mb-4">MATERIALS REQUIRED</h3>
+				<Section title="MATERIALS REQUIRED" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 					<div class="space-y-2">
 						{#each Object.entries(selectedItem.materials) as [mat, amt] (mat)}
 							<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
@@ -175,11 +167,10 @@
 							</div>
 						{/each}
 					</div>
-				</div>
+				</Section>
 
 				<!-- Components Required -->
-				<div class="border-2 border-primary-500 p-6 bg-surface">
-					<h3 class="text-lg font-bold text-primary-300 mb-4">COMPONENTS REQUIRED</h3>
+				<Section title="COMPONENTS REQUIRED" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 					<div class="space-y-2">
 						{#each Object.entries(selectedItem.components) as [comp, qty] (comp)}
 							<div class="flex justify-between items-center p-3 bg-background border border-primary-500">
@@ -188,11 +179,10 @@
 							</div>
 						{/each}
 					</div>
-				</div>
+				</Section>
 
 				<!-- Tags -->
-				<div class="border-2 border-primary-500 p-6 bg-surface">
-					<h3 class="text-lg font-bold text-primary-300 mb-4">TAGS</h3>
+				<Section title="TAGS" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 					<div class="flex flex-wrap gap-2">
 						{#each selectedItem.tags as tg (tg)}
 							<span class="px-3 py-1 bg-primary-500 text-background text-xs font-bold rounded">
@@ -200,11 +190,11 @@
 							</span>
 						{/each}
 					</div>
-				</div>
+				</Section>
 			{:else}
-				<div class="border-2 border-primary-500 p-6 bg-surface text-center">
-					<p class="text-sm opacity-50">Select an item to view details and materials required.</p>
-				</div>
+				<Section class="border-2 border-primary-500 p-6 bg-surface mb-0">
+					<p class="text-sm opacity-50 text-center">Select an item to view details and materials required.</p>
+				</Section>
 			{/if}
 		</div>
 	</div>
