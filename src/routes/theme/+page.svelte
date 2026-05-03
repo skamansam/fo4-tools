@@ -46,16 +46,16 @@
               selectedTheme.set(index);
               applyTheme(colorTheme);
             }}
-            class="p-6 border-2 font-mono font-bold transition-all text-left"
-            style="background-color: {colorTheme.secondary}; border-color: {colorTheme.border}; color: {colorTheme.text}; {!$useCustom && $selectedTheme === index ? 'box-shadow: 0 0 20px ' + colorTheme.primary : ''}"
+            class="p-6 border-2 font-mono font-bold transition-all text-left hover:bg-accent bg-secondary border-border text-text"
+            style="--color-background: {colorTheme.bg}; --color-primary: {colorTheme.primary}; --color-secondary: {colorTheme.secondary}; --color-border: {colorTheme.border}; --color-text: {colorTheme.text}; --color-accent: {colorTheme.accent}; {!$useCustom && $selectedTheme === index ? `box-shadow: 0 0 20px ${colorTheme.primary}` : ''}"
           >
-            <div class="text-lg mb-3" style="color: {colorTheme.primary};">{colorTheme.name}</div>
+            <div class="text-lg mb-3 text-primary">{colorTheme.name}</div>
             <div class="grid grid-cols-5 gap-2">
-              <div class="w-12 h-12" style="background-color: {colorTheme.primary};"></div>
-              <div class="w-12 h-12" style="background-color: {colorTheme.secondary};"></div>
-              <div class="w-12 h-12" style="background-color: {colorTheme.accent};"></div>
-              <div class="w-12 h-12" style="background-color: {colorTheme.border};"></div>
-              <div class="w-12 h-12" style="background-color: {colorTheme.bg};"></div>
+              <div class="w-12 h-12 bg-primary"></div>
+              <div class="w-12 h-12 bg-background"></div>
+              <div class="w-12 h-12 bg-accent"></div>
+              <div class="w-12 h-12 bg-border"></div>
+              <div class="w-12 h-12 bg-surface"></div>
             </div>
           </button>
         {/each}
@@ -63,7 +63,7 @@
     </Section>
 
     <!-- Custom Color -->
-    <Section title="CUSTOM COLOR" class="border-2 border-border p-6 bg-surface mb-12">
+    <Section title="CUSTOM COLOR" class="border-2 border-border p-6 bg-surface mb-12 text-primary">
       <div class="flex gap-6 items-center mb-6">
         <input
           type="color"
@@ -72,18 +72,17 @@
             useCustom.set(true);
             applyTheme(getThemeFromCustomColor($customColor));
           }}
-          class="w-24 h-24 cursor-pointer border-2 border-theme-border"
+          class="w-24 h-24 cursor-pointer border-2 border-border"
         />
         <div>
           <p class="text-sm font-mono mb-3 text-text">Selected Color:</p>
-          <p class="text-lg font-mono font-bold text-theme-primary">{$customColor}</p>
+          <p class="text-lg font-mono font-bold text-primary">{$customColor}</p>
           <button
             on:click={() => {
               useCustom.set(true);
               applyTheme(getThemeFromCustomColor($customColor));
             }}
-            class="mt-4 px-6 py-3 border-2 font-mono font-bold transition-all"
-            style="background-color: {$useCustom ? 'var(--theme-primary)' : 'var(--theme-border)'}; border-color: var(--theme-border); color: {$useCustom ? 'var(--theme-bg)' : 'var(--theme-text)'};"
+            class="mt-4 px-6 py-3 border-2 font-mono font-bold transition-all bg-primary text-text"
           >
             {$useCustom ? '✓ ACTIVE' : 'ACTIVATE'}
           </button>
@@ -111,88 +110,88 @@
     </Section>
 
     <!-- Current Theme Preview -->
-    <Section title="CURRENT THEME" class="border-2 border-theme-border p-6 bg-surface mb-12">
-      <p class="text-lg font-mono font-bold mb-6 text-theme-primary">{getCurrentTheme().name}</p>
+    <Section title="CURRENT THEME" class="border-2 border-border p-6 bg-surface mb-12">
+      <p class="text-lg font-mono font-bold mb-6 text-primary">{getCurrentTheme().name}</p>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <p class="text-xs font-mono mb-2 text-text">PRIMARY</p>
-            <div class="h-16 border border-theme-border" style="background-color: var(--theme-primary);"></div>
+            <div class="h-16 border border-border" style="background-color: var(--theme-primary);"></div>
             <p class="text-xs font-mono mt-2 text-text">var(--theme-primary)</p>
           </div>
           <div>
-            <p class="text-xs font-mono mb-2 text-theme-text">SECONDARY</p>
-            <div class="h-16 border border-theme-border" style="background-color: var(--theme-secondary);"></div>
-            <p class="text-xs font-mono mt-2 text-theme-text">var(--theme-secondary)</p>
+            <p class="text-xs font-mono mb-2 text-text">SECONDARY</p>
+            <div class="h-16 border border-border" style="background-color: var(--theme-secondary);"></div>
+            <p class="text-xs font-mono mt-2 text-text">var(--theme-secondary)</p>
           </div>
           <div>
-            <p class="text-xs font-mono mb-2 text-theme-text">ACCENT</p>
-            <div class="h-16 border border-theme-border" style="background-color: var(--theme-accent);"></div>
-            <p class="text-xs font-mono mt-2 text-theme-text">var(--theme-accent)</p>
+            <p class="text-xs font-mono mb-2 text-text">ACCENT</p>
+            <div class="h-16 border border-border" style="background-color: var(--theme-accent);"></div>
+            <p class="text-xs font-mono mt-2 text-text">var(--theme-accent)</p>
           </div>
           <div>
-            <p class="text-xs font-mono mb-2 text-theme-text">BORDER</p>
-            <div class="h-16 border border-theme-border" style="background-color: var(--theme-border);"></div>
-            <p class="text-xs font-mono mt-2 text-theme-text">var(--theme-border)</p>
+            <p class="text-xs font-mono mb-2 text-text">BORDER</p>
+            <div class="h-16 border border-border" style="background-color: var(--theme-border);"></div>
+            <p class="text-xs font-mono mt-2 text-text">var(--theme-border)</p>
           </div>
           <div>
-            <p class="text-xs font-mono mb-2 text-theme-text">BACKGROUND</p>
-            <div class="h-16 border border-theme-border" style="background-color: var(--theme-bg);"></div>
-            <p class="text-xs font-mono mt-2 text-theme-text">var(--theme-bg)</p>
+            <p class="text-xs font-mono mb-2 text-text">BACKGROUND</p>
+            <div class="h-16 border border-border" style="background-color: var(--theme-bg);"></div>
+            <p class="text-xs font-mono mt-2 text-text">var(--theme-bg)</p>
           </div>
           <div>
-            <p class="text-xs font-mono mb-2 text-theme-text">TEXT</p>
-            <div class="h-16 border border-theme-border" style="background-color: var(--theme-text);"></div>
-            <p class="text-xs font-mono mt-2 text-theme-text">var(--theme-text)</p>
+            <p class="text-xs font-mono mb-2 text-text">TEXT</p>
+            <div class="h-16 border border-border" style="background-color: var(--theme-text);"></div>
+            <p class="text-xs font-mono mt-2 text-text">var(--theme-text)</p>
           </div>
         </div>
     </Section>
 
     <!-- Component Examples -->
-    <Section title="COMPONENT EXAMPLES" class="border-2 border-theme-border p-6 bg-surface mb-12">
+    <Section title="COMPONENT EXAMPLES" class="border-2 border-border p-6 bg-surface mb-12">
       
       <!-- Buttons -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Buttons</h3>
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Buttons</h3>
         <div class="flex flex-wrap gap-4">
-          <button class="px-6 py-3 border-2 font-mono font-bold bg-theme-primary text-theme-bg border-theme-primary hover:opacity-90">
+          <button class="px-6 py-3 border-2 font-mono font-bold bg-primary text-text border-primary hover:opacity-90">
             PRIMARY
           </button>
-          <button class="px-6 py-3 border-2 font-mono font-bold bg-theme-secondary text-theme-text border-theme-border hover:opacity-90">
+          <button class="px-6 py-3 border-2 font-mono font-bold bg-background text-text border-border hover:opacity-90">
             SECONDARY
           </button>
-          <button class="px-6 py-3 border-2 font-mono font-bold bg-theme-accent text-theme-bg border-theme-accent hover:opacity-90">
+          <button class="px-6 py-3 border-2 font-mono font-bold bg-accent text-text border-accent hover:opacity-90">
             ACCENT
           </button>
-          <button class="px-6 py-3 border-2 font-mono font-bold bg-transparent text-theme-primary border-theme-border hover:bg-theme-secondary">
+          <button class="px-6 py-3 border-2 font-mono font-bold bg-transparent text-primary border-border hover:bg-background">
             OUTLINE
           </button>
         </div>
       </div>
 
       <!-- Text Styles -->
-      <div class="mb-8 p-6 border-2 bg-surface border-theme-border">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Text Styles</h3>
+      <div class="mb-8 p-6 border-2 bg-surface border-border">
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Text Styles</h3>
         <div class="space-y-3">
-          <p class="text-theme-primary font-bold">Primary Text (Bold)</p>
+          <p class="text-primary font-bold">Primary Text (Bold)</p>
           <p class="text-text">Regular Text</p>
-          <p class="text-theme-accent">Accent Text</p>
-          <p class="text-theme-primary opacity-75">Dimmed Primary Text</p>
+          <p class="text-accent">Accent Text</p>
+          <p class="text-primary opacity-75">Dimmed Primary Text</p>
         </div>
       </div>
 
       <!-- Alert Boxes -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Alerts</h3>
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Alerts</h3>
         <div class="space-y-4">
-          <div class="p-4 border-2 bg-surface border-theme-border">
-            <p class="font-bold text-theme-primary mb-2">⚠ Primary Alert</p>
+          <div class="p-4 border-2 bg-surface border-border">
+            <p class="font-bold text-primary mb-2">⚠ Primary Alert</p>
             <p class="text-text text-sm">This is a primary alert message showing important information.</p>
           </div>
-          <div class="p-4 border-2 bg-surface border-theme-border">
-            <p class="font-bold text-theme-accent mb-2">✓ Success Alert</p>
+          <div class="p-4 border-2 bg-surface border-border">
+            <p class="font-bold text-accent mb-2">✓ Success Alert</p>
             <p class="text-text text-sm">This is a success alert message showing positive feedback.</p>
           </div>
-          <div class="p-4 border-2 bg-surface border-theme-border">
+          <div class="p-4 border-2 bg-surface border-border">
             <p class="font-bold text-text mb-2">ℹ Info Alert</p>
             <p class="text-text text-sm">This is an informational alert message with additional details.</p>
           </div>
@@ -201,19 +200,19 @@
 
       <!-- Cards -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Cards</h3>
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Cards</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-6 border-2 bg-surface border-theme-border">
-            <h4 class="text-theme-primary font-bold mb-2">Card Title</h4>
+          <div class="p-6 border-2 bg-surface border-border">
+            <h4 class="text-primary font-bold mb-2">Card Title</h4>
             <p class="text-text text-sm mb-4">This is a card with a border and secondary background color.</p>
-            <button class="px-4 py-2 border-2 bg-theme-primary text-theme-bg border-theme-primary font-mono text-sm font-bold">
+            <button class="px-4 py-2 border-2 bg-primary text-text border-primary font-mono text-sm font-bold">
               ACTION
             </button>
           </div>
-          <div class="p-6 border-2 bg-background border-theme-border">
-            <h4 class="text-theme-accent font-bold mb-2">Accent Card</h4>
+          <div class="p-6 border-2 bg-background border-border">
+            <h4 class="text-accent font-bold mb-2">Accent Card</h4>
             <p class="text-text text-sm mb-4">This card uses the accent color for the border.</p>
-            <button class="px-4 py-2 border-2 bg-theme-primary text-theme-bg border-theme-primary font-mono text-sm font-bold">
+            <button class="px-4 py-2 border-2 bg-primary text-text border-primary font-mono text-sm font-bold">
               ACTION
             </button>
           </div>
@@ -222,49 +221,49 @@
 
       <!-- Input Fields -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Input Fields</h3>
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Input Fields</h3>
         <div class="space-y-4">
           <div>
-            <label class="block text-theme-primary font-mono text-sm font-bold mb-2">Text Input</label>
-            <input type="text" placeholder="Enter text..." class="w-full px-4 py-2 border-2 bg-background text-text border-theme-border transition-colors focus:bg-surface placeholder:text-primary-900 focus:ring-primary-900" />
+            <label class="block text-primary font-mono text-sm font-bold mb-2">Text Input</label>
+            <input type="text" placeholder="Enter text..." class="w-full px-4 py-2 border-2 bg-background text-text border-border transition-colors focus:bg-surface placeholder:text-muted focus:ring-primary" />
           </div>
           <div>
-            <label class="block text-theme-primary font-mono text-sm font-bold mb-2">Color Input</label>
-            <input type="color" class="w-full h-12 border-2 border-theme-border cursor-pointer" />
+            <label class="block text-primary font-mono text-sm font-bold mb-2">Color Input</label>
+            <input type="color" class="w-full h-12 border-2 border-border cursor-pointer" />
           </div>
         </div>
       </div>
 
       <!-- Code Block -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Code Block</h3>
-        <div class="p-4 border-2 border-theme-border font-mono text-sm text-theme-accent">
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Code Block</h3>
+        <div class="p-4 border-2 border-border font-mono text-sm text-accent">
           <div>const theme = &#123;</div>
-          <div class="ml-4">primary: <span class="text-theme-primary">#4ade80</span>,</div>
+          <div class="ml-4">primary: <span class="text-primary">#4ade80</span>,</div>
           <div class="ml-4">secondary: <span class="text-muted">#15803d</span>,</div>
-          <div class="ml-4">accent: <span class="text-theme-accent">#86efac</span>,</div>
+          <div class="ml-4">accent: <span class="text-accent">#86efac</span>,</div>
           <div>&#125;</div>
         </div>
       </div>
 
       <!-- Status Indicators -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Status Indicators</h3>
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Status Indicators</h3>
         <div class="flex flex-wrap gap-6">
           <div class="flex items-center gap-2">
-            <div class="w-4 h-4 border-2 border-theme-border bg-theme-primary"></div>
+            <div class="w-4 h-4 border-2 border-border bg-primary"></div>
             <span class="text-text font-mono text-sm">Active</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-4 h-4 border-2 border-theme-border bg-theme-accent"></div>
+            <div class="w-4 h-4 border-2 border-border bg-accent"></div>
             <span class="text-text font-mono text-sm">Success</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-4 h-4 border-2 border-theme-border bg-transparent"></div>
+            <div class="w-4 h-4 border-2 border-border bg-transparent"></div>
             <span class="text-text font-mono text-sm">Inactive</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-4 h-4 border-2 border-theme-border bg-surface"></div>
+            <div class="w-4 h-4 border-2 border-border bg-surface"></div>
             <span class="text-text font-mono text-sm">Pending</span>
           </div>
         </div>
@@ -272,31 +271,31 @@
 
       <!-- Tables -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Table</h3>
-        <div class="border-2 border-theme-border overflow-hidden">
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Table</h3>
+        <div class="border-2 border-border overflow-hidden">
           <table class="w-full">
             <thead>
-              <tr class="bg-surface border-b-2 border-theme-border">
-                <th class="px-4 py-3 text-left text-theme-primary font-bold font-mono">Header 1</th>
-                <th class="px-4 py-3 text-left text-theme-primary font-bold font-mono">Header 2</th>
-                <th class="px-4 py-3 text-left text-theme-primary font-bold font-mono">Header 3</th>
+              <tr class="bg-surface border-b-2 border-border">
+                <th class="px-4 py-3 text-left text-primary font-bold font-mono">Header 1</th>
+                <th class="px-4 py-3 text-left text-primary font-bold font-mono">Header 2</th>
+                <th class="px-4 py-3 text-left text-primary font-bold font-mono">Header 3</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-theme-border hover:bg-surface">
+              <tr class="border-b border-border hover:bg-surface">
                 <td class="px-4 py-3 text-text">Row 1, Col 1</td>
                 <td class="px-4 py-3 text-text">Row 1, Col 2</td>
-                <td class="px-4 py-3 text-theme-accent">Row 1, Col 3</td>
+                <td class="px-4 py-3 text-accent">Row 1, Col 3</td>
               </tr>
-              <tr class="border-b border-theme-border hover:bg-surface">
+              <tr class="border-b border-border hover:bg-surface">
                 <td class="px-4 py-3 text-text">Row 2, Col 1</td>
                 <td class="px-4 py-3 text-text">Row 2, Col 2</td>
-                <td class="px-4 py-3 text-theme-accent">Row 2, Col 3</td>
+                <td class="px-4 py-3 text-accent">Row 2, Col 3</td>
               </tr>
               <tr class="hover:bg-surface">
                 <td class="px-4 py-3 text-text">Row 3, Col 1</td>
                 <td class="px-4 py-3 text-text">Row 3, Col 2</td>
-                <td class="px-4 py-3 text-theme-accent">Row 3, Col 3</td>
+                <td class="px-4 py-3 text-accent">Row 3, Col 3</td>
               </tr>
             </tbody>
           </table>
@@ -305,25 +304,25 @@
 
       <!-- Badges/Tags -->
       <div class="mb-8">
-        <h3 class="text-lg font-bold font-mono mb-4 text-theme-primary">Badges</h3>
+        <h3 class="text-lg font-bold font-mono mb-4 text-primary">Badges</h3>
         <div class="flex flex-wrap gap-3">
-          <span class="px-3 py-1 border-2 bg-theme-primary text-theme-bg border-theme-primary font-mono text-xs font-bold">BADGE</span>
-          <span class="px-3 py-1 border-2 bg-surface text-text border-theme-border font-mono text-xs font-bold">SECONDARY</span>
-          <span class="px-3 py-1 border-2 bg-background text-theme-accent border-theme-border font-mono text-xs font-bold">ACCENT</span>
-          <span class="px-3 py-1 border-2 bg-transparent text-theme-primary border-theme-border font-mono text-xs font-bold">OUTLINE</span>
+          <span class="px-3 py-1 border-2 bg-primary text-text border-primary font-mono text-xs font-bold">BADGE</span>
+          <span class="px-3 py-1 border-2 bg-surface text-text border-border font-mono text-xs font-bold">SECONDARY</span>
+          <span class="px-3 py-1 border-2 bg-background text-accent border-border font-mono text-xs font-bold">ACCENT</span>
+          <span class="px-3 py-1 border-2 bg-transparent text-primary border-border font-mono text-xs font-bold">OUTLINE</span>
         </div>
       </div>
     </Section>
 
     <!-- Info -->
-    <Section class="border-2 border-theme-border p-6 bg-surface mb-0">
+    <Section class="border-2 border-border p-6 bg-surface mb-0">
       <p class="text-sm font-mono text-text">
-        <strong class="text-theme-primary">NOTE:</strong> Theme preferences are currently stored per-session. Future updates will add persistent storage.
+        <strong class="text-primary">NOTE:</strong> Theme preferences are currently stored per-session. Future updates will add persistent storage.
       </p>
     </Section>
   </div>
 </div>
 
 <style lang="postcss">
-  @reference "../../routes/layout.css";
+  @reference "../../app.css";
 </style>
