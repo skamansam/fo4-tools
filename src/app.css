@@ -4,6 +4,8 @@
 @source "../../twintrinsic/src/lib/components/**/*.svelte";
 @source "./routes/**/*.svelte";
 
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
 /* @plugin "@tailwindcss/aspect-ratio";
 @plugin "@tailwindcss/container-queries"; */
 
@@ -17,13 +19,56 @@
   --theme-bg: #0f2818;
   --theme-border: #22c55e;
   --theme-text: #dcfce7;
+}
 
-  /* Override Twintrinsic color variables to use theme colors */
+@theme {
+  /* Base theme colors */
   --color-background: var(--theme-secondary);
   --color-surface: var(--theme-bg);
   --color-text: var(--theme-text);
   --color-border: var(--theme-border);
-  --color-muted: color-mix(in srgb, var(--theme-primary) 70%, transparent);
+
+  /* Primary color variants - derived from theme-primary */
+  --color-primary-500: var(--theme-primary);
+  --color-primary-400: color-mix(in srgb, var(--theme-primary) 90%, white);
+  --color-primary-300: color-mix(in srgb, var(--theme-primary) 75%, white);
+  --color-primary-200: color-mix(in srgb, var(--theme-primary) 50%, white);
+  --color-primary-100: color-mix(in srgb, var(--theme-primary) 25%, white);
+  --color-primary-50: color-mix(in srgb, var(--theme-primary) 10%, white);
+  --color-primary-600: color-mix(in srgb, var(--theme-primary) 85%, black);
+  --color-primary-700: color-mix(in srgb, var(--theme-primary) 70%, black);
+  --color-primary-800: color-mix(in srgb, var(--theme-primary) 55%, black);
+  --color-primary-900: color-mix(in srgb, var(--theme-primary) 40%, black);
+
+  /* Secondary color variants - derived from theme-secondary */
+  --color-secondary-500: var(--theme-secondary);
+  --color-secondary-400: color-mix(in srgb, var(--theme-secondary) 90%, white);
+  --color-secondary-300: color-mix(in srgb, var(--theme-secondary) 75%, white);
+  --color-secondary-200: color-mix(in srgb, var(--theme-secondary) 50%, white);
+  --color-secondary-100: color-mix(in srgb, var(--theme-secondary) 25%, white);
+  --color-secondary-50: color-mix(in srgb, var(--theme-secondary) 10%, white);
+  --color-secondary-600: color-mix(in srgb, var(--theme-secondary) 85%, black);
+  --color-secondary-700: color-mix(in srgb, var(--theme-secondary) 70%, black);
+  --color-secondary-800: color-mix(in srgb, var(--theme-secondary) 55%, black);
+  --color-secondary-900: color-mix(in srgb, var(--theme-secondary) 40%, black);
+
+  /* Success color variants - derived from theme-primary */
+  --color-success-500: var(--theme-primary);
+  --color-success-400: color-mix(in srgb, var(--theme-primary) 90%, white);
+  --color-success-300: color-mix(in srgb, var(--theme-primary) 75%, white);
+  --color-success-200: color-mix(in srgb, var(--theme-primary) 50%, white);
+  --color-success-100: color-mix(in srgb, var(--theme-primary) 25%, white);
+  --color-success-50: color-mix(in srgb, var(--theme-primary) 10%, white);
+  --color-success-600: color-mix(in srgb, var(--theme-primary) 85%, black);
+  --color-success-700: color-mix(in srgb, var(--theme-primary) 70%, black);
+  --color-success-800: color-mix(in srgb, var(--theme-primary) 55%, black);
+  --color-success-900: color-mix(in srgb, var(--theme-primary) 40%, black);
+
+  /* Static colors - not theme-dependent */
+  --color-warning-500: #f59e0b;
+  --color-error-500: #ef4444;
+  --color-info-500: #3b82f6;
+  --color-muted: color-mix(in srgb, var(--theme-primary) 60%, black);
 }
 
 /* Style the App component and its sections */
@@ -34,6 +79,79 @@
 .appMain {
   background-color: var(--theme-bg) !important;
   color: var(--theme-text) !important;
+}
+
+/* Progress bar styling - override all progress elements */
+progress {
+  accent-color: var(--theme-primary) !important;
+  color: var(--theme-primary) !important;
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+progress::-webkit-progress-bar {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--theme-primary) !important;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+  background-color: var(--theme-primary) !important;
+}
+
+/* Override all variant classes */
+.progress-primary {
+  accent-color: var(--theme-primary) !important;
+}
+
+.progress-primary::-webkit-progress-value {
+  background-color: var(--theme-primary) !important;
+}
+
+.progress-primary::-moz-progress-bar {
+  background-color: var(--theme-primary) !important;
+}
+
+.progress-secondary {
+  accent-color: var(--theme-accent) !important;
+}
+
+.progress-secondary::-webkit-progress-value {
+  background-color: var(--theme-accent) !important;
+}
+
+.progress-secondary::-moz-progress-bar {
+  background-color: var(--theme-accent) !important;
+}
+
+.progress-success {
+  accent-color: var(--theme-primary) !important;
+}
+
+.progress-success::-webkit-progress-value {
+  background-color: var(--theme-primary) !important;
+}
+
+.progress-success::-moz-progress-bar {
+  background-color: var(--theme-primary) !important;
+}
+
+/* Checkbox styling for better contrast */
+input[type="checkbox"] {
+  accent-color: var(--theme-primary) !important;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--theme-primary) !important;
+  border-color: var(--theme-primary) !important;
+}
+
+/* Improve text contrast in completed items */
+.line-through {
+  color: var(--theme-primary);
+  opacity: 0.7;
 }
 
 /* Hover and active states use accent color */
@@ -52,121 +170,4 @@ a.active,
 [role="button"].active {
   background-color: var(--theme-accent) !important;
   color: var(--theme-bg) !important;
-}
-
-@theme {
-  --color-theme-primary: #4ade80;
-  --color-theme-secondary: #15803d;
-  --color-theme-accent: #86efac;
-  --color-theme-bg: #0f2818;
-  --color-theme-border: #22c55e;
-  --color-theme-text: #dcfce7;
-
-  --color-primary-50: #f0fdf4;
-  --color-primary-100: #dcfce7;
-  --color-primary-200: #bbf7d0;
-  --color-primary-300: #86efac;
-  --color-primary-400: #4ade80;
-  --color-primary-500: #4ade80;
-  --color-primary-600: #16a34a;
-  --color-primary-700: #15803d;
-  --color-primary-800: #166534;
-  --color-primary-900: #14532d;
-  --color-primary-950: #052e16;
-
-  --color-accent-50: #f0fdf4;
-  --color-accent-100: #dcfce7;
-  --color-accent-200: #bbf7d0;
-  --color-accent-300: #86efac;
-  --color-accent-400: #4ade80;
-  --color-accent-500: #22c55e;
-  --color-accent-600: #16a34a;
-  --color-accent-700: #15803d;
-  --color-accent-800: #166534;
-  --color-accent-900: #14532d;
-  --color-accent-950: #052e16;
-
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --color-neutral-950: #0a0a0a;
-
-  --color-success-50: #f0fdf4;
-  --color-success-100: #dcfce7;
-  --color-success-200: #bbf7d0;
-  --color-success-300: #86efac;
-  --color-success-400: #4ade80;
-  --color-success-500: #4ade80;
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-  --color-success-800: #166534;
-  --color-success-900: #14532d;
-  --color-success-950: #052e16;
-
-  --color-warning-50: #fff7ed;
-  --color-warning-100: #ffedd5;
-  --color-warning-200: #fed7aa;
-  --color-warning-300: #fdba74;
-  --color-warning-400: #fb923c;
-  --color-warning-500: #f97316;
-  --color-warning-600: #ea580c;
-  --color-warning-700: #c2410c;
-  --color-warning-800: #9a3412;
-  --color-warning-900: #7c2d12;
-  --color-warning-950: #431407;
-
-  --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-200: #fecaca;
-  --color-error-300: #fca5a5;
-  --color-error-400: #f87171;
-  --color-error-500: #ef4444;
-  --color-error-600: #dc2626;
-  --color-error-700: #b91c1c;
-  --color-error-800: #991b1b;
-  --color-error-900: #7f1d1d;
-  --color-error-950: #450a0a;
-
-  --color-light-surface-50: #ffffff;
-  --color-light-surface-100: #fafafa;
-  --color-light-surface-200: #f5f5f5;
-  --color-light-surface-300: #e5e5e5;
-  --color-light-text-50: #171717;
-  --color-light-text-100: #404040;
-  --color-light-text-200: #737373;
-  --color-light-border-50: #e5e5e5;
-  --color-light-border-100: #d4d4d4;
-  --color-light-border-200: #a3a3a3;
-
-  --color-dark-surface-50: #18181b;
-  --color-dark-surface-100: #1f1f23;
-  --color-dark-surface-200: #27272a;
-  --color-dark-surface-300: #303035;
-  --color-dark-text-50: #ffffff;
-  --color-dark-text-100: #d4d4d8;
-  --color-dark-text-200: #a1a1aa;
-  --color-dark-border-50: #27272a;
-  --color-dark-border-100: #3f3f46;
-  --color-dark-border-200: #52525b;
-
-  --radius-sm: 0.25rem;
-  --radius: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-
-  --spacing-18: 4.5rem;
-  --spacing-112: 28rem;
-  --spacing-128: 32rem;
-  --spacing-144: 36rem;
-
-  --shadow-inner-lg: inset 0 2px 4px 0 rgb(0 0 0 / 0.1);
 }

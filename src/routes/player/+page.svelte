@@ -170,5 +170,5 @@
 </div>
 
 <style lang="postcss">
-  @reference "../../routes/layout.css";
+  @reference "../../app.css";
 </style>

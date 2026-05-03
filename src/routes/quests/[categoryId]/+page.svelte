@@ -147,5 +147,5 @@
 
 <style lang="postcss">
 	@reference 'twintrinsic/twintrinsic.css';
-	@reference '../../layout.css';
+	@reference '../../../app.css';
 </style>
