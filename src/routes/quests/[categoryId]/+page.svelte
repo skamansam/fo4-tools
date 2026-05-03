@@ -103,7 +103,7 @@
 			</button>
 			<button
 				onclick={resetAll}
-				class="px-4 py-2 border-2 border-theme-border bg-surface hover:bg-border font-bold transition-colors"
+				class="px-4 py-2 border-2 border-border bg-surface hover:bg-border font-bold transition-colors"
 			>
 				RESET ALL
 			</button>

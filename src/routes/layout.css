@@ -19,44 +19,52 @@
 
 /* Override Twintrinsic color variables via @theme inline */
 @theme inline {
-  --color-background: #15803d;
-  --color-surface: #0f2818;
-  --color-text: #dcfce7;
-  --color-border: #22c55e;
-  --color-primary-50: #f0fdf4;
-  --color-primary-100: #dcfce7;
-  --color-primary-200: #bbf7d0;
-  --color-primary-300: #86efac;
-  --color-primary-400: #4ade80;
-  --color-primary-500: #4ade80;
-  --color-primary-600: #16a34a;
-  --color-primary-700: #15803d;
-  --color-primary-800: #166534;
-  --color-primary-900: #14532d;
-  --color-secondary-50: #f0fdf4;
-  --color-secondary-100: #dcfce7;
-  --color-secondary-200: #bbf7d0;
-  --color-secondary-300: #86efac;
-  --color-secondary-400: #4ade80;
-  --color-secondary-500: #86efac;
-  --color-secondary-600: #16a34a;
-  --color-secondary-700: #15803d;
-  --color-secondary-800: #166534;
-  --color-secondary-900: #14532d;
-  --color-success-50: #f0fdf4;
-  --color-success-100: #dcfce7;
-  --color-success-200: #bbf7d0;
-  --color-success-300: #86efac;
-  --color-success-400: #4ade80;
-  --color-success-500: #4ade80;
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-  --color-success-800: #166534;
-  --color-success-900: #14532d;
+  --color-background: var(--theme-secondary);
+  --color-surface: var(--theme-bg);
+  --color-text: var(--theme-text);
+  --color-border: var(--theme-border);
+
+  /* Primary color variants - derived from theme-primary */
+  --color-primary-500: var(--theme-primary);
+  --color-primary-400: color-mix(in srgb, var(--theme-primary) 90%, white);
+  --color-primary-300: color-mix(in srgb, var(--theme-primary) 75%, white);
+  --color-primary-200: color-mix(in srgb, var(--theme-primary) 50%, white);
+  --color-primary-100: color-mix(in srgb, var(--theme-primary) 25%, white);
+  --color-primary-50: color-mix(in srgb, var(--theme-primary) 10%, white);
+  --color-primary-600: color-mix(in srgb, var(--theme-primary) 85%, black);
+  --color-primary-700: color-mix(in srgb, var(--theme-primary) 70%, black);
+  --color-primary-800: color-mix(in srgb, var(--theme-primary) 55%, black);
+  --color-primary-900: color-mix(in srgb, var(--theme-primary) 40%, black);
+
+  /* Secondary color variants - derived from theme-secondary */
+  --color-secondary-500: var(--theme-secondary);
+  --color-secondary-400: color-mix(in srgb, var(--theme-secondary) 90%, white);
+  --color-secondary-300: color-mix(in srgb, var(--theme-secondary) 75%, white);
+  --color-secondary-200: color-mix(in srgb, var(--theme-secondary) 50%, white);
+  --color-secondary-100: color-mix(in srgb, var(--theme-secondary) 25%, white);
+  --color-secondary-50: color-mix(in srgb, var(--theme-secondary) 10%, white);
+  --color-secondary-600: color-mix(in srgb, var(--theme-secondary) 85%, black);
+  --color-secondary-700: color-mix(in srgb, var(--theme-secondary) 70%, black);
+  --color-secondary-800: color-mix(in srgb, var(--theme-secondary) 55%, black);
+  --color-secondary-900: color-mix(in srgb, var(--theme-secondary) 40%, black);
+
+  /* Success color variants - derived from theme-primary */
+  --color-success-500: var(--theme-primary);
+  --color-success-400: color-mix(in srgb, var(--theme-primary) 90%, white);
+  --color-success-300: color-mix(in srgb, var(--theme-primary) 75%, white);
+  --color-success-200: color-mix(in srgb, var(--theme-primary) 50%, white);
+  --color-success-100: color-mix(in srgb, var(--theme-primary) 25%, white);
+  --color-success-50: color-mix(in srgb, var(--theme-primary) 10%, white);
+  --color-success-600: color-mix(in srgb, var(--theme-primary) 85%, black);
+  --color-success-700: color-mix(in srgb, var(--theme-primary) 70%, black);
+  --color-success-800: color-mix(in srgb, var(--theme-primary) 55%, black);
+  --color-success-900: color-mix(in srgb, var(--theme-primary) 40%, black);
+
+  /* Static colors - not theme-dependent */
   --color-warning-500: #f59e0b;
   --color-error-500: #ef4444;
   --color-info-500: #3b82f6;
-  --color-muted: #5d7a5d;
+  --color-muted: color-mix(in srgb, var(--theme-primary) 60%, black);
 }
 
 /* Style the App component and its sections */

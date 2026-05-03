@@ -32,12 +32,12 @@
 <div class="min-h-screen p-8 text-text">
   <div class="max-w-4xl mx-auto">
     <!-- Header -->
-    <div class="border-2 border-theme-border p-6 bg-surface mb-6">
-      <h1 class="text-4xl font-bold text-theme-primary">THEME SETTINGS</h1>
+    <div class="border-2 border-border p-6 bg-surface mb-6">
+      <h1 class="text-4xl font-bold text-primary">THEME SETTINGS</h1>
     </div>
 
     <!-- Predefined Colors -->
-    <Section title="PREDEFINED THEMES" class="border-2 border-theme-border p-6 bg-surface mb-12">
+    <Section title="PREDEFINED THEMES" class="border-2 border-border p-6 bg-surface mb-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {#each colorThemes as colorTheme, index}
           <button
@@ -63,7 +63,7 @@
     </Section>
 
     <!-- Custom Color -->
-    <Section title="CUSTOM COLOR" class="border-2 border-theme-border p-6 bg-surface mb-12">
+    <Section title="CUSTOM COLOR" class="border-2 border-border p-6 bg-surface mb-12">
       <div class="flex gap-6 items-center mb-6">
         <input
           type="color"
