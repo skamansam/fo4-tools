@@ -1,12 +1,35 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import { Section } from 'twintrinsic';
   import type { ColorTheme } from '$lib/theme';
-  import { colorThemes, getThemeFromCustomColor } from '$lib/theme';
+  import { colorThemes, defaultTheme, getThemeFromCustomColor } from '$lib/theme';
 
-  const selectedTheme = writable<number>(2);
-  const customColor = writable<string>('#4ade80');
-  const useCustom = writable<boolean>(false);
+  const STORAGE_KEY = 'fo4-tools-theme';
+
+  function loadFromStorage() {
+    if (typeof window === 'undefined') return null;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveToStorage(data: { selectedTheme: number; customColor: string; useCustom: boolean }) {
+    if (typeof window === 'undefined') return;
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch {
+      // Storage might be disabled or full
+    }
+  }
+
+  const stored = loadFromStorage();
+  const selectedTheme = writable<number>(stored?.selectedTheme ?? 2);
+  const customColor = writable<string>(stored?.customColor ?? '#4ade80');
+  const useCustom = writable<boolean>(stored?.useCustom ?? false);
 
   function getCurrentTheme(): ColorTheme {
     if ($useCustom) {
@@ -24,8 +47,13 @@
     document.documentElement.style.setProperty('--theme-text', theme.text);
   }
 
+  onMount(() => {
+    applyTheme(getCurrentTheme());
+  });
+
   $effect(() => {
     applyTheme(getCurrentTheme());
+    saveToStorage({ selectedTheme: $selectedTheme, customColor: $customColor, useCustom: $useCustom });
   });
 </script>
 
@@ -317,7 +345,7 @@
     <!-- Info -->
     <Section class="border-2 border-border p-6 bg-surface mb-0">
       <p class="text-sm font-mono text-text">
-        <strong class="text-primary">NOTE:</strong> Theme preferences are currently stored per-session. Future updates will add persistent storage.
+        <strong class="text-primary">NOTE:</strong> Theme preferences are persisted in localStorage and will be remembered across sessions.
       </p>
     </Section>
   </div>
