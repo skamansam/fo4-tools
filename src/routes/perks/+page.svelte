@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Card, Rating, Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from 'twintrinsic';
-	import { perkStore } from '$lib/stores/perkStore';
+	import { Card, Rating, Section, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from 'twintrinsic';
 	import perksData from '$lib/data/perks.json';
+	import { perkStore } from '$lib/stores/perkStore';
 
 	interface PerkEffect {
 		rank: number;
@@ -96,13 +96,30 @@
 	}
 </script>
 
-<div class="max-w-7xl mx-auto">
-	<div class="mb-8">
-		<h2 class="text-3xl font-bold text-primary-500 mb-2">PERKS</h2>
-		<p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks</p>
-	</div>
+<div class="max-w-6xl mx-auto space-y-6">
+	<!-- Header -->
+	<Section title="PERKS" subtitle="Assign {totalSpecialPoints} S.P.E.C.I.A.L. points in the table header to unlock perks" class="border-2 border-primary-500 p-6 bg-surface mb-6" />
 
-		<!-- VAULT-TEC Style Grid with Table Styling -->
+	<!-- SPECIAL Progress -->
+	<Section title="SPECIAL PROGRESS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
+		<div class="space-y-4">
+			<div class="flex justify-between items-center">
+				<span class="text-text">Points Used</span>
+				<span class="text-lg font-bold text-primary-300">{usedSpecialPoints} / {totalSpecialPoints}</span>
+			</div>
+			<div class="w-full bg-border rounded-full h-3">
+				<div
+					class="bg-primary-500 h-3 rounded-full transition-all duration-300"
+					style="width: {(usedSpecialPoints / totalSpecialPoints) * 100}%"
+				></div>
+			</div>
+			<p class="text-sm text-muted">
+				Remaining: {remainingSpecialPoints} points
+			</p>
+		</div>
+	</Section>
+
+	<!-- VAULT-TEC Style Grid with Table Styling -->
 	<div class="overflow-x-auto">
 		<Table bordered striped>
 			<TableHead>
@@ -129,15 +146,15 @@
 				{#each Array.from({ length: 10 }, (_, i) => i + 1) as level}
 					<TableRow>
 						{#each specialAttributes as special}
-							<TableCell class="p-4 bg-neutral-50 dark:bg-neutral-900 min-h-[200px]">
+							<TableCell class="p-4 bg-surface min-h-[200px]">
 								<div class="space-y-4 {specialRanks[special] === 0 || specialRanks[special] < level ? 'opacity-50' : ''}">
 									{#each perksBySpecial[special]?.filter(p => p.level === level) || [] as perk}
-											<div class="flex flex-col gap-2 border border-neutral-200 dark:border-neutral-800 p-3 rounded bg-white dark:bg-neutral-950">
+											<div class="flex flex-col gap-2 border border-primary-500 p-3 rounded bg-background">
 												<div>
-													<div class="font-semibold text-sm text-neutral-900 dark:text-white">
+													<div class="font-semibold text-sm text-text">
 														{perk.name}
 													</div>
-													<div class="text-xs text-neutral-600 dark:text-neutral-400">
+													<div class="text-xs text-muted">
 														{perk.description}
 													</div>
 												</div>
@@ -152,7 +169,7 @@
 													onhover={(e) => handlePerkHover(perk.id, e)}
 												/>
 												{#if perk.effects && perk.effects.length > 0}
-													<div class="text-xs text-neutral-600 dark:text-neutral-400 italic min-h-[2.5rem]">
+													<div class="text-xs text-muted italic min-h-[2.5rem]">
 														{getNextRankDescription(perk)}
 													</div>
 												{/if}
@@ -165,5 +182,5 @@
 				{/each}
 			</TableBody>
 		</Table>
-		</div>
 	</div>
+</div>

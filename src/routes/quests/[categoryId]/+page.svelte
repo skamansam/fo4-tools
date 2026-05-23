@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Progress } from 'twintrinsic';
+	import { Progress, Section } from 'twintrinsic';
 	import { page } from '$app/stores';
 	import questsData from '$lib/data/quests.json';
 
@@ -66,23 +66,21 @@
 {#if category}
 	<div class="max-w-6xl mx-auto space-y-6">
 		<!-- Header -->
-		<div class="border-2 border-theme-border p-6 bg-surface">
+		<Section title={category.name} class="border-2 border-primary-500 p-6 bg-surface mb-6">
 			<a href="/quests" class="text-theme-primary hover:text-theme-accent text-sm mb-4 block">← Back to Quests</a>
-			<h1 class="text-4xl font-bold text-theme-primary mb-2">{category.name}</h1>
 			<p class="text-muted">{category.description}</p>
-		</div>
+		</Section>
 
 		<!-- Search Box -->
 		<input
 			type="text"
 			placeholder="Search quests..."
 			bind:value={searchQuery}
-			class="w-full px-4 py-2 bg-background border-2 border-theme-border text-text placeholder-muted focus:outline-none focus:border-theme-primary transition-colors"
+			class="w-full px-4 py-2 bg-background border-2 border-primary-500 text-text transition-colors focus:bg-surface placeholder:text-primary-900 focus:ring-primary-900"
 		/>
 
 		<!-- Progress Section -->
-		<div class="border-2 border-theme-border p-6 bg-surface">
-			<h2 class="text-xl font-bold text-theme-primary mb-4">PROGRESS</h2>
+		<Section title="PROGRESS" class="border-2 border-primary-500 p-6 bg-surface mb-6">
 			<div class="space-y-4">
 				<div class="flex justify-between items-center">
 					<span class="text-text">Completed</span>
@@ -93,7 +91,7 @@
 					{questsState.filter((q) => q.completed).length} of {questsState.length} quests completed
 				</p>
 			</div>
-		</div>
+		</Section>
 
 		<!-- Action Buttons -->
 		<div class="flex gap-4">
@@ -105,57 +103,49 @@
 			</button>
 			<button
 				onclick={resetAll}
-				class="px-4 py-2 border-2 border-theme-border bg-surface hover:bg-border font-bold transition-colors"
+				class="px-4 py-2 border-2 border-border bg-surface hover:bg-border font-bold transition-colors"
 			>
 				RESET ALL
 			</button>
 		</div>
 
 		<!-- Quest List -->
-		<div class="space-y-4">
-			<h2 class="text-2xl font-bold text-theme-primary">
-				{hasSearch ? 'SEARCH RESULTS' : 'QUESTS'}
-			</h2>
+		<Section title={hasSearch ? 'SEARCH RESULTS' : 'QUESTS'} class="border-2 border-primary-500 p-6 bg-surface mb-0">
 			{#if filteredQuests.length === 0}
-				<div class="border-2 border-theme-border p-6 bg-surface text-center">
-					<p class="text-muted">No quests found matching "{searchQuery}"</p>
-				</div>
+				<p class="text-muted text-center">No quests found matching "{searchQuery}"</p>
 			{:else}
-				<div class="border-2 border-theme-border p-6 bg-surface">
-					<div class="space-y-2">
-						{#each filteredQuests as quest (quest.id)}
-							<div class="flex items-center gap-4 p-3 bg-background border border-theme-border hover:border-theme-primary transition-colors">
-								<input
-									type="checkbox"
-									checked={quest.completed}
-									onchange={() => toggleQuest(quest.id)}
-									class="w-5 h-5 cursor-pointer"
-								/>
-								<span
-									class={`flex-1 ${
-										quest.completed ? 'line-through text-text opacity-60' : 'text-text'
-									}`}
-								>
-									{quest.name}
-								</span>
-							</div>
-						{/each}
-					</div>
+				<div class="space-y-2">
+					{#each filteredQuests as quest (quest.id)}
+						<div class="flex items-center gap-4 p-3 bg-background border border-theme-border hover:border-theme-primary transition-colors">
+							<input
+								type="checkbox"
+								checked={quest.completed}
+								onchange={() => toggleQuest(quest.id)}
+								class="w-5 h-5 cursor-pointer"
+							/>
+							<span
+								class={`flex-1 ${
+									quest.completed ? 'line-through text-text opacity-60' : 'text-text'
+								}`}
+							>
+								{quest.name}
+							</span>
+						</div>
+					{/each}
 				</div>
 			{/if}
-		</div>
+		</Section>
 	</div>
 {:else}
 	<div class="max-w-6xl mx-auto space-y-6">
 		<a href="/quests" class="text-theme-primary hover:text-theme-accent text-sm">← Back to Quests</a>
-		<div class="border-2 border-theme-border p-6 bg-surface">
-			<h1 class="text-2xl font-bold text-theme-primary">QUEST CATEGORY NOT FOUND</h1>
+		<Section title="QUEST CATEGORY NOT FOUND" class="border-2 border-primary-500 p-6 bg-surface mb-0">
 			<p class="text-muted mt-2">The quest category you're looking for doesn't exist.</p>
-		</div>
+		</Section>
 	</div>
 {/if}
 
 <style lang="postcss">
 	@reference 'twintrinsic/twintrinsic.css';
-	@reference '../../layout.css';
+	@reference '../../../app.css';
 </style>
